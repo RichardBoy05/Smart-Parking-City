@@ -3,9 +3,9 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 
 ## Indice
 1. [Il mondo dell'IoT](#il-mondo-delliot)
-2. [Prototipo](#prototipo)
-3. [Installazione](#installazione)
-4. [Releases](#releases)
+2. [Panoramica del progetto](#panoramica-del-progetto)
+3. [Materiali](#materiali)
+4. [Circuito](#circuito)
 5. [Bugs](#bugs)
 6. [Licenza](#licenza)
 7. [Domande, suggerimenti e bug fixes](#domande-suggerimenti-e-bug-fixes)
@@ -32,16 +32,3 @@ I **sensori** sono ovunque ormai: grazie ad essi è possibile raccogliere una gr
 - **Interoperabilità:** capacità di interagire con altri dispositivi e sistemi, essenziale per consentire una comunicazione efficace tra dispositivi di diversi produttori e piattaforme.
 - **Efficienza energetica:** molti dispositivi IoT sono alimentati da batterie o sorgenti di energia limitate; l'efficienza energetica è un aspetto chiave per garantire una lunga durata della batteria e ridurre l'impatto ambientale.
 - **Manutenzione remota e aggiornamenti:** essenziale per garantire che i dispositivi IoT rimangano sicuri e aggiornati nel tempo.
-
-
-#### Come sono collegati
-
-
-
-## Prototipo
-
-## Materiali
-
-## Circuito
-
-## 
