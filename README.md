@@ -6,7 +6,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 2. [Panoramica del progetto](#panoramica-del-progetto)
 3. [Materiali](#materiali)
 4. [Circuito](#circuito)
-5. [Bugs](#bugs)
+5. [Adattamenti e conversioni dei parametri](#bugs)
 6. [Licenza](#licenza)
 7. [Domande, suggerimenti e bug fixes](#domande-suggerimenti-e-bug-fixes)
 
