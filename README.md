@@ -100,7 +100,7 @@ Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di ve
 - Nastro adesivo e biadesivo
 - 
 ## Mappa
-![Mappa](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/map/smart_parking_city_map.png)
+![Mappa](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/smart_parking_city_map.png)
 
 ## Circuito
 | Componente | Quantità | Descrizione |
@@ -119,4 +119,6 @@ Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di ve
 | [`Powerbank 5V`](https://www.amazon.it/Powerbank-10400mAh-Caricabatterie-Portatile-Smartphone/dp/B07K1D2T5Z/ref=sr_1_5?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.BIPnA8BKQhI8x_Uw5NNC-ug9yp0vTNsgVnbbs540ql1PzfFz5pwgr0mGNSesYeJonzmXacp1TX9ZhE54HvZrd02JtxGU_I9_gg2Qh0CFwFtPZcHX8Y-x8moMi_ZY8JzwNdqkyksxVemAAdcSNruSDtnZnticvLbntWML0MupUhjskF9LliKCn8-lI9b5xmm-aM1YmUO5QdJBMt2eY57vMuqlD9gqqqhOY_xsK5dqe8PoOnjdU8szz8SnYLFUxn9mbz4nRnuMUTmGxes365E4yqdYn0ZI_vLXLLmywo92t_M.7kuAkz54nGoahHmgf3QfydIKKFDvwwCP2OTcN0c8bns&dib_tag=se&keywords=power+bank+5+volt&qid=1713165582&sr=8-5) | 1 | sssssssssssssssssssssssssssssssssssssss |
 
 # Circuito
+![Circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/smart_parking_city_circuit_diagram.png)
+
 
