@@ -33,6 +33,40 @@ I **sensori** sono ovunque ormai: grazie ad essi è possibile raccogliere una gr
 - **Efficienza energetica:** molti dispositivi IoT sono alimentati da batterie o sorgenti di energia limitate; l'efficienza energetica è un aspetto chiave per garantire una lunga durata della batteria e ridurre l'impatto ambientale.
 - **Manutenzione remota e aggiornamenti:** essenziale per garantire che i dispositivi IoT rimangano sicuri e aggiornati nel tempo.
 
+## Panoramica del progetto
+
+Il progetto consiste in un prototipo di **sistema di parcheggio intelligente** implementato a livello comunale. Consiste in un modellino in scala di un percorso stradale comunale con **3 diverse zone parcheggio.**
+
+### PARCHEGGIO **LIBERO** (strisce bianche)
+
+- 2 *sensori a ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
+- 2 slot (a L o a S)
+
+### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)** (strisce bianche)
+
+- 2 slot (a L o a S)
+- 2 *sensori a ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
+- Ogni slot è occupabile per un tempo massimo PRESTABILITO (es.: 1 ora + 15’ irl, 20’’ + 5’’ nel prototipo), superato quel tempo, Il LED inizia a lampeggiare fino a che lo slot non è liberato
+- La zona disco è attiva solo da lunedì a sabato, dalle 8 alle 20.
+
+### PARCHEGGIO A **PAGAMENTO** (strisce blu)
+
+- 5 slot
+- Gli slot NON prevedono sensori dedicati;
+- Gli slot sono coperti da una tettoia ricoperta di pannelli fotovoltaici fittizi (come esempio di fonte di energia rinnovabile, implementato nel parcheggio che richiede più energia fra i tre)
+- L’ingresso è a senso unico alternato (1), regolamentato da una sbarra (collegata ad un *servo motor*), da 2 *sensori IR* e da 2 *led* affiancati in funzione di semaforo (1 verde, attivo quando almeno uno slot è libero; 1 rosso, attivo solo quando tutti gli slot sono occupati)
+- Processo di ingresso: l’utente accosta a fianco del sensore all’ingresso e viene verificato che gli slot non siano tutti occupati (se lo dovessero essere, visibile tramite il LED rosso, la sbarra non si aprirà); l’utente effettua il pagamento o ritira il ticket (3); la sbarra si apre e si chiude solo nel momento in cui il sensore oltre la sbarra è prima attivato e poi disattivato (passaggio completo dei veicolo); solo alla fine, il contatore dei parcheggi verrà incrementato di uno.
+- Processo di uscita: l’utente accosta a fianco del sensore all’uscita; l’utente effettua il pagamento o ritira il ticket (3); la sbarra si apre e si chiude solo nel momento in cui il sensore oltre la sbarra è prima attivato e poi disattivato (passaggio completo dei veicolo); solo alla fine, il contatore dei parcheggi verrà decrementato di uno.
+- Il parcheggio è dotato di un *fotoresistore* collegato a *2 (eventualmente 3) LED bianchi*, che si accendono in caso di scarsa luminosità esterna e sono posizionati sotto la tettoia, per illuminare il parcheggio (ulteriore giustifica del fatto che sia a pagamento)
+
+Note:
+
+1) *Indica che la viabilità è concessa in una sola direzione contemporaneamente; nel prototipo non si è integrata una zona d’uscita separata poiché la zona parcheggio è relativamente piccola e poiché non necessario ai fini dimostrativi del progetto.*
+
+3)*OMESSO: il sistema di pagamento non è implementato nel prototipo perché estraneo ai fini dimostrativi del progetto, ma sarebbe necessariamente impiegato in una situazione reale (RICORDATELO).*
+
+Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot.
+
 ## Materiali
 ### Modellino
 
