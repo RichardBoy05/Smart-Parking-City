@@ -1,6 +1,9 @@
 # Smart Parking City 🚗
 Prototipo di un sistema di parcheggio intelligente implementato a livello comunale, il cui obiettivo è dimostrare come l’introduzione di **dispositivi IoT** (_Internet of Things_) possa agevolare la vita delle persone.
 
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
 ## Indice
 1. [Il mondo dell'IoT](#il-mondo-delliot)
 2. [Panoramica del progetto](#panoramica-del-progetto)
@@ -9,9 +12,13 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 5. [Adattamenti e conversioni dei parametri](#bugs)
 6. [Licenza](#licenza)
 7. [Domande, suggerimenti e bug fixes](#domande-suggerimenti-e-bug-fixes)
+   
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
-## Il mondo dell'IoT
-### "Un mondo interconnesso"
+# Il mondo dell'IoT
+Prima di esplorare il progetto in sé è opportuno fare un'introduzione al concetto di Intenrt of Things.
+## "Un mondo interconnesso"
 Il mondo sta assistendo ad una rapida diffusione delle reti digitali, che consentono ai dispositivi di connettersi e trasmettere informazioni. Questo fenomeno, noto come ***trasformazione digitale***, consiste nell’applicazione della tecnologia digitale al fine di stimolare innovazione ed progresso.
 I **sensori** sono ovunque ormai: grazie ad essi è possibile raccogliere una grande quantità di dati che possono essere archiviati, analizzati e utilizzati per una moltitudine di scopi differenti, come monitorare l'ambiente, prevedere la crescita demografica, gestire i rifiuti, migliorare la sicurezza domestica, e molti altri.
 
@@ -19,21 +26,36 @@ I **sensori** sono ovunque ormai: grazie ad essi è possibile raccogliere una gr
 
 ![Un mondo sempre più "interconnesso"...](https://eu-images.contentstack.com/v3/assets/blt10e444bce2d36aa8/blt212253f30ff67b32/6525326cb528befd7b152b76/IoT-internet-of-things-.jpg)
 
-### Internet of Things
-#### Cosa s'intende per IoT?
+## Internet of Things
+### Cosa s'intende per IoT?
 > **“Internet of Things” (IoT) è una rete interconnessa di dispositivi fisici (things), che comunicano e scambiano dati per migliorare l'efficienza e l'esperienza umana in svariati settori, tramite l’utilizzo di sensori ed altre tecnologie.**
 
-#### Quali caratteristiche deve possedere un oggetto IoT?
+## Quali caratteristiche deve possedere un oggetto IoT?
 - **Connettività:** capacità di connettersi in modo affidabile a reti, tramite tecnologie e protocolli di comunicazione efficaci.
 - **Sensori e attuatori**: capacità di percepire l’ambiente attraverso sensori e di agire su di esso tramite attuatori; questa funzionalità consente al dispositivo di raccogliere dati, prendere decisioni basate su tali dati e potenzialmente influenzare l'ambiente circostante.
 - **Automazione:** implementare processi autogestiti che riducono, per poi eventualmente eliminare, la necessità dell’intervento umano; l’IoT apre un nuovo mondo in cui le attività che prima richiedevano l’intervento umano possono diventare automatizzate**.**
 - **Scalabilità:** dato che gli ambienti IoT possono variare notevolmente in termini di dimensioni e complessità, i dispositivi dovrebbero essere progettati per scalare facilmente in modo da poter essere utilizzati in piccole reti domestiche o in grandi reti industriali.
-- **Sicurezza:** l'integrità e la sicurezza dei dati sono cruciali nell'ambito dell'IoT, specialmente quando si tratta di gestire informazioni sensibili.
+- **Sicurezza:** l'integrità e la sicurezza dei dati sono cruciali nell'ambito dell'IoT, specialmente quando si tratta di informazioni sensibili o di dispositivi critici.
 - **Interoperabilità:** capacità di interagire con altri dispositivi e sistemi, essenziale per consentire una comunicazione efficace tra dispositivi di diversi produttori e piattaforme.
 - **Efficienza energetica:** molti dispositivi IoT sono alimentati da batterie o sorgenti di energia limitate; l'efficienza energetica è un aspetto chiave per garantire una lunga durata della batteria e ridurre l'impatto ambientale.
 - **Manutenzione remota e aggiornamenti:** essenziale per garantire che i dispositivi IoT rimangano sicuri e aggiornati nel tempo.
 
-## Panoramica del progetto
+## Come si collegano alla rete gli oggetti IoT?
+Un **sensore** deve essere collegato a una rete in modo che i dati raccolti possano essere archiviati e condivisi.
+Il **controllore** si occupa di raccogliere i dati dai sensori e di garantire la connettività: può avere la capacità di prendere decisioni immediate, oppure può inviare dati a un computer più potente per l’analisi.
+Tali elementi solitamente lavorano insieme a un dispositivo chiamato **attuatore**. Gli attuatori ricevono l'input elettrico e lo convertono in azione fisica.
+
+![](https://www.electricaltechnology.org/wp-content/uploads/2021/11/Sensor-Actuator.png)
+
+## Pro e contro
+L’IoT offre numerosi **vantaggi**, consentendo la raccolta e l'analisi efficace dei dati provenienti dai sensori. Le aziende traggono beneficio da informazioni dettagliate sui loro prodotti e clienti, ottimizzando la produzione e indirizzando il marketing in modo mirato. Le città gestiscono il traffico, il riciclaggio, le esigenze sanitarie e di trasporto. Gli individui traggono benefici in termini di salute, sicurezza domestica e costi energetici ridotti.
+
+Allo stesso tempo, è importante considerare anche gli **svantaggi**: le imprese che sviluppano dispositivi indossabili hanno accesso a informazioni personali sugli utenti; affidarsi prettamente ad acquisti online potrebbe comportare la perdita di posti di lavoro; i rivenditori sono a conoscenza di tutti gli acquisti effettuati; un'interruzione della rete può avere conseguenze catastrofiche.
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+# Panoramica del progetto
 
 Il progetto consiste in un prototipo di **sistema di parcheggio intelligente** implementato a livello comunale. Consiste in un modellino in scala di un percorso stradale comunale con **3 diverse zone parcheggio.**
 
@@ -67,7 +89,7 @@ Note:
 
 Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot.
 
-## Materiali
+# Materiali
 
 | Componente | Quantità | Descrizione |
 | --- | --- | --- |
