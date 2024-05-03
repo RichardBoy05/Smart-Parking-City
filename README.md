@@ -80,7 +80,7 @@ La mappa illustra un percorso stradale che presenta **3 tipologie di parcheggio*
 **N.B.:** Si precisa che la mappa è concepita esclusivamente a fini **teorici e concettuali**, pertanto alcune delle sue caratteristiche potrebbero non essere praticamente applicabili in una situazione reale su strada.
 
 ## Componenti del circuito
-La tabella sottostante riporta i diversi componenti impiegati nel circuito. Per le specifiche tecniche complete consultare i rispettivi datasheet.
+La tabella sottostante riporta i diversi componenti impiegati nel circuito. Per le specifiche tecniche complete consultare i rispettivi *datasheet*.
 | Componente | Quantità | Descrizione |
 | --- | --- | --- |
 | [`Arduino UNO R4 WiFi`](https://docs.arduino.cc/hardware/uno-r4-wifi/) | 1 | **Arduino** è una piattaforma hardware e software *open-source* con cui realizzare dispositivi digitali in grado di interagire con il mondo esterno attraverso sensori e attuatori ([datasheet](https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf)). |
@@ -91,19 +91,12 @@ La tabella sottostante riporta i diversi componenti impiegati nel circuito. Per 
 | [`Resistori`](https://www.amazon.it/AZDelivery-Resistenze-Resistori-Arduino-gratuito/dp/B07Q87JZ9G/ref=mp_s_a_1_3?crid=2TC9BVKNFDZ8E&dib=eyJ2IjoiMSJ9.m5BpWsNponXDu2NgiZft18byMuQH5acGxvlPhkBDKIAP6-y2xkoGZDoyxxVfIyDYEAg99g_jaLYLPw8QVpi4V4XCuJx9dncmhRd_uYIwo9uobWLQXDFQJ4iGopYZX5K_RucRwQR4Q-SBcYHL1jgJWOIpFCjRGIo-STIrgjKXDrMMtJ_gDsPfRLhde17dlA3fmogNdJBKoq52tJmEmCQ0lA.9eHZDTs0PXLqoFtuXdFetqe9rQbFbAhfiUGoJ44W2ts&dib_tag=se&keywords=azdelivery+resistor&qid=1711229207&sprefix=azdelivery+resistor+%2Caps%2C168&sr=8-3) | 10 | Un resistore è un componente elettronico che limita il flusso di corrente in un circuito, determinato dal suo valore di resistenza misurato in ohm, essenziale per **regolare** la quantità di corrente che attraversa il circuito e proteggere i componenti sensibili. <ul><li>(9x) Resistori da 470 Ω, 1/4 W</li><li>(1x) Resistori da 10 kΩ, 1/4 W</li></ul> |
 | [`Fotoresistore`](https://www.amazon.it/AZDelivery-fotoresistenti-LDR5528-compatibili-Arduino/dp/B089YNCYG4/ref=sr_1_7?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2A3APBD8O8PY&dib=eyJ2IjoiMSJ9.QA9xJKurHImIT1lWJXxxdlnbVU5UKDHiJiSE8BfTa5shSX8N_5-MaEax9oqEEga5oNdL8Azt-5rqM3ElFDL3_B0r6F1qAQhCQTbHtBPYBOur-ZnERjDBQYsBogf_XU816SJLQFBg719l7WRvUNZGG7LiAoieR9oRcJriKK3CDxooxr4I4-moYNi1UXT8sbimDNixjAUhLv2dQ-H4lnygvw2ixt41P2KxyN8yO6ETdJ9fLiwU0NgUWKRUQkIr3XEbgrfC6cIpOYQ1T80aCICCmrM0zGWEunkuGV8vYIbvqds.Z_CgHc8fCiFFLbCQ0lHBB4iV51wunor6gzONEHCuHQs&dib_tag=se&keywords=photoresistor%2Bldr&qid=1711311437&sprefix=photoresistor%2Bld%2Caps%2C114&sr=8-7&th=1) | 1 | La fotoresistenza è un componente elettronico la cui resistenza è inversamente proporzionale alla quantità di luce che lo colpisce, il che lo rende adatto per la realizzazione di **luci crepuscolari**.|
 | [`Servo motore SG90`](https://www.amazon.it/AZDelivery-Servomotore-compatibile-Elicottero-Arduino/dp/B07CYZK379/ref=sr_1_3_sspa?dib=eyJ2IjoiMSJ9.H5GMwpa4wNe8ulI-HmmzdcDht2QFTc48OwjhYYXIGgnF_nrgGONIOFU5ZTkcfWKfsql0zVMRrjnDoI1RDVFKbSKTAc8BVYbfDwlvx7gUBatWIHzP4UajWxboJIyJEdFu6NJDMSqDGAm6o207fv4AhQjXq59-yz3EZihzw5uH_0ZfiRZKMJWrpRNE2Z6cYtxTJxzI5ZC9MJeLHkQZb6y57rli0luWh3UFG2-qbtL_fFc-jzGfIWlapPriDetNoK6c0iaOqV0gYQqzO__K9Kn788wdh8yWWhfTVFtSnvadwKg.lN3SZuhmgmwKlqWWHE71rGuFKolFMLjj86eRxRc3MsI&dib_tag=se&keywords=arduino%2Bservo%2Bmotor&qid=1710865115&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) | 1 | Un servo motore è un dispositivo che converte un segnale di controllo in movimento **preciso e controllato**, comunemente utilizzato per il controllo di posizione in sistemi robotici e automazione industriale. <ul><li>Alimentazione: 4,8 - 6 V DC</li><li>Angolo di rotazione: 180 ° </li><li>Velocità: 0,1 s su 60°</li><li>Coppia: 2,5 kg/cm</li></ul> |
-| [`Jumper wires`](https://www.amazon.it/gp/aw/d/B07KCFG5YX/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=de9838076b80169474b4678f431464e9&hsa_cr_id=3263644680502&qid=1711312198&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&ref_=sbx_be_s_sparkle_lsi4d_asin_0_title&pd_rd_w=rpZDT&content-id=amzn1.sym.b580b30c-dd62-441e-ab95-5e749dbe7889%3Aamzn1.sym.b580b30c-dd62-441e-ab95-5e749dbe7889&pf_rd_p=b580b30c-dd62-441e-ab95-5e749dbe7889&pf_rd_r=JVVYGQ2GXAEZ3D0TW82Y&pd_rd_wg=FwLuU&pd_rd_r=161e4473-fa7a-4822-8c9c-0136839bec18&th=1) | ~100 | I jumper wires sono cavi elettrici **corti e flessibili** utilizzati per connettere componenti elettronici tra loro in modo rapido e senza saldatura. Si distinguono in *male-to-male**, *male-to-female* e *female-to-femnale* in base al tipo di estremità.|
+| [`Jumper wires`](https://www.amazon.it/gp/aw/d/B07KCFG5YX/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=de9838076b80169474b4678f431464e9&hsa_cr_id=3263644680502&qid=1711312198&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&ref_=sbx_be_s_sparkle_lsi4d_asin_0_title&pd_rd_w=rpZDT&content-id=amzn1.sym.b580b30c-dd62-441e-ab95-5e749dbe7889%3Aamzn1.sym.b580b30c-dd62-441e-ab95-5e749dbe7889&pf_rd_p=b580b30c-dd62-441e-ab95-5e749dbe7889&pf_rd_r=JVVYGQ2GXAEZ3D0TW82Y&pd_rd_wg=FwLuU&pd_rd_r=161e4473-fa7a-4822-8c9c-0136839bec18&th=1) | ~100 | I jumper wires sono cavi elettrici **corti e flessibili** utilizzati per connettere componenti elettronici tra loro in modo rapido e senza saldatura. Si distinguono in *male-to-male*, *male-to-female* e *female-to-femnale* in base al tipo di estremità.|
 | [`Powerbank 5V`](https://www.amazon.it/Powerbank-10400mAh-Caricabatterie-Portatile-Smartphone/dp/B07K1D2T5Z/ref=sr_1_5?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.BIPnA8BKQhI8x_Uw5NNC-ug9yp0vTNsgVnbbs540ql1PzfFz5pwgr0mGNSesYeJonzmXacp1TX9ZhE54HvZrd02JtxGU_I9_gg2Qh0CFwFtPZcHX8Y-x8moMi_ZY8JzwNdqkyksxVemAAdcSNruSDtnZnticvLbntWML0MupUhjskF9LliKCn8-lI9b5xmm-aM1YmUO5QdJBMt2eY57vMuqlD9gqqqhOY_xsK5dqe8PoOnjdU8szz8SnYLFUxn9mbz4nRnuMUTmGxes365E4yqdYn0ZI_vLXLLmywo92t_M.7kuAkz54nGoahHmgf3QfydIKKFDvwwCP2OTcN0c8bns&dib_tag=se&keywords=power+bank+5+volt&qid=1713165582&sr=8-5) | 1 | Un powerbank è una fonte di energia **portatile** progettato per alimentare dispositivi **USB**, fornendo energia attraverso batterie interne ricaricabili. <li>Tensione: 5 V</li><li>Corrente (max): 3 A</li><li>Capacità: 10400 mAh</li> |
 | [`Batterie AA`](https://www.amazon.it/GP-Batterie-alcaline-extra-Pack/dp/B07QLY7GJM/ref=sr_1_51?adgrpid=52877419152&dib=eyJ2IjoiMSJ9.7qd2mWgPWlRveGEJRbjXJNr_1e9RKYC6IRoJ2DMJVN8DdBdwJqCzqK73YUGTu7Fp6M8yQAk3qMl9dYuvGwGbMX7USwwgVBXJGIIQ5_AyID0oKvImWeARVVw5WJEQ0Yu4qGTWo3c7yk3QvBtwPNUi0jkd5V4RcMvFwj5okyh7y0IhIXa5eOPrGXhx_wAhMs2IetHvDGn6JOylqSXNwCbYjeA4Rl0DjkUd5rvQNbVtBsfFoNIqIcWG39teBqrWrV3nV3eMhC6yga41q2zkZMfY9eRJsmqzn6z_76V3YKGhaRc.uM6QNZjC_zp7i0GUddvcEFiaSM3V_ZWUb_dckQprSA4&dib_tag=se&hvadid=591172535230&hvdev=c&hvlocphy=20530&hvnetw=g&hvqmt=e&hvrand=7053405220002942603&hvtargid=kwd-297014870873&hydadcr=16358_2167162&keywords=batterie+aa&qid=1714133456&sr=8-51) | 4 | La batteria AA è una fonte di energia **portatile** di dimensione standard, comunemente utilizzata in dispositivi elettronici di piccole dimensioni. <li>Tensione: 1,5 V</li><li>Composizione: alcalina</li> |
 | [`6V case per batterie AA`](https://www.amazon.it/GTIWUNG-Portabatterie-Batteries-Titolare-Batteria/dp/B07WJ3HFSP/ref=sr_1_4_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1H1FAUSVDY2ZO&dib=eyJ2IjoiMSJ9.VaIPkWXh1vEz2NWlzy-bskl9fVmzWq7qeBQ8_ApM4FPnZ8V06gFMpukyYOf0ioPXd84rmuTRhwcCTQ-VyXnU4EB3BAxMwPgJyKHS5BD2nhbk5AyTJEGofYvVUIhDMtfrEYWUxj76uI_8QnKTrhU6xVS8KeJ8W6aC3NxHL-sjlnikRBs7oRnvvSmNphDlNJrFtqXkM1Psx928dYTdv8xYIyf37HDewKhmBF5k6ltBX6ugh2mP0TILY5vQ6Vt7XLJGf1b0Tg2dlh3lrgPXofts5vrMIoWyVe_076TEcwlvY2E.PCfiGvevFAiXFAPFaMBk1aE8f2rlIRc813mSuyq8xkc&dib_tag=se&keywords=aa%2Bbattery%2Bholder&qid=1711374901&sprefix=aa%2Bbattery%2Bhgolder%2Caps%2C109&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) | 1 | Contenitore utilizzato per collegare 4 batterie AA in serie, generando una tensione totale di 6V. |
 
 ![Componenti del circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_components.png)
-
------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------
-
-# Circuito
-![Schema del circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_diagram.png)
-![Circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit.png)
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
@@ -142,6 +135,77 @@ Note:
 
 Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot.
 
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+# Circuito
+
+![Schema del circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_diagram.png)
+![Circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit.png)
+
+Il circuito che gestisce il funzionamento del prototipo si occupa delle seguenti funzioni:
+- **Alimentare** il microcontrollore Arduino e il servo motore.
+- **Connettere** i vari sensori e attuatori ad Arduino in modo che possano essere **controllati** tramite codice.
+
+Analizziamone ora le caratteristiche nello specifico.
+
+## Alimentazione
+
+### Arduino
+Tra le varie opzioni di alimentazione per la scheda, si è scelto di utilizzare il **connettore USB-C® integrato**. È il metodo più comune, semplice e sicuro, poiché la tensione (*5 V*) e la corrente (*500 mA max*) sono **regolate e standardizzate** secondo le specifiche USB. Oltre all'Arduino, il connettore USB consente di alimentare anche i vari componenti connessi al pin *5v* della scheda.
+
+Dato che la massima intensità di corrente concessa è di 500 mA, è stato necessario verificare che i dispositivi collegati ad Arduino non superassero complessivamente questo limite.
+
+| Componente | Corrente massima | Quantità | Corrente totale massima
+| --- | --- | ---| --- |
+| `Sensore ad ultrasuoni` | ~5 mA | 4 | ~5 mA x 4 = **~20 mA** |
+| `Sensore ad infrarossi` | ~5 mA | 2 | ~5 mA x 4 = **~10 mA** |
+| `LED` | ~20 mA | 9 | 20 mA x 9 = **~180 mA** |
+
+*(Il pin di controllo del servo motore e il fotoresistore consumano una quantità di corrente talmente bassa da potersi considerare trascurabile).*
+
+La corrente totale massima è quindi pari a ~210 mA, abbondantemente entro il limite di 500 mA.                                         
+**N.B.:** sebbene, a livello teorico, la massima corrente consumata da ciascun LED è pari a ~20 mA, nel circuito non supera mai gli 8 mA (per ragioni che saranno spiegate in seguito). Pertanto, la corrente massima (**~100 mA**) utilizzata risulta ancora minore.
+
+### Servo motore
+Il servo motore si distingue dagli altri componenti per il suo consumo di corrente **instabile**, caratterizzato da picchi di corrente elevati che potrebbero danneggiare il microcontrollore. Per questo motivo, è consigliabile alimentarlo tramite una fonte esterna, avente una tensione compresa tra 4,8 e 6 V. Di conseguenza, si è optato per l'utilizzo di **4 batterie AA** (1,5 V ciascuna) collegate in serie.
+
+## Sensori
+I sensori si occupano di rilevare alcune condizioni ambientali al fine di comunicarle al controllore.
+
+### Sensori ad ultrasuoni
+Un sensore ad ultrasuoni funziona emettendo impulsi sonori ad **alta frequenza**, al di fuori dell'udibile dall'orecchio umano, e misurando il tempo che impiega per questi impulsi a riflettersi da un oggetto e tornare al sensore. Conoscendo la velocità del suono nell'aria, il sensore calcola la distanza basandosi sul tempo impiegato dagli impulsi per viaggiare avanti e indietro, in base alla seguente formula:
+
+$$distance =\frac{speed\ of\ sound \times time}{2}$$
+  
+![](https://cdn.shopify.com/s/files/1/0550/8091/0899/files/How-Ultrasonic-Sensors-Work_2_bbe85036-facc-4a57-a46d-c1e7f56312ba_600x600.gif?v=1677693349)
+
+Il sensore è dotato di 4 connettori: *VCC* per l'alimentazione, *GND* per la terra, *ECHO* e *TRIG* per il controllo. I primi due sono collegati rispettivamente ai pin *5v* e *GND* dell'Arduino, attraverso la breadboard. I connettori *ECHO* e *TRIG* gestiscono l'invio e la ricezione degli ultrasuoni e possono essere collegati allo stesso pin GPIO (*General Purpose Input/Output*) del microcontrollore, poiché operano in modo alternato.
+
+La scelta di questo sensore per il rilevamento dei parcheggi è motivata dalla sua **precisione** nelle misurazioni della distanza dei veicoli, consentendo una **facile regolazione** per adattarsi a vari tipi di parcheggio. Inoltre, non è influenzato da luce, fumo, polvere e caratteristiche delle superfici riflettenti (eccetto superfici morbide, che possono assorbire gli ultrasuoni anziché rifletterli; tuttavia, questo non è un problema nel contesto del rilevamento dei parcheggi).
+
+### Sensori ad infrarossi
+Un sensore ad infrarossi attivo funziona emettendo un fascio di luce infrarossa e poi rilevando la sua riflessione. Quando un oggetto si trova nel percorso del fascio, la luce infrarossa viene riflessa verso il sensore, il quale rileva la presenza dell'oggetto. Questa variazione nella riflessione della luce è interpretata come la presenza di un oggetto davanti al sensore.
+
+![](https://circuitdigest.com/sites/default/files/inlineimages/u4/IR-Sensor-Working.gif)
+
+Il sensore dispone di 3 connettori: *VCC* per l'alimentazione, *GND* per la terra e *OUT* per il controllo.  Il collegamento ad Arduino è analogo a quello del sensore ad ultrasuoni.
+
+La scelta di utilizzare questo tipo di sensore per la rilevazione dei veicoli all'accesso del parcheggio a pagamento è motivata dalla sua affidabile capacità di rilevare la presenza di un oggetto di fronte a sé. A differenza del sensore ad ultrasuoni, non è in grado di fornire misurazioni precise, quindi non è raccomandato per il rilevamento dei parcheggi. Inoltre, a differenza del sensore ad ultrasuoni, è particolarmente sensibile alle condizioni ambientali.
 
 
+### Fotoresistenza
+
+## Attuatori
+Gli attuatori si occupano di convertire i segnali del microcontrollore in azioni fisiche.
+### LED
+### Servo motore
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+# Codice
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
