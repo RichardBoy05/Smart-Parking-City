@@ -184,17 +184,20 @@ Il sensore è dotato di 4 connettori: *VCC* per l'alimentazione, *GND* per la te
 
 La scelta di questo sensore per il rilevamento dei parcheggi è motivata dalla sua **precisione** nelle misurazioni della distanza dei veicoli, consentendo una **facile regolazione** per adattarsi a vari tipi di parcheggio. Inoltre, non è influenzato da luce, fumo, polvere e caratteristiche delle superfici riflettenti (eccetto superfici morbide, che possono assorbire gli ultrasuoni anziché rifletterli; tuttavia, questo non è un problema nel contesto del rilevamento dei parcheggi).
 
-### Sensori ad infrarossi
+### Sensori ad infrarossi attivo
 Un sensore ad infrarossi attivo funziona emettendo un fascio di luce infrarossa e poi rilevando la sua riflessione. Quando un oggetto si trova nel percorso del fascio, la luce infrarossa viene riflessa verso il sensore, il quale rileva la presenza dell'oggetto. Questa variazione nella riflessione della luce è interpretata come la presenza di un oggetto davanti al sensore.
 
 ![](https://circuitdigest.com/sites/default/files/inlineimages/u4/IR-Sensor-Working.gif)
 
 Il sensore dispone di 3 connettori: *VCC* per l'alimentazione, *GND* per la terra e *OUT* per il controllo.  Il collegamento ad Arduino è analogo a quello del sensore ad ultrasuoni.
 
-La scelta di utilizzare questo tipo di sensore per la rilevazione dei veicoli all'accesso del parcheggio a pagamento è motivata dalla sua affidabile capacità di rilevare la presenza di un oggetto di fronte a sé. A differenza del sensore ad ultrasuoni, non è in grado di fornire misurazioni precise, quindi non è raccomandato per il rilevamento dei parcheggi. Inoltre, a differenza del sensore ad ultrasuoni, è particolarmente sensibile alle condizioni ambientali.
+La scelta di utilizzare questo sensore per la rilevazione dei veicoli all'accesso del parcheggio a pagamento è motivata dalla sua **affidabile** capacità di rilevare la presenza di un oggetto di fronte a sé, nonché dalla sua **facilità** di utilizzo. Tuttavia, a differenza del sensore ad ultrasuoni, non è in grado di fornire misurazioni precise, quindi non è raccomandato per il rilevamento dei parcheggi. È inoltre particolarmente sensibile alle condizioni di estrema luminosità, rendendolo inadatto per applicazioni esposte ad una forte luce solare.
 
+La volontà di utilizzare due diverse tipologie di sensori nel prototipo deriva anche dalla volontà di effettuare un confronto tra i due, così da delineare i rispettivi **vantaggi e svantaggi**.
 
 ### Fotoresistenza
+
+L'ultimo componente di questa categoria (sebbene non si tratti di un vero e proprio sensore, ma di una resistenza) è il fotoresistore. Esso è un componente elettronico che varia la sua resistenza in base all'intensità luminosa a cui è esposto. Quando la luce colpisce il materiale fotosensibile all'interno del dispositivo, gli elettroni vengono eccitati, aumentando la conduttività del materiale e di conseguenza diminuendo la resistenza del fotoresistore. Questa variazione di resistenza viene utilizzata per regolare altri componenti del circuito elettronico, come ad esempio per accendere o spegnere una luce crepuscolare quando la luminosità ambientale cambia.
 
 ## Attuatori
 Gli attuatori si occupano di convertire i segnali del microcontrollore in azioni fisiche.
