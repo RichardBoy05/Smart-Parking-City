@@ -235,8 +235,11 @@ Possiamo dunque determinare il valore della resistenza per ogni colore di LED ut
 
 Dopo aver eseguito i calcoli e considerando la disponibilità del set di resistori, l'opzione migliore è utilizzare **un resistore da 470 Ω per ciascun LED**, in modo da assicurare che la corrente diretta attraverso ciascuno sia ben al di sotto del limite massimo di 8 mA.
 
+**Curiosità** 💡: il valore di resistenza di un resistore è determinato dalle **bande colorate** visibili sulla sua superficie, rendendoli facilmente identificabili attraverso opportune tabelle o [tool](https://www.digikey.it/en/resources/conversion-calculators/conversion-calculator-resistor-color-code) online.
+
 ### Servo motore
-Un servo motore è un dispositivo, tipicamente di ridotta potenza, utilizzato per convertire un segnale di controllo in un **movimento preciso e controllato**. Questo processo è reso possibile grazie alla tecnica di modulazione chiamata PWM (Pulse Width Modulation)o. In sostanza, il segnale PWM consiste in una serie di impulsi elettrici con una frequenza costante, ma con la durata (o larghezza) di ciascun impulso variabile. Quando Arduino controlla il servomotore, utilizza la funzione analogWrite(pin, valore) per generare segnali PWM di diverse larghezze. Ad esempio, se si desidera spostare il servomotore in una determinata posizione, Arduino invia impulsi PWM con una larghezza proporzionale a quella posizione. La durata dell'impulso è proporzionale alla posizione desiderata del servomotore.
+Il servomotore è un dispositivo di ridotta potenza utilizzato per convertire un segnale di controllo in un **movimento preciso e controllato**. Questo processo è reso possibile grazie alla tecnica di modulazione chiamata ***PWM (Pulse Width Modulation)***. Un segnale PWM consiste in una serie di impulsi elettrici con una frequenza costante, ma con **durata variabile**. Questi impulsi assumono la forma di *onde quadre*, dove il valore può essere solo *HIGH* (*5V*) o *LOW* (*0V*). 
+Quando Arduino controlla un servomotore, genera segnali PWM con diverse larghezze (che ne rappresentano la durata). Ad esempio, per spostare il servomotore in una posizione desiderata, Arduino invia impulsi PWM con una larghezza **proporzionale** a quella della posizione. Questa relazione tra larghezza dell'impulso e posizione del servomotore è stabilita nel *datasheet* del servomotore stesso e viene sfruttata da Arduino per controllarlo in modo preciso e deterministico.
 
 ![](https://lastminuteengineers.com/wp-content/uploads/arduino/Servo-Motor-Working-Animation.gif)
 
