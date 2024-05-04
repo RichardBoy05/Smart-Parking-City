@@ -12,7 +12,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 5. [Adattamenti e conversioni dei parametri](#bugs)
 6. [Licenza](#licenza)
 7. [Codice](#codice)
-8. [Domande, suggerimenti e bug fixes](#domande-suggerimenti-e-bug-fixes)
+8. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari)
    
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
@@ -197,18 +197,63 @@ La volontà di utilizzare due diverse tipologie di sensori nel prototipo deriva 
 
 ### Fotoresistenza
 
-L'ultimo componente di questa categoria (sebbene non si tratti di un vero e proprio sensore, ma di una resistenza) è il fotoresistore. Esso è un componente elettronico che varia la sua resistenza in base all'intensità luminosa a cui è esposto. Quando la luce colpisce il materiale fotosensibile all'interno del dispositivo, gli elettroni vengono eccitati, aumentando la conduttività del materiale e di conseguenza diminuendo la resistenza del fotoresistore. Questa variazione di resistenza viene utilizzata per regolare altri componenti del circuito elettronico, come ad esempio per accendere o spegnere una luce crepuscolare quando la luminosità ambientale cambia.
+Il fotoresistore, pur non essendo un sensore vero e proprio ma una *resistenza*, costituisce l'ultimo componente di questa categoria. È un dispositivo elettronico che **modifica** la propria resistenza in base all'**intensità luminosa** a cui è esposto. Quando la luce colpisce il materiale fotosensibile all'interno del dispositivo, gli elettroni vengono eccitati, aumentando la conduttività del materiale e, di conseguenza, diminuendo la resistenza del fotoresistore. Questa variazione di resistenza viene sfruttata per controllare altri elementi del circuito elettronico, come, ad esempio, l'attivazione o la disattivazione di una luce crepuscolare in risposta ai cambiamenti di luminosità ambientale.
+
+![](https://engineeringlearn.com/wp-content/uploads/2021/12/LDR.jpg)
+
+Poiché i pin di Arduino non sono in grado di misurare direttamente una variazione di resistenza ma solo di tensione, il collegamento del fotoresistore avviene tramite un circuito noto come "***partitore di tensione***". Questo circuito è composto da due resistenze collegate in serie a una fonte di tensione. La tensione si distribuisce sulle diverse resistenze in base ai loro valori, secondo le regole delle *resistenze in serie* e alla *legge delle maglie di Kirchhoff*. Nel nostro caso, le due resistenze sono il fotoresistore (variabile) e un resistore da 10 kΩ (un valore standard per garantire una buona sensibilità e un basso consumo di corrente), mentre la fonte di tensione è il pin *5V* del microcontrollore.
+Successivamente, un GPIO pin analogico di Arduino (in questo caso *A5*), è connesso in mezzo alle due resistenze. Trattandosi di un pin analogico, esso è in grado di leggere una gamma di valori anziché solo un valore digitale. Il valore di tensione misurato può essere interpretato attraverso il codice per determinare il livello di luminosità ed effettuare le azioni necessarie.
 
 ## Attuatori
 Gli attuatori si occupano di convertire i segnali del microcontrollore in azioni fisiche.
+
 ### LED
+Il circuito utilizza 9 LED, diodi a semiconduttore che emettono **luce** quando attraversati da corrente elettrica. Ciascun LED è controllato tramite un pin digitale GPIO di Arduino, con l'eccezione di 3 LED collegati a pin analogici, che possono funzionare anche come digitali (tuttavia tale flessibilità non vale al contrario, in quanto pin digitali non possono fungere da analogici). Nello specifico, ogni LED è dotato di un *anodo* (terminale positivo) connesso al pin della scheda e di un *catodo* (terminale negativo) collegato al *GND* del microcontrollore.
+
+![](https://www.emanuelegenovese.it/wp-content/uploads/2018/03/LED-anatomia.png)
+
+Ogni LED possiede 2 importanti proprietà:
+- ***Caduta di tensione diretta** (Vf)*: tensione necessaria affinché possa fluire corrente attraverso il LED.
+- ***Corrente diretta massima** (If)*: valore massimo di corrente che può attraversare il LED senza danneggiarlo. Nei LED utilizzati, equivale a **20 mA**.
+
+Inoltre, ogni pin GPIO dell'*Arduino UNO R4 WiFi* ha un limite massimo di corrente che può essere assorbito da un dispositivo collegato senza danneggiare il pin, pari a **8 mA**. Quindi, per garantire che la corrente che scorre attraverso il LED sia inferiore a 8 mA, è necessario aggiungere un **resistore in serie** a ciascun LED. Per maggior sicurezza, si opta per una corrente ancora più ridotta, come **7 mA**.
+
+Il valore idoneo della resistenza è stabilito dalla **prima legge di Ohm**:
+> **"La differenza di potenziale ai capi di un resistore è uguale al prodotto della resistenza per l'intensità della corrente che lo attraversa.**
+
+Definendo quindi *Vs* come tensione di alimentazione, pari a *5V* (standard erogato dai GPIO pin di Arduino), possiamo determinare il valore dei resistori in base alla seguente formula:
+$$R=\frac{Vs - Vf}{If}$$
+
+Possiamo dunque determinare il valore della resistenza per ogni colore di LED utilizzato.
+
+| Colore del LED | Vf | If | Resistenza |
+| --- | --- | ---| --- |
+| `Blu` | 2,7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
+| `Bianco` | 2,7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
+| `Verde` | 2,5 V | 7 mA | $$\frac{5,0 V - 2,5 V}{7 mA} = 357,1 Ω $$ |
+| `Rosso` | 1,9 V | 7 mA | $$\frac{5,0 V - 1,9 V}{7 mA} = 442,9 Ω $$ |
+
+Dopo aver eseguito i calcoli e considerando la disponibilità del set di resistori, l'opzione migliore è utilizzare **un resistore da 470 Ω per ciascun LED**, in modo da assicurare che la corrente diretta attraverso ciascuno sia ben al di sotto del limite massimo di 8 mA.
+
 ### Servo motore
+Un servo motore è un dispositivo, tipicamente di ridotta potenza, utilizzato per convertire un segnale di controllo in un **movimento preciso e controllato**. Questo processo è reso possibile grazie alla tecnica di modulazione chiamata PWM (Pulse Width Modulation)o. In sostanza, il segnale PWM consiste in una serie di impulsi elettrici con una frequenza costante, ma con la durata (o larghezza) di ciascun impulso variabile. Quando Arduino controlla il servomotore, utilizza la funzione analogWrite(pin, valore) per generare segnali PWM di diverse larghezze. Ad esempio, se si desidera spostare il servomotore in una determinata posizione, Arduino invia impulsi PWM con una larghezza proporzionale a quella posizione. La durata dell'impulso è proporzionale alla posizione desiderata del servomotore.
+
+![](https://lastminuteengineers.com/wp-content/uploads/arduino/Servo-Motor-Working-Animation.gif)
+
+Il servo motore possiede 3 connettori: *rosso* per l'alimentazione, *marrone* per la terra, *arancione* per il controllo. I primi due sono connessi al generatore da *6V*, mentre il cavo di controllo è collegato ad un GPIO PWM digitale, nello specifico al pin *D10*. 
+
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
 # Codice
 
+Linguaggio: C++
+Rimanda al codice, dove tutto è spiegato tramite commenti, altrimenti non finiresti più, eventualmente usa il codice anche durante la presentazione.
+Al limite puoi descrivere il ruolo di ogni file.
+
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
+
+# Collegamenti interdisciplinari
 
