@@ -141,8 +141,13 @@ Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di ve
 # Circuito
 
 ![Schema del circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_diagram.png)
+*(schema del circuito)*
 ![Circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit.png)
-![Zoom sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed.png)
+*(vista dall'alto)*
+![Zoom 1 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_1.png)
+![Zoom 2 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_2.png)
+![Zoom 3 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_3.png)
+![Zoom 4 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_4.png)
 
 Il circuito che gestisce il funzionamento del prototipo si occupa delle seguenti funzioni:
 - **Alimentare** il microcontrollore Arduino e il servo motore.
