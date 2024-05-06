@@ -29,7 +29,7 @@ I **sensori** sono ovunque ormai: grazie ad essi è possibile raccogliere una gr
 
 ## Internet of Things
 ### Cosa s'intende per IoT?
-> **“Internet of Things” (IoT) è una rete interconnessa di dispositivi fisici (things), che comunicano e scambiano dati per migliorare l'efficienza e l'esperienza umana in svariati settori, tramite l’utilizzo di sensori ed altre tecnologie.**
+> **“Internet of Things” (IoT) è una rete interconnessa di dispositivi fisici (things), che comunicano e scambiano dati per migliorare l'efficienza e l'esperienza umana in svariati settori, tramite l’utilizzo di sensori, attuatori ed altre tecnologie.**
 
 ## Quali caratteristiche deve possedere un oggetto IoT?
 - **Connettività:** capacità di connettersi in modo affidabile a reti, tramite tecnologie e protocolli di comunicazione efficaci.
