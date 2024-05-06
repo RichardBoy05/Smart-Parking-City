@@ -276,6 +276,17 @@ Linguaggio: C++
 Rimanda al codice, dove tutto è spiegato tramite commenti, altrimenti non finiresti più, eventualmente usa il codice anche durante la presentazione.
 Al limite puoi descrivere il ruolo di ogni file.
 
+Le funzionalità del progetto sono regolate tramite codice.
+
+## Linguaggio
+Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un linguaggio di alto livello basato su **C/C++** che include librerie e funzioni specializzate per interagire con l'hardware specifico di Arduino, come sensori, attuatori e moduli di comunicazione. 
+
+## File
+- [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
+- [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
+- [`thingProperties.ho`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
+- [`ledMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ledMatrixConfig.h)
+
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
