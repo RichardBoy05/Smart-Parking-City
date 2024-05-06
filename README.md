@@ -271,21 +271,29 @@ Il servo motore possiede 3 connettori: *rosso* per l'alimentazione, *marrone* pe
 -----------------------------------------------------------------------------------------------------------
 
 # Codice
-
-Linguaggio: C++
-Rimanda al codice, dove tutto è spiegato tramite commenti, altrimenti non finiresti più, eventualmente usa il codice anche durante la presentazione.
-Al limite puoi descrivere il ruolo di ogni file.
-
-Le funzionalità del progetto sono regolate tramite codice.
+Le funzionalità del progetto sono controllate e gestite attraverso il codice, il quale è redatto nell'editor cloud di Arduino e successivamente caricato sul microcontrollore. Quest'ultimo conserva una copia del codice e lo esegue immediatamente all'alimentazione.
 
 ## Linguaggio
 Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un linguaggio di alto livello basato su **C/C++** che include librerie e funzioni specializzate per interagire con l'hardware specifico di Arduino, come sensori, attuatori e moduli di comunicazione. 
 
 ## File
-- [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
-- [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
-- [`thingProperties.ho`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
-- [`ledMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ledMatrixConfig.h)
+
+### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
+
+(spiegazione, includi main, loop e funzioni annesse)
+
+  
+### - [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
+
+(spiegazione, concetto di classe)
+
+### - [`thingProperties.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
+
+(spiegazione)
+
+### - [`ledMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ledMatrixConfig.h)
+
+(spiegazione)
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
