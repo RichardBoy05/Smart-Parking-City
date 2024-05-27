@@ -1,3 +1,14 @@
+/*
+ *
+ * This sketch implements a ParkingSensor class that utilizes an ultrasonic sensor
+ * to detect the presence of vehicles in parking slots. It manages LED indicators to
+ * signal parking occupancy and vacancy, with specific handling for timed parking
+ * slots, including a maximum occupation time limit and LED blinking when exceeded.
+ * Additionally, it updates cloud variables to reflect parking states variation.
+ *
+ */
+
+
 #include <Time.h>
 #include <NewPing.h>
 
@@ -6,32 +17,31 @@ class ParkingSensor {
   private:
 
     NewPing sonar; // ultrasonic sensor object
-    float distance = 0; // distance measured by the ultrasonic sensor
-    float duration = 0; // duration of the ultrasonic pulse travel
     String id; // identifier for the parking sensor (F1, F2, T1, T2)
-    const float SOUND_SPEED = 0.0343; // speed of sound in cm/microseconds
-
+    float distance = 0; // distance measured by the ultrasonic sensor
+    float duration = 0; // duration of the ultrasonic pulse travel  
     int led; // LED pin number
     boolean is_led_blinking = false;
-    const int LED_BLINKING_INTERVAL = 500; // LED blinking interval in milliseconds
 
     unsigned long detection_time = 0; // time when parking is detected
     unsigned long undetection_time = 0; // time when parking becomes vacant
     unsigned long occupation_time = 0; // occupation time of the slot
     unsigned long previous_blink = 0;  // time when the LED last blinked
 
+    const float SOUND_SPEED = 0.0343; // speed of sound in cm/microseconds
     const float PK_DISTANCE_THRESHOLD = 5.00; // threshold distance for detecting parking, in cm
-    const int SLOT_DETECTION_TIME = 3000; // minimum time to update the state of a parking slot
-    const int MAX_OCCUPATION_TIME = 20000; // max occupation time for timed parking slots in milliseconds
+    const int SLOT_DETECTION_TIME = 3000; // minimum time to update the state of a parking slot in milliseconds
+    const int MAX_OCCUPATION_TIME = 20000; // maximum occupation time for timed parking slots in milliseconds
+    const int LED_BLINKING_INTERVAL = 500; // LED blinking interval in milliseconds
 
     
   public:
 
      /**
-     * @brief Constructor for ParkingSensor class.
-     * @param sensor Ultrasonic sensor object.
-     * @param indicator_led Pin number for LED indicator.
-     * @param parking_id Identifier for the parking sensor.
+     * @brief Constructor for ParkingSensor class
+     * @param sensor: ultrasonic sensor object
+     * @param indicator_led: pin number for LED indicator
+     * @param parking_id: identifier for the parking sensor
      */
 
     ParkingSensor(NewPing sensor, int indicator_led, String parking_id) : sonar(sensor), led(indicator_led), id(parking_id) {}
@@ -50,7 +60,7 @@ class ParkingSensor {
      */
       
       if (id != "F1" && id != "F2" && id != "T1" && id != "T2") { // checks if parking ID is valid
-        Serial.println("Incorrect parking id (" + id + "). Can't proceed with the request!");
+        // incorrect parking id, can't proceed with the request
         return;
       }
 
@@ -103,6 +113,7 @@ class ParkingSensor {
       }
     };
 
+
   private:
      
     void updateCloudVariable(boolean state) {
@@ -110,7 +121,7 @@ class ParkingSensor {
      /**
      *
      * Updates the cloud variable based on parking state.
-     * @param state True if parking is occupied, false otherwise.
+     * @param state: true if parking is occupied, false otherwise.
      *
      */
       
@@ -126,11 +137,9 @@ class ParkingSensor {
       } else if (id == "T2") {
         timed_parking_slot_2 = state;
         timed_parking_slot_2_int = state;
-      } else {
-        Serial.println("Unexpected error in updating parking state!");
       }
+      
     };
-
 
     void checkMaxOccupationTime() {
 
@@ -139,8 +148,7 @@ class ParkingSensor {
      * Checks if the max occupation time is exceeded for timed parking slots.
      *
      */
-      
-      
+       
       if (id.startsWith("T")) { // checks if id starts with "T", indicating a timed parking slot
         
         time_t unix_time = ArduinoCloud.getLocalTime(); // retrieves current timestamp from the cloud
@@ -158,10 +166,10 @@ class ParkingSensor {
             is_led_blinking = true;
 
             if (millis() - previous_blink >= LED_BLINKING_INTERVAL) { // regulates led blinking
-              
               previous_blink = millis();
               digitalWrite(led, !digitalRead(led)); // alternates LED state
             }
+            
           } else { // resets blinking       
             is_led_blinking = false;
           }
