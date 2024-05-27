@@ -291,7 +291,7 @@ Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un 
 
 (spiegazione)
 
-### - [`ledMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ledMatrixConfig.h)
+### - [`LedMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/LedMatrixConfig.h)
 
 (spiegazione)
 
