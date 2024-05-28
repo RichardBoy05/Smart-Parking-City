@@ -240,7 +240,7 @@ Ogni LED possiede 2 importanti proprietà:
 Inoltre, ogni pin GPIO dell'*Arduino UNO R4 WiFi* ha un limite massimo di corrente che può essere assorbito da un dispositivo collegato senza danneggiare il pin, pari a **8 mA**. Quindi, per garantire che la corrente che scorre attraverso il LED sia inferiore a 8 mA, è necessario aggiungere un **resistore in serie** a ciascun LED. Per maggior sicurezza, si opta per una corrente ancora più ridotta, come **7 mA**.
 
 Il valore idoneo della resistenza è stabilito dalla **prima legge di Ohm**:
-> **"La differenza di potenziale ai capi di un resistore è uguale al prodotto della resistenza per l'intensità della corrente che lo attraversa.**
+> **"La differenza di potenziale ai capi di un resistore è uguale al prodotto della resistenza per l'intensità della corrente che lo attraversa."**
 
 Definendo quindi *Vs* come tensione di alimentazione, pari a *5V* (standard erogato dai GPIO pin di Arduino), possiamo determinare il valore dei resistori in base alla seguente formula:
 $$R=\frac{Vs - Vf}{If}$$
@@ -278,9 +278,65 @@ Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un 
 
 ## File
 
-### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
+### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino#L113)
 
-(spiegazione, includi main, loop e funzioni annesse)
+Il codice presentato è uno sketch per un sistema di parcheggio intelligente gestito tramite una scheda Arduino. Questo sistema utilizza una varietà di sensori e componenti per monitorare l'occupazione dei posti auto, controllare i cancelli di ingresso e uscita, gestire l'illuminazione in base ai livelli di luce ambientale e visualizzare lo stato del sistema su una matrice LED incorporata.
+
+Descrizione dei Componenti e delle Funzioni Principali
+Inclusione delle Librerie
+Il codice include diverse librerie essenziali per il funzionamento del sistema:
+
+Servo.h: per il controllo del servomotore.
+EEPROM.h: per la memorizzazione permanente dei dati.
+NewPing.h: per l'uso dei sensori a ultrasuoni.
+thingProperties.h, ParkingSensor.h, LedMatrixConfig.h, Arduino_LED_Matrix.h: per la gestione delle proprietà del dispositivo IoT, dei sensori di parcheggio, della configurazione della matrice LED e della matrice LED stessa.
+Variabili Globali
+Sono definite numerose variabili globali per la gestione della connettività, dei sensori, dei LED, del servo, delle luci notturne e dei posti auto.
+
+Setup del Sistema
+Funzione setup()
+La funzione setup() è eseguita una volta all'avvio del sistema e comprende:
+
+Inizializzazione della matrice LED e visualizzazione dello stato di setup.
+Connessione al cloud Arduino IoT.
+Configurazione delle modalità dei pin per i vari componenti.
+Inizializzazione delle luci automatiche e del servomotore.
+Lettura dei dati memorizzati nella memoria EEPROM.
+Impostazione delle luci dei LED di stato iniziali.
+Ciclo Principale del Sistema
+Funzione loop()
+La funzione loop() è eseguita in modo continuo e include:
+
+Gestione della connettività con il cloud Arduino IoT.
+Aggiornamento della percentuale di occupazione del parcheggio.
+Gestione automatica delle luci in base alla luce ambientale.
+Regolazione dell'accesso al parcheggio tramite i cancelli.
+Rilevazione dell'occupazione dei posti auto utilizzando i sensori di parcheggio.
+Funzioni Aggiuntive
+Gestione della Connessione
+Funzione connectionHandler()
+Questa funzione verifica la connessione al cloud Arduino IoT e tenta di riconnettersi in caso di disconnessione, con un numero limitato di tentativi per evitare blocchi indefiniti del codice.
+
+Regolazione dell'Accesso al Parcheggio
+Funzione parkingAccessRegulator()
+Questa funzione controlla l'accesso al parcheggio utilizzando i sensori di ingresso e uscita e un servomotore per l'operazione dei cancelli. Gestisce le luci di segnalazione e aggiorna il conteggio dei veicoli parcheggiati in base ai rilevamenti dei sensori.
+
+Funzione setServoAngle(int angle)
+Questa funzione imposta l'angolo del servomotore per aprire o chiudere il cancello, con un breve ritardo per consentire il posizionamento del motore prima di staccarlo per evitare vibrazioni.
+
+Gestione delle Luci Automatiche
+Funzione setupAutoLights()
+Questa funzione calibra il livello di soglia di oscurità basato sulla lettura iniziale del sensore di luce (LDR) e spegne le luci notturne all'avvio.
+
+Funzione autoLights()
+Questa funzione monitora il livello di luce utilizzando il sensore LDR e attiva o disattiva le luci notturne in base al superamento della soglia di oscurità per un determinato periodo di tempo.
+
+Gestione del Conteggio dei Veicoli Parcheggiati
+Funzione updateParkedVehiclesCount(int change)
+Questa funzione aggiorna il conteggio dei veicoli parcheggiati (aggiungendo o sottraendo uno) e memorizza il nuovo valore nella EEPROM.
+
+Funzione updateParkingOccupationPercentage()
+Questa funzione calcola la percentuale di occupazione del parcheggio sommando i conteggi dei posti occupati e aggiornando la variabile corrispondente.
 
   
 ### - [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
