@@ -276,76 +276,67 @@ Le funzionalità del progetto sono controllate e gestite attraverso il codice, i
 ## Linguaggio
 Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un linguaggio di alto livello basato su **C/C++** che include librerie e funzioni specializzate per interagire con l'hardware specifico di Arduino, come sensori, attuatori e moduli di comunicazione. 
 
-## File
+## Sketches
 
-### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino#L113)
+Di seguito viene descritto in linea generale il funzionamento dei vari file di codice del progetto (definiti "*sketches*" nell'ecosistema Arduino). Per ulteriori approfondimenti, è possibile consultare direttamente i file, commentati nei minimi dettagli.
 
-Il codice presentato è uno sketch per un sistema di parcheggio intelligente gestito tramite una scheda Arduino. Questo sistema utilizza una varietà di sensori e componenti per monitorare l'occupazione dei posti auto, controllare i cancelli di ingresso e uscita, gestire l'illuminazione in base ai livelli di luce ambientale e visualizzare lo stato del sistema su una matrice LED incorporata.
+### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
 
-Descrizione dei Componenti e delle Funzioni Principali
-Inclusione delle Librerie
-Il codice include diverse librerie essenziali per il funzionamento del sistema:
+Questo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei posti auto, regolare ingresso e uscita nel parcheggio a pagamento, adattare l'illuminazione in base ai livelli di luce ambientale, gestire la connettività al cloud e visualizzare lo stato del sistema su una matrice LED incorporata.
 
-Servo.h: per il controllo del servomotore.
-EEPROM.h: per la memorizzazione permanente dei dati.
-NewPing.h: per l'uso dei sensori a ultrasuoni.
-thingProperties.h, ParkingSensor.h, LedMatrixConfig.h, Arduino_LED_Matrix.h: per la gestione delle proprietà del dispositivo IoT, dei sensori di parcheggio, della configurazione della matrice LED e della matrice LED stessa.
-Variabili Globali
-Sono definite numerose variabili globali per la gestione della connettività, dei sensori, dei LED, del servo, delle luci notturne e dei posti auto.
+#### Librerie
+- `Servo.h`: controllo del servomotore.
+- `EEPROM.h`: memorizzazione permanente dei dati.
+- `NewPing.h`: uso dei sensori a ultrasuoni.
+- `thingProperties.h`, `ParkingSensor.h`, `LedMatrixConfig.h`, `Arduino_LED_Matrix.h`: gestione delle proprietà del dispositivo IoT, dei sensori di parcheggio e della matrice LED.
 
-Setup del Sistema
-Funzione setup()
-La funzione setup() è eseguita una volta all'avvio del sistema e comprende:
+#### Funzione `setup()`
+La funzione `setup()` è eseguita una volta all'avvio del sistema e comprende:
+- Inizializzazione della matrice LED e visualizzazione dello stato di setup.
+- Connessione al cloud Arduino IoT.
+- Configurazione delle modalità dei pin per i vari componenti.
+- Inizializzazione delle luci automatiche e del servomotore.
+- Lettura dei dati memorizzati nella memoria EEPROM.
+- Impostazione delle luci dei LED allo stato iniziale.
 
-Inizializzazione della matrice LED e visualizzazione dello stato di setup.
-Connessione al cloud Arduino IoT.
-Configurazione delle modalità dei pin per i vari componenti.
-Inizializzazione delle luci automatiche e del servomotore.
-Lettura dei dati memorizzati nella memoria EEPROM.
-Impostazione delle luci dei LED di stato iniziali.
-Ciclo Principale del Sistema
-Funzione loop()
-La funzione loop() è eseguita in modo continuo e include:
+#### Funzione `loop()`
+La funzione `loop()` è eseguita in modo continuo e include:
+- Gestione della connettività con il cloud Arduino IoT.
+- Aggiornamento della percentuale di occupazione del parcheggio.
+- Gestione automatica delle luci in base alla luce ambientale.
+- Regolazione dell'accesso al parcheggio a pagamento.
+- Rilevazione dell'occupazione dei posti auto utilizzando i sensori di parcheggio.
 
-Gestione della connettività con il cloud Arduino IoT.
-Aggiornamento della percentuale di occupazione del parcheggio.
-Gestione automatica delle luci in base alla luce ambientale.
-Regolazione dell'accesso al parcheggio tramite i cancelli.
-Rilevazione dell'occupazione dei posti auto utilizzando i sensori di parcheggio.
-Funzioni Aggiuntive
-Gestione della Connessione
-Funzione connectionHandler()
-Questa funzione verifica la connessione al cloud Arduino IoT e tenta di riconnettersi in caso di disconnessione, con un numero limitato di tentativi per evitare blocchi indefiniti del codice.
+##### Funzione `connectionHandler()`
+Verifica la connessione al cloud Arduino IoT e tenta di riconnettersi in caso di disconnessione, con un numero limitato di tentativi per evitare blocchi indefiniti del codice.
 
-Regolazione dell'Accesso al Parcheggio
-Funzione parkingAccessRegulator()
-Questa funzione controlla l'accesso al parcheggio utilizzando i sensori di ingresso e uscita e un servomotore per l'operazione dei cancelli. Gestisce le luci di segnalazione e aggiorna il conteggio dei veicoli parcheggiati in base ai rilevamenti dei sensori.
+##### Funzione `parkingAccessRegulator()`
+Controlla l'accesso al parcheggio utilizzando i sensori di ingresso e uscita e un servomotore per il movimento della sbarra. Gestisce le luci del sefamoro d'accesso e aggiorna il conteggio dei veicoli parcheggiati in tempo reale.
 
-Funzione setServoAngle(int angle)
-Questa funzione imposta l'angolo del servomotore per aprire o chiudere il cancello, con un breve ritardo per consentire il posizionamento del motore prima di staccarlo per evitare vibrazioni.
+##### Funzione `setServoAngle(int angle)`
+Imposta l'angolo del servomotore per aprire o chiudere la sbarra, con un breve ritardo per consentire il corretto posizionamento del motore, per poi disconnetterlo al fine di evitare vibrazioni e ridurre il consumo energetico.
 
-Gestione delle Luci Automatiche
-Funzione setupAutoLights()
-Questa funzione calibra il livello di soglia di oscurità basato sulla lettura iniziale del sensore di luce (LDR) e spegne le luci notturne all'avvio.
+##### Funzione `setupAutoLights()`
+Calibra il livello di soglia di oscurità basato sulla lettura iniziale del sensore di luce (LDR).
 
-Funzione autoLights()
-Questa funzione monitora il livello di luce utilizzando il sensore LDR e attiva o disattiva le luci notturne in base al superamento della soglia di oscurità per un determinato periodo di tempo.
+##### Funzione `autoLights()`
+Monitora il livello di luce utilizzando il sensore LDR e attiva o disattiva le luci notturne in base al superamento della soglia di oscurità per un determinato periodo di tempo.
 
-Gestione del Conteggio dei Veicoli Parcheggiati
-Funzione updateParkedVehiclesCount(int change)
-Questa funzione aggiorna il conteggio dei veicoli parcheggiati (aggiungendo o sottraendo uno) e memorizza il nuovo valore nella EEPROM.
+##### Funzione `updateParkedVehiclesCount(int change)`
+Aggiorna il conteggio dei veicoli parcheggiati (aggiungendone o sottraendone uno) e memorizza il nuovo valore nella memoria interna EEPROM.
 
-Funzione updateParkingOccupationPercentage()
-Questa funzione calcola la percentuale di occupazione del parcheggio sommando i conteggi dei posti occupati e aggiornando la variabile corrispondente.
+##### Funzione `updateParkingOccupationPercentage()`
+Calcola la percentuale di occupazione del parcheggio sommando i conteggi dei posti occupati e aggiornando la variabile corrispondente.
 
+-----------------------------------------------------------------------------------------------------------
   
 ### - [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
 
-(spiegazione, concetto di classe)
+-----------------------------------------------------------------------------------------------------------
 
 ### - [`thingProperties.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
 
-(spiegazione)
+-----------------------------------------------------------------------------------------------------------
 
 ### - [`LedMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/LedMatrixConfig.h)
 
