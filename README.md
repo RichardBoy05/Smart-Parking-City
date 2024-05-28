@@ -85,7 +85,7 @@ La tabella sottostante riporta i diversi componenti impiegati nel circuito. Per 
 | --- | --- | --- |
 | [`Arduino UNO R4 WiFi`](https://docs.arduino.cc/hardware/uno-r4-wifi/) | 1 | **Arduino** è una piattaforma hardware e software *open-source* con cui realizzare dispositivi digitali in grado di interagire con il mondo esterno attraverso sensori e attuatori ([datasheet](https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf)). |
 | [`Breadboard`](https://www.amazon.it/AZDelivery-Breadboard-830-Arduino-Raspberry/dp/B07K8PQ4B5/ref=sr_1_2_sspa?crid=1LMAFIJE2TP5X&dib=eyJ2IjoiMSJ9.xi5AD3br6MkhFSnelneIz7280DzKo1UPIgHXXQxS0vDi-8Bj8_KMO0Ft7mOEqn_c4DgwRgptPgED-dbL794yeQGaXmW2_qVZUJwOZC9koeBdMlCEWO5zqT9bsy9L2nphxe2txNQFNUz6pkFSZn8p07Ap2cJVg1HmHG6fYz52zx-99Eig9D_CrKX9PWKCvcmJHxeDd1Yq5woqp8RimPIKu8p5l6XgSiEbDgoBknKcrwAFMY1qN1KmEPWghXLIkrgJr-bDWcngQiwzBPV1lfq6UnJalqQV_hPRmeFzyHoQ3pc.CoHS3PYbmqBx3LB_7yP7nYr01mM75NqVi_AmuokDvlI&dib_tag=se&keywords=breadboard%2Bazdelivery&qid=1711213155&sprefix=breadboard%2Baz%2Caps%2C111&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) | 1 | Una breadboard è una base di costruzione *solderless* utilizzata per costruire prototipi **semipermanenti** di circuiti elettronici. |
-| [`Sensori ad ultrasuoni HC-SR04`](https://www.amazon.it/HC-SR04-Misuratore-Distanze-Ultrasuoni-Ultrasonic/dp/B01COSN7O6/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=30NWWH1A2DL14&dib=eyJ2IjoiMSJ9.YPGfdw-5BDSrtfbP8kv-6aGGle4kgcSXSrlzpcqGoPsfcnfizPwGRtIYfIKsq8itrG6JeKxwGq2DwFn2DMf3zIOc5y_8k_RRBCZPZdmaIo9Gq8HodidfIYzK55jsxE15lHQb5P9RAw47zHFb6QvEz25AzeJv8u7KZ16vRqjMBMAjXJQQq62uieufO6f0KGgoCKjZyjgB0C6J_I2DyW6kR0wi-I-azZVeTOnXJJl8Rr1pkvhKk88J7EMqu6S0r-TB6uziPzrA0N30beduj5U6ryeTwGEe2sOSwjErChZhAa0.2y-gnTMdJfhvV7wX6Yj0LG5YkOOeMEmsXL6mW3etajA&dib_tag=se&keywords=hc-sr04&qid=1710178436&sprefix=hc-sr04%2Caps%2C119&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) | 4 | Un sensore a ultrasuoni è un dispositivo che misura la distanza di un oggetto emettendo onde sonore **ultrasoniche** e converte il suono riflesso in un segnale elettrico. <ul><li>Alimentazione: 5V DC</li><li>Portata: 2 cm - 300 cm </li><li>Angolo effettivo: <15°</li></ul> |
+| [`Sensori ad ultrasuoni HC-SR04`](https://www.amazon.it/HC-SR04-Misuratore-Distanze-Ultrasuoni-Ultrasonic/dp/B01COSN7O6/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=30NWWH1A2DL14&dib=eyJ2IjoiMSJ9.YPGfdw-5BDSrtfbP8kv-6aGGle4kgcSXSrlzpcqGoPsfcnfizPwGRtIYfIKsq8itrG6JeKxwGq2DwFn2DMf3zIOc5y_8k_RRBCZPZdmaIo9Gq8HodidfIYzK55jsxE15lHQb5P9RAw47zHFb6QvEz25AzeJv8u7KZ16vRqjMBMAjXJQQq62uieufO6f0KGgoCKjZyjgB0C6J_I2DyW6kR0wi-I-azZVeTOnXJJl8Rr1pkvhKk88J7EMqu6S0r-TB6uziPzrA0N30beduj5U6ryeTwGEe2sOSwjErChZhAa0.2y-gnTMdJfhvV7wX6Yj0LG5YkOOeMEmsXL6mW3etajA&dib_tag=se&keywords=hc-sr04&qid=1710178436&sprefix=hc-sr04%2Caps%2C119&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) | 4 | Un sensore ad ultrasuoni è un dispositivo che misura la distanza di un oggetto emettendo onde sonore **ultrasoniche** e converte il suono riflesso in un segnale elettrico. <ul><li>Alimentazione: 5V DC</li><li>Portata: 2 cm - 300 cm </li><li>Angolo effettivo: <15°</li></ul> |
 | [`Sensori ad infrarossi`](https://www.amazon.it/AZDelivery-ultrasuoni-distanza-Raspberry-Abstandsensor/dp/B07D924JHT/ref=mp_s_a_1_5?dib=eyJ2IjoiMSJ9.N_u-ND_UNSKzILwTb_kxjlsZcEJNcU5Le3Hu39DGXwD1VZKRyrOdLBsll-pX1661BkCRVFys71-XLrlVqggrRjAohvOBZQRBgTgw6dQHC427BW-roSgnvJVozBauLSVE2-UaNJdcLvi581S5n_ZWF1OW3G5-9n3PBW2uPtV2ShYr_AD1vIiHsBmQy3Bxs5FrI4oLC_FK1V0thHQPpEed7A.yO1UcKvXtKMLtSVnJ6Q17CHAcejGBa83jLJXz3p3RHQ&dib_tag=se&keywords=Arduino%2BIr%2BSensor&qid=1710180504&sr=8-5&th=1) | 2 | Un sensore a infrarossi (IR) è un dispositivo che misura e rileva la radiazione infrarossa nell'ambiente circostante, utilizzato spesso come rilevatiore di **prossimità**. <ul><li>Alimentazione: 5 V DC</li><li>Portata: 2 cm - 30 cm </li><li>Angolo effettivo: <35°</li></ul> |
 | [`LED`](https://www.amazon.it/AZDelivery-Emissione-Circolare-Emettitore-compatibile/dp/B08T1YGM8K/ref=sr_1_8?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2G25R9Q9KMV7M&dib=eyJ2IjoiMSJ9.Am2uI2a0USpWEEaWXZ90u194WS8WKSs1QZNDmJ6hj8_hYjaYFnkLlHD6lVWbkPfdHygL7TaWlO8mNwOuxr-frFUB0bavzQ94Ibj_YaqSa1V1ME1AiB6mrNFXCaHSsiUCMdFt-A4Ifhh9wUiVrrhQ3m4ttITdREQZFpaWtH6MWmbqbfQq1p714WPJp3kfOx224M1b20MTaLoXEOwoxqgkREE7-gup46SCvOQlz043GhnGBglaU4R-J4IT82WMzcNHRLVTaOKyj0LCsq0WJIhUfid-j2uI-_CjezbgR3MpGww.0WSwAdpsbW0cjDMWK-UAEMssRI6VXRBNlLM9M9BpgCs&dib_tag=se&keywords=led+arduino&qid=1711231790&sprefix=ledsarduino%2Caps%2C106&sr=8-8) | 9 | Un LED (*Light Emitting Diode*) è un dispositivo a semiconduttore che emette **luce** quando attraversato da una corrente elettrica. <ul><li>(4x) LED blu (*Vf* = 2,7 V; *If* = 20 mA)</li><li>(3x) LED bianchi (*Vf* = 2,7 V; *If* = 20 mA)</li><li>(1x) LED verde (*Vf* = 2,5 V; *If* = 20 mA)</li><li>(1x) LED rosso (*Vf* = 1,9 V; *If* = 20 mA)</li></ul>|
 | [`Resistori`](https://www.amazon.it/AZDelivery-Resistenze-Resistori-Arduino-gratuito/dp/B07Q87JZ9G/ref=mp_s_a_1_3?crid=2TC9BVKNFDZ8E&dib=eyJ2IjoiMSJ9.m5BpWsNponXDu2NgiZft18byMuQH5acGxvlPhkBDKIAP6-y2xkoGZDoyxxVfIyDYEAg99g_jaLYLPw8QVpi4V4XCuJx9dncmhRd_uYIwo9uobWLQXDFQJ4iGopYZX5K_RucRwQR4Q-SBcYHL1jgJWOIpFCjRGIo-STIrgjKXDrMMtJ_gDsPfRLhde17dlA3fmogNdJBKoq52tJmEmCQ0lA.9eHZDTs0PXLqoFtuXdFetqe9rQbFbAhfiUGoJ44W2ts&dib_tag=se&keywords=azdelivery+resistor&qid=1711229207&sprefix=azdelivery+resistor+%2Caps%2C168&sr=8-3) | 10 | Un resistore è un componente elettronico che limita il flusso di corrente in un circuito, determinato dal suo valore di resistenza misurato in ohm, essenziale per **regolare** la quantità di corrente che attraversa il circuito e proteggere i componenti sensibili. <ul><li>(9x) Resistori da 470 Ω, 1/4 W</li><li>(1x) Resistori da 10 kΩ, 1/4 W</li></ul> |
@@ -107,13 +107,13 @@ Il progetto consiste in un prototipo di **sistema di parcheggio intelligente** i
 
 ### PARCHEGGIO **LIBERO** (strisce bianche)
 
-- 2 *sensori a ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
+- 2 *sensori ad ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
 - 2 slot (a L o a S)
 
 ### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)** (strisce bianche)
 
 - 2 slot (a L o a S)
-- 2 *sensori a ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
+- 2 *sensori ad ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
 - Ogni slot è occupabile per un tempo massimo PRESTABILITO (es.: 1 ora + 15’ irl, 20’’ + 5’’ nel prototipo), superato quel tempo, Il LED inizia a lampeggiare fino a che lo slot non è liberato
 - La zona disco è attiva solo da lunedì a sabato, dalle 8 alle 20.
 
@@ -282,16 +282,16 @@ Di seguito viene descritto in linea generale il funzionamento dei vari file di c
 
 ### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
 
-Questo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei posti auto, regolare ingresso e uscita nel parcheggio a pagamento, adattare l'illuminazione in base ai livelli di luce ambientale, gestire la connettività al cloud e visualizzare lo stato del sistema su una matrice LED incorporata.
+Lo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei posti auto, regolare ingresso e uscita nel parcheggio a pagamento, adattare l'illuminazione in base ai livelli di luce ambientale, gestire la connettività al cloud e visualizzare lo stato del sistema su una matrice LED incorporata.
 
 #### Librerie
 - `Servo.h`: controllo del servomotore.
 - `EEPROM.h`: memorizzazione permanente dei dati.
-- `NewPing.h`: uso dei sensori a ultrasuoni.
+- `NewPing.h`: uso dei sensori ad ultrasuoni.
 - `thingProperties.h`, `ParkingSensor.h`, `LedMatrixConfig.h`, `Arduino_LED_Matrix.h`: gestione delle proprietà del dispositivo IoT, dei sensori di parcheggio e della matrice LED.
 
 #### Funzione `setup()`
-La funzione `setup()` è eseguita una volta all'avvio del sistema e comprende:
+È eseguita una volta all'avvio del sistema e comprende:
 - Inizializzazione della matrice LED e visualizzazione dello stato di setup.
 - Connessione al cloud Arduino IoT.
 - Configurazione delle modalità dei pin per i vari componenti.
@@ -300,7 +300,7 @@ La funzione `setup()` è eseguita una volta all'avvio del sistema e comprende:
 - Impostazione delle luci dei LED allo stato iniziale.
 
 #### Funzione `loop()`
-La funzione `loop()` è eseguita in modo continuo e include:
+È eseguita in modo continuo e include:
 - Gestione della connettività con il cloud Arduino IoT.
 - Aggiornamento della percentuale di occupazione del parcheggio.
 - Gestione automatica delle luci in base alla luce ambientale.
@@ -332,15 +332,44 @@ Calcola la percentuale di occupazione del parcheggio sommando i conteggi dei pos
   
 ### - [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
 
+Lo sketch implementa una classe `ParkingSensor` per l'utilizzo dei sensori ad ultrasuoni, destinati al rilevamento dei veicoli nei parcheggi. Essi consentono di misurare la distanza di oggetti e determinare se un posto è occupato o libero. Il codice gestisce anche degli indicatori LED che segnalano lo stato dei parcheggi e aggiorna le corrispondenti variabili nel cloud.
+
+#### Librerie
+- `Time.h`: funzionalità di gestione del tempo.
+- `NewPing.h`: uso dei sensori ad ultrasuoni.
+
+#### Metodo pubblico `detectParking()`
+Rileva la presenza di un veicolo nel posto auto e aggiorna l'indicatore LED di conseguenza. Nello specifico:
+- Misura la durata dell'ultrasuono e calcola la distanza dall'oggetto rilevato.
+- Se un veicolo è rilevato, registra il tempo di rilevamento e controlla il tempo massimo di occupazione.
+- Se il parcheggio è occupato per un certo periodo, accende il LED e aggiorna la variabile cloud.
+- Nel momento in cui non è più rilevato alcun veicolo, registra il tempo di assenza e spegne il LED dopo un certo periodo.
+
+#### Metodo privato `updateCloudVariable(boolean state)`
+Assegna lo stato di un parcheggio (occupato o libero) alle rispettive variabili nel cloud.
+
+#### Metodo privato `checkMaxOccupationTime()`
+Verifica se il tempo massimo di occupazione è superato per i parcheggi a zona disco. Nello specifico:
+- Verifica se l'ID inizia con "T", indicando un posto a sosta breve.
+- Ottiene il timestamp corrente dal cloud.
+- Se non è domenica e l'ora è tra le 8:00 e le 20:00, verifica il tempo di occupazione del parcheggio: in caso superi il tempo massimo consentito, attiva il lampeggio del rispettivo LED.
+
 -----------------------------------------------------------------------------------------------------------
 
 ### - [`thingProperties.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
+Lo sketch connette il dispositivo alla rete Wi-Fi e utilizza il cloud di Arduino IoT per monitorare e aggiornare lo stato dei parcheggi. Include variabili booleane, per indicare la disponibilità dei posti, e variabili intere, per contare i veicoli parcheggiati e calcolare la percentuale di occupazione. Le proprietà sono definite e registrate nel cloud di Arduino IoT per consentire il monitoraggio e gli aggiornamenti in tempo reale.
 
 -----------------------------------------------------------------------------------------------------------
 
 ### - [`LedMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/LedMatrixConfig.h)
 
-(spiegazione)
+Lo sketch definisce quattro matrici bidimensionali che rappresentano diversi stati visivi per un display grafico. Queste matrici sono progettate per essere visualizzate sulla matrice LED integrata nell'Arduino UNO R4 WiFi. Ognuna rappresenta uno stato specifico:
+- "*running_matrix*": rappresenta la forma di un cuore, che indica uno stato normale e funzionante.
+- "*setup_matrix*": rappresenta la forma di una clessidra, che indica uno stato iniziale di configurazione.
+- "*attempting_reconnection_matrix*": rappresenta il simbolo del WiFi, che indica un tentativo di riconnessione.
+- "*no_connection_matrix*": rappresenta una faccia morta, che indica l'incapacità di stabilire una connessione di rete.
+
+Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento rappresenta lo stato di un singolo LED sulla matrice. I valori binari sono utilizzati per indicare se un LED è acceso (1) o spento (0).
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
