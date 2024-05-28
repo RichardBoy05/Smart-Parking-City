@@ -278,7 +278,7 @@ Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un 
 
 ## Sketches
 
-Di seguito viene descritto in linea generale il funzionamento dei vari file di codice del progetto (definiti "*sketches*" nell'ecosistema Arduino). Per ulteriori approfondimenti, è possibile consultare direttamente i file, commentati nei minimi dettagli.
+Di seguito viene descritto in linea generale il funzionamento dei vari file di codice del progetto (definiti "*sketches*" nell'ecosistema Arduino). Per ulteriori approfondimenti, è possibile consultare direttamente i file, **commentati** nei minimi dettagli.
 
 ### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
 
@@ -291,7 +291,7 @@ Lo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei 
 - `thingProperties.h`, `ParkingSensor.h`, `LedMatrixConfig.h`, `Arduino_LED_Matrix.h`: gestione delle proprietà del dispositivo IoT, dei sensori di parcheggio e della matrice LED.
 
 #### Funzione `setup()`
-È eseguita una volta all'avvio del sistema e comprende:
+È eseguita **una volta** all'avvio del sistema e comprende:
 - Inizializzazione della matrice LED e visualizzazione dello stato di setup.
 - Connessione al cloud Arduino IoT.
 - Configurazione delle modalità dei pin per i vari componenti.
@@ -300,7 +300,7 @@ Lo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei 
 - Impostazione delle luci dei LED allo stato iniziale.
 
 #### Funzione `loop()`
-È eseguita in modo continuo e include:
+È eseguita in **modo continuo** e include:
 - Gestione della connettività con il cloud Arduino IoT.
 - Aggiornamento della percentuale di occupazione del parcheggio.
 - Gestione automatica delle luci in base alla luce ambientale.
@@ -308,48 +308,48 @@ Lo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei 
 - Rilevazione dell'occupazione dei posti auto utilizzando i sensori di parcheggio.
 
 ##### Funzione `connectionHandler()`
-Verifica la connessione al cloud Arduino IoT e tenta di riconnettersi in caso di disconnessione, con un numero limitato di tentativi per evitare blocchi indefiniti del codice.
+Verifica la **connessione** al cloud Arduino IoT e tenta di riconnettersi in caso di disconnessione, con un numero limitato di tentativi per evitare blocchi indefiniti del codice.
 
 ##### Funzione `parkingAccessRegulator()`
-Controlla l'accesso al parcheggio utilizzando i sensori di ingresso e uscita e un servomotore per il movimento della sbarra. Gestisce le luci del sefamoro d'accesso e aggiorna il conteggio dei veicoli parcheggiati in tempo reale.
+Controlla l'**accesso** al parcheggio a pagamento utilizzando i sensori di ingresso e uscita e un servomotore per il movimento della sbarra. Gestisce le **luci** del sefamoro d'accesso e aggiorna il conteggio dei veicoli parcheggiati in tempo reale.
 
 ##### Funzione `setServoAngle(int angle)`
-Imposta l'angolo del servomotore per aprire o chiudere la sbarra, con un breve ritardo per consentire il corretto posizionamento del motore, per poi disconnetterlo al fine di evitare vibrazioni e ridurre il consumo energetico.
+Imposta l'**angolo** del servomotore per aprire o chiudere la sbarra, con un breve ritardo per consentire il corretto posizionamento del motore, per poi disconnetterlo al fine di evitare vibrazioni e ridurre il consumo energetico.
 
 ##### Funzione `setupAutoLights()`
-Calibra il livello di soglia di oscurità basato sulla lettura iniziale del sensore di luce (LDR).
+**Calibra** il livello di soglia di oscurità basato sulla lettura iniziale del sensore di luce (LDR).
 
 ##### Funzione `autoLights()`
-Monitora il livello di luce utilizzando il sensore LDR e attiva o disattiva le luci notturne in base al superamento della soglia di oscurità per un determinato periodo di tempo.
+Monitora il livello di luce utilizzando il sensore LDR e attiva o disattiva le **luci crepuscolari** in base al superamento della soglia di oscurità per un determinato periodo di tempo.
 
 ##### Funzione `updateParkedVehiclesCount(int change)`
-Aggiorna il conteggio dei veicoli parcheggiati (aggiungendone o sottraendone uno) e memorizza il nuovo valore nella memoria interna EEPROM.
+**Aggiorna** il conteggio dei veicoli parcheggiati (aggiungendone o sottraendone uno) e **memorizza** il nuovo valore nella memoria interna EEPROM.
 
 ##### Funzione `updateParkingOccupationPercentage()`
-Calcola la percentuale di occupazione del parcheggio sommando i conteggi dei posti occupati e aggiornando la variabile corrispondente.
+Calcola la **percentuale** di occupazione del parcheggio sommando i conteggi dei posti occupati e aggiornando la variabile corrispondente.
 
 -----------------------------------------------------------------------------------------------------------
   
 ### - [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
 
-Lo sketch implementa una classe `ParkingSensor` per l'utilizzo dei sensori ad ultrasuoni, destinati al rilevamento dei veicoli nei parcheggi. Essi consentono di misurare la distanza di oggetti e determinare se un posto è occupato o libero. Il codice gestisce anche degli indicatori LED che segnalano lo stato dei parcheggi e aggiorna le corrispondenti variabili nel cloud.
+Lo sketch implementa una classe `ParkingSensor` per l'utilizzo dei **sensori ad ultrasuoni**, destinati al rilevamento dei veicoli nei parcheggi. Essi consentono di misurare la distanza di oggetti e determinare se un posto è occupato o libero. Il codice gestisce anche degli indicatori LED che segnalano lo stato dei parcheggi e aggiorna le corrispondenti variabili nel cloud.
 
 #### Librerie
 - `Time.h`: funzionalità di gestione del tempo.
 - `NewPing.h`: uso dei sensori ad ultrasuoni.
 
 #### Metodo pubblico `detectParking()`
-Rileva la presenza di un veicolo nel posto auto e aggiorna l'indicatore LED di conseguenza. Nello specifico:
+**Rileva la presenza di un veicolo** nel posto auto e aggiorna l'indicatore LED di conseguenza. Nello specifico:
 - Misura la durata dell'ultrasuono e calcola la distanza dall'oggetto rilevato.
 - Se un veicolo è rilevato, registra il tempo di rilevamento e controlla il tempo massimo di occupazione.
 - Se il parcheggio è occupato per un certo periodo, accende il LED e aggiorna la variabile cloud.
 - Nel momento in cui non è più rilevato alcun veicolo, registra il tempo di assenza e spegne il LED dopo un certo periodo.
 
 #### Metodo privato `updateCloudVariable(boolean state)`
-Assegna lo stato di un parcheggio (occupato o libero) alle rispettive variabili nel cloud.
+Assegna lo **stato di un parcheggio** (occupato o libero) alle rispettive variabili nel cloud.
 
 #### Metodo privato `checkMaxOccupationTime()`
-Verifica se il tempo massimo di occupazione è superato per i parcheggi a zona disco. Nello specifico:
+Verifica se il **tempo massimo** di occupazione è superato per i parcheggi a zona disco. Nello specifico:
 - Verifica se l'ID inizia con "T", indicando un posto a sosta breve.
 - Ottiene il timestamp corrente dal cloud.
 - Se non è domenica e l'ora è tra le 8:00 e le 20:00, verifica il tempo di occupazione del parcheggio: in caso superi il tempo massimo consentito, attiva il lampeggio del rispettivo LED.
@@ -357,13 +357,13 @@ Verifica se il tempo massimo di occupazione è superato per i parcheggi a zona d
 -----------------------------------------------------------------------------------------------------------
 
 ### - [`thingProperties.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
-Lo sketch connette il dispositivo alla rete Wi-Fi e utilizza il cloud di Arduino IoT per monitorare e aggiornare lo stato dei parcheggi. Include variabili booleane, per indicare la disponibilità dei posti, e variabili intere, per contare i veicoli parcheggiati e calcolare la percentuale di occupazione. Le proprietà sono definite e registrate nel cloud di Arduino IoT per consentire il monitoraggio e gli aggiornamenti in tempo reale.
+Lo sketch connette il dispositivo alla rete **Wi-Fi** e utilizza il cloud di Arduino IoT per monitorare e aggiornare lo stato dei parcheggi. Include variabili booleane, per indicare la disponibilità dei posti, e variabili intere, per contare i veicoli parcheggiati e calcolare la percentuale di occupazione. Le proprietà sono definite e registrate nel cloud di Arduino IoT per consentire il monitoraggio e gli aggiornamenti in tempo reale.
 
 -----------------------------------------------------------------------------------------------------------
 
 ### - [`LedMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/LedMatrixConfig.h)
 
-Lo sketch definisce quattro matrici bidimensionali che rappresentano diversi stati visivi per un display grafico. Queste matrici sono progettate per essere visualizzate sulla matrice LED integrata nell'Arduino UNO R4 WiFi. Ognuna rappresenta uno stato specifico:
+Lo sketch definisce quattro **matrici bidimensionali** che rappresentano diversi stati visivi per un display grafico. Queste matrici sono progettate per essere visualizzate sulla matrice LED integrata nell'Arduino UNO R4 WiFi. Ognuna rappresenta uno stato specifico:
 - "*running_matrix*": rappresenta la forma di un cuore, che indica uno stato normale e funzionante.
 - "*setup_matrix*": rappresenta la forma di una clessidra, che indica uno stato iniziale di configurazione.
 - "*attempting_reconnection_matrix*": rappresenta il simbolo del WiFi, che indica un tentativo di riconnessione.
