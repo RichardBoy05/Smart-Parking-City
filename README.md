@@ -103,7 +103,7 @@ Le entrate e le uscite dal parcheggio vengono monitorate tramite sensori che agg
 - Solo a questo punto, il contatore dei parcheggi verrà decrementato di uno.
 
 #### Illuminazione automatica
-Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
+Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita per un dato intervallo di tempo, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
 
 #### Note
 - Non si è prevista un’uscita separata poiché la zona di parcheggio è relativamente piccola e in quanto non necessario ai fini dimostrativi del progetto. In alternativa, si è introdotta una funzione che impedisce l'ingresso e l'uscita (attraverso l'accensione del semaforo rosso) quando entrambi i sensori sono attivati, indicando due veicoli provenienti contemporaneamente in senso opposto.
@@ -111,7 +111,7 @@ Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva 
 
 ## Adattamento dei parametri
 
-reale - fittizio - MOTIVAZIONE (detect e undetect parcheggi, zona disco ma con tolleranza, sensore gate, soglia di luce)
+reale - fittizio - MOTIVAZIONE (detect e undetect parcheggi, zona disco ma con tolleranza, sensore gate, soglia di luce, tempo anti sfarfallio)
 
 ## Applicazione
 
