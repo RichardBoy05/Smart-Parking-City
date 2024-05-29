@@ -11,7 +11,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 4. [Circuito](#circuito)
 5. [Codice](#codice)
 6. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari) (da fare)
-7. [Conclusioni sull'esperienza](#conclusioni-sullesperienza)
+7. [Conclusioni sull'esperienza](#conclusioni-sullesperienza) (da fare)
    
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
