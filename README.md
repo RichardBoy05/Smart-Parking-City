@@ -10,9 +10,8 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 3. [Materiali](#materiali)
 4. [Circuito](#circuito)
 5. [Adattamenti e conversioni dei parametri](#bugs)
-6. [Licenza](#licenza)
-7. [Codice](#codice)
-8. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari)
+6. [Codice](#codice)
+7. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari)
    
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
@@ -68,7 +67,7 @@ Il progetto prevede la realizzazione di un prototipo di **sistema di parcheggio 
 
 Il progetto si propone di dimostrare come l'introduzione di dispositivi IoT possa migliorare significativamente la **qualità della vita** delle persone, applicandosi nello specifico al contesto dei parcheggi urbani.
 
-L'integrazione di tali tecnologie offre diversi vantaggi pratici, tra cui la possibilità di ricevere **aggiornamenti in tempo reale** sulla disponibilità dei posti auto, riducendo così il tempo e lo stress associati alla ricerca di un parcheggio. Inoltre, l'uso di sensori intelligenti e algoritmi di previsione consente di effettuare **stime accurate** sulla disponibilità futura dei parcheggi, aiutando gli automobilisti a pianificare meglio i loro spostamenti. Grazie a queste innovazioni, è possibile ridurre il traffico veicolare causato dalla ricerca di parcheggio, migliorare l'efficienza dei trasporti urbani e contribuire a un ambiente più sostenibile, riducendo le emissioni di CO<sub>2</sub>. I dati raccolti possono essere inoltre utilizzati dalle amministrazioni comunali per ottimizzare la gestione degli spazi urbani, identificando aree con alta domanda di parcheggi e pianificando interventi infrastrutturali mirati.
+L'integrazione di tali tecnologie offre diversi vantaggi pratici, tra cui la possibilità di ricevere **aggiornamenti in tempo reale** sulla disponibilità dei posti auto, riducendo così il tempo e lo stress associati alla ricerca di un parcheggio. Inoltre, l'uso di sensori e algoritmi di previsione consente di effettuare **stime accurate** sulla disponibilità futura dei parcheggi, aiutando gli automobilisti a pianificare meglio i loro spostamenti. Grazie a queste innovazioni, è possibile ridurre il traffico veicolare causato dalla ricerca di parcheggio, migliorare l'efficienza dei trasporti urbani e contribuire a un ambiente più sostenibile, riducendo le emissioni di CO<sub>2</sub>. I dati raccolti possono essere inoltre utilizzati dalle amministrazioni comunali per ottimizzare la gestione degli spazi urbani, identificando aree con alta domanda di parcheggi e pianificando interventi infrastrutturali mirati.
 Un ulteriore vantaggio è rappresentato dalla possibilità di integrare sistemi di pagamento automatizzati, che consentono agli utenti di prenotare e pagare il parcheggio tramite app, rendendo il processo più rapido e conveniente.
 
 In sintesi, il progetto intende non solo dimostrare l'efficacia dei dispositivi IoT nel migliorare la gestione dei parcheggi, ma anche evidenziare come queste tecnologie possano contribuire a creare città più **intelligenti e vivibili**, migliorando la qualità della vita dei cittadini attraverso soluzioni innovative e sostenibili.
@@ -77,37 +76,36 @@ In sintesi, il progetto intende non solo dimostrare l'efficacia dei dispositivi 
 
 Come anticipato, il prototipo consta di **tre tipologie di parcheggio**, ognuna con le proprie caratteristiche e funzionalità.
 
-### - PARCHEGGIO **LIBERO** (strisce bianche)
+### PARCHEGGIO **LIBERO**
+Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni** e di un **indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
 
-- 2 *sensori ad ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
-- 2 slot (a L o a S)
+### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)**
+Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a prevedere tutte le funzionalità dei parcheggi liberi, questi possiedono anche un **limite massimo di occupazione**, valido esclusivamente dal lunedì al sabato tra le 8:00 e le 20:00. Durante questo intervallo, in caso venga superato tale limite (considerando comunque una certa tolleranza), l'indicatore LED dello slot inizierà a **lampeggiare** (in un contesto reale, potrebbe essere prevista una segnalazione automatica). Al di fuori di questo orario, il parcheggio è libero.
 
-### - PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)** (strisce bianche)
+**Curiosità** 💡: Il lampeggio del LED, segnale chiaro ed evidente a tutti, ha l'obiettivo di favorire il **rispetto delle regole** del parcheggio, poiché le persone sono naturalmente inclini a evitare comportamenti che le pongono in una luce negativa di fronte agli altri. Esiste infatti un principio psicologico secondo cui le persone tendono a modificare il proprio comportamento quando consapevoli di essere osservate o quando un'azione indesiderata viene resa visibile a tutti.
 
-- 2 slot (a L o a S)
-- 2 *sensori ad ultrasuoni* e 2 *LED*, spenti o accessi (rossi) in base allo stato del parcheggio (libero o occupato); il tempo minimo per il cambio di stato di uno slot è di 3’’ (1’ IRL)
-- Ogni slot è occupabile per un tempo massimo PRESTABILITO (es.: 1 ora + 15’ irl, 20’’ + 5’’ nel prototipo), superato quel tempo, Il LED inizia a lampeggiare fino a che lo slot non è liberato
-- La zona disco è attiva solo da lunedì a sabato, dalle 8 alle 20.
+### PARCHEGGIO A **PAGAMENTO**
+Il parcheggio a pagamento è composto da 5 posti auto, accessibili tramite un sistema di senso unico alternato. Dispone di una sbarra d'accesso (controllata da un *servo motore*), due *sensori ad infrarossi* per rilevare i veicoli, due *indicatori LED* in funzione di semaforo, un *fotoresistore* e altri tre *indicatori LED* per gestire l'illuminazione automatica. La copertura dei parcheggi è dotata di pannelli fotovoltaici fittizi, che in un contesto reale potrebbero fornire energia rinnovabile per alimentare i dispositivi del parcheggio.
 
-### - PARCHEGGIO A **PAGAMENTO** (strisce blu)
-
-- 5 slot
-- Gli slot NON prevedono sensori dedicati;
-- Gli slot sono coperti da una tettoia ricoperta di pannelli fotovoltaici fittizi (come esempio di fonte di energia rinnovabile, implementato nel parcheggio che richiede più energia fra i tre)
-- L’ingresso è a senso unico alternato (1), regolamentato da una sbarra (collegata ad un *servo motor*), da 2 *sensori IR* e da 2 *led* affiancati in funzione di semaforo (1 verde, attivo quando almeno uno slot è libero; 1 rosso, attivo solo quando tutti gli slot sono occupati)
+#### Regolazione degli accessi
+L'ingresso e l'uscita dal parcheggio sono consentiti solo qualora almeno uno dei due sensori non 
 - Processo di ingresso: l’utente accosta a fianco del sensore all’ingresso e viene verificato che gli slot non siano tutti occupati (se lo dovessero essere, visibile tramite il LED rosso, la sbarra non si aprirà); l’utente effettua il pagamento o ritira il ticket (3); la sbarra si apre e si chiude solo nel momento in cui il sensore oltre la sbarra è prima attivato e poi disattivato (passaggio completo dei veicolo); solo alla fine, il contatore dei parcheggi verrà incrementato di uno.
 - Processo di uscita: l’utente accosta a fianco del sensore all’uscita; l’utente effettua il pagamento o ritira il ticket (3); la sbarra si apre e si chiude solo nel momento in cui il sensore oltre la sbarra è prima attivato e poi disattivato (passaggio completo dei veicolo); solo alla fine, il contatore dei parcheggi verrà decrementato di uno.
+
+#### Illuminazione automatica
 - Il parcheggio è dotato di un *fotoresistore* collegato a *2 (eventualmente 3) LED bianchi*, che si accendono in caso di scarsa luminosità esterna e sono posizionati sotto la tettoia, per illuminare il parcheggio (ulteriore giustifica del fatto che sia a pagamento)
 
-Note:
+#### Note
+- Non si è prevista un’uscita separata poiché la zona di parcheggio è relativamente piccola e in quanto non necessario ai fini dimostrativi del progetto. In alternativa, si è introdotta una funzione che impedisce l'ingresso e l'uscita (attraverso l'accensione del semaforo rosso) quando entrambi i sensori sono attivati, indicando due veicoli provenienti contemporaneamente in senso opposto.
+- Il sistema di pagamento non è stato incluso poiché non rilevante ai fini dimostrativi del progetto, ma sarebbe necessariamente implemnetato in un contesto reale.
 
-1) *Indica che la viabilità è concessa in una sola direzione contemporaneamente; nel prototipo non si è integrata una zona d’uscita separata poiché la zona parcheggio è relativamente piccola e poiché non necessario ai fini dimostrativi del progetto.*
+## Adattamento dei parametri
 
-3) *OMESSO: il sistema di pagamento non è implementato nel prototipo perché estraneo ai fini dimostrativi del progetto, ma sarebbe necessariamente impiegato in una situazione reale (RICORDATELO).*
-
-Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot.
+reale - fittizio - motivazione (detect e undetect parcheggi, zona disco ma con tolleranza)
 
 ## Applicazione
+
+Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot.
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
