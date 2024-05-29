@@ -88,20 +88,30 @@ Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a preved
 Il parcheggio a pagamento è composto da 5 posti auto, accessibili tramite un sistema di senso unico alternato. Dispone di una sbarra d'accesso (controllata da un *servo motore*), due *sensori ad infrarossi* per rilevare i veicoli, due *indicatori LED* in funzione di semaforo, un *fotoresistore* e altri tre *indicatori LED* per gestire l'illuminazione automatica. La copertura dei parcheggi è dotata di pannelli fotovoltaici fittizi, che in un contesto reale potrebbero fornire energia rinnovabile per alimentare i dispositivi del parcheggio.
 
 #### Regolazione degli accessi
-L'ingresso e l'uscita dal parcheggio sono consentiti solo qualora almeno uno dei due sensori non 
-- Processo di ingresso: l’utente accosta a fianco del sensore all’ingresso e viene verificato che gli slot non siano tutti occupati (se lo dovessero essere, visibile tramite il LED rosso, la sbarra non si aprirà); l’utente effettua il pagamento o ritira il ticket (3); la sbarra si apre e si chiude solo nel momento in cui il sensore oltre la sbarra è prima attivato e poi disattivato (passaggio completo dei veicolo); solo alla fine, il contatore dei parcheggi verrà incrementato di uno.
-- Processo di uscita: l’utente accosta a fianco del sensore all’uscita; l’utente effettua il pagamento o ritira il ticket (3); la sbarra si apre e si chiude solo nel momento in cui il sensore oltre la sbarra è prima attivato e poi disattivato (passaggio completo dei veicolo); solo alla fine, il contatore dei parcheggi verrà decrementato di uno.
+Le entrate e le uscite dal parcheggio vengono monitorate tramite sensori che aggiornano costantemente il **conteggio dei veicoli** presenti. Il semaforo verde segnala che sono ancora disponibili posti auto e quindi è consentito l'ingresso, mentre il rosso indica che tutti i posti sono occupati e l'accesso è temporaneamente negato.
+
+**Ingresso nel parcheggio**:
+- L'utente si avvicina al sensore situato all'ingresso.
+- Se gli spazi non sono tutti occupati (semaforo verde), dopo un breve periodo di rilevamento, l'utente ritira il ticket per il pagamento.
+- La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
+- Solo a questo punto il contatore dei parcheggi verrà incrementato di uno.
+
+**Uscita dal parcheggio**:
+- L'utente si avvicina al sensore situato all'uscita.
+- Dopo un breve periodo di rilevamento, l'utente effettua il pagamento.
+- La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
+- Solo a questo punto, il contatore dei parcheggi verrà decrementato di uno.
 
 #### Illuminazione automatica
-- Il parcheggio è dotato di un *fotoresistore* collegato a *2 (eventualmente 3) LED bianchi*, che si accendono in caso di scarsa luminosità esterna e sono posizionati sotto la tettoia, per illuminare il parcheggio (ulteriore giustifica del fatto che sia a pagamento)
+Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
 
 #### Note
 - Non si è prevista un’uscita separata poiché la zona di parcheggio è relativamente piccola e in quanto non necessario ai fini dimostrativi del progetto. In alternativa, si è introdotta una funzione che impedisce l'ingresso e l'uscita (attraverso l'accensione del semaforo rosso) quando entrambi i sensori sono attivati, indicando due veicoli provenienti contemporaneamente in senso opposto.
-- Il sistema di pagamento non è stato incluso poiché non rilevante ai fini dimostrativi del progetto, ma sarebbe necessariamente implemnetato in un contesto reale.
+- Il sistema di pagamento non è stato incluso poiché non rilevante ai fini dimostrativi del progetto, ma sarebbe necessariamente implementato in un contesto reale.
 
 ## Adattamento dei parametri
 
-reale - fittizio - motivazione (detect e undetect parcheggi, zona disco ma con tolleranza)
+reale - fittizio - MOTIVAZIONE (detect e undetect parcheggi, zona disco ma con tolleranza, sensore gate, soglia di luce)
 
 ## Applicazione
 
