@@ -6,12 +6,12 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 
 ## Indice
 1. [Il mondo dell'IoT](#il-mondo-delliot)
-2. [Panoramica del progetto](#panoramica-del-progetto)
-3. [Materiali](#materiali)
+2. [Panoramica del progetto](#panoramica-del-progetto) (da finire + aggiungere foto e video)
+3. [Materiali](#materiali) (da finire)
 4. [Circuito](#circuito)
-5. [Adattamenti e conversioni dei parametri](#bugs)
-6. [Codice](#codice)
-7. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari)
+5. [Codice](#codice)
+6. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari) (da fare)
+7. [Conclusioni sull'esperienza] (#collegamenti-interdisciplinari)
    
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
@@ -395,4 +395,9 @@ Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento r
 -----------------------------------------------------------------------------------------------------------
 
 # Collegamenti interdisciplinari
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+# Conclusioni
 
