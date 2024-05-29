@@ -11,7 +11,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 4. [Circuito](#circuito)
 5. [Codice](#codice)
 6. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari) (da fare)
-7. [Conclusioni sull'esperienza] (#collegamenti-interdisciplinari)
+7. [Conclusioni sull'esperienza](#conclusioni-sull'esperienza)
    
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
@@ -399,5 +399,5 @@ Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento r
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Conclusioni
+# Conclusioni sull'esperienza
 
