@@ -98,20 +98,27 @@ Le entrate e le uscite dal parcheggio vengono monitorate tramite sensori che agg
 
 **Uscita dal parcheggio**:
 - L'utente si avvicina al sensore situato all'uscita.
-- Dopo un breve periodo di rilevamento, l'utente effettua il pagamento.
+- Dopo un breve periodo di rilevamento, l'utente riconsegna il ticket pagato.
 - La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
 - Solo a questo punto, il contatore dei parcheggi verrà decrementato di uno.
 
 #### Illuminazione automatica
 Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita per un dato intervallo di tempo, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
 
+## Adattamento dei parametri
+
+Per praticità, sono stati apportati degli adattamenti a determinati parametri, i cui valori **differiscono da quelli reali**. Di seguito è riportata una tabella riassuntiva.
+
+| Parametro | Valore reale | Valore dimostrativo | Descrizione
+| --- | --- | --- | --- |
+| Tempo di rilevamento | 30 secondi | 3 secondi | Tempo necessario per il rilevamento di un veicolo da parte di un sensore, per prevenire errori causati da interferenze momentanee.
+| Distanza di rilevamento | 2,5 metri | 5 cm | Distanza di soglia entro cui un veicolo viene rilevato in un parcheggio.
+| Tempo massimo della zona disco | 1 ora (+ 15 minuti di tolleranza) | 16 secondi (+ 4 secondi di tolleranza) | Tempo massimo di occupazione di un parcheggio a zona disco, con tolleranza del 25%.
+| Tempo di stabilizzazione della luminosità | 20 secondi | 2 secondi | Tempo necessario prima dell'accensione o dello spegnimento delle luci crepuscolari, per evitare sfarfallii quando la luminosità è vicina alla soglia.
+
 #### Note
 - Non si è prevista un’uscita separata poiché la zona di parcheggio è relativamente piccola e in quanto non necessario ai fini dimostrativi del progetto. In alternativa, si è introdotta una funzione che impedisce l'ingresso e l'uscita (attraverso l'accensione del semaforo rosso) quando entrambi i sensori sono attivati, indicando due veicoli provenienti contemporaneamente in senso opposto.
 - Il sistema di pagamento non è stato incluso poiché non rilevante ai fini dimostrativi del progetto, ma sarebbe necessariamente implementato in un contesto reale.
-
-## Adattamento dei parametri
-
-reale - fittizio - MOTIVAZIONE (detect e undetect parcheggi, zona disco ma con tolleranza, sensore gate, soglia di luce, tempo anti sfarfallio)
 
 ## Applicazione
 
