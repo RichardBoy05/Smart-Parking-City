@@ -414,10 +414,8 @@ Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplina
 - **Letteratura inglese**:
 - **Storia dell'arte**: Art Nouveau, assemblamento a freddo di materiali smontabili, analogo al concetto di solderless della breadboard e del tipo di circuito impiegato
 
-
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
 # Conclusioni sull'esperienza
-
-
+Partendo dall'esperienza di PCTO organizzata da Cisco Networking Academy, ho avuto l'opportunità di integrare conoscenze personali (programmazione) a compotenze acquisiste durante il mio percorso scolastico (circuiti) nella realizzazione di un progetto.
