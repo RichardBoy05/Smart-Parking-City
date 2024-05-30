@@ -6,7 +6,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 
 ## Indice
 1. [Il mondo dell'IoT](#il-mondo-delliot)
-2. [Panoramica del progetto](#panoramica-del-progetto) (da finire + aggiungere foto e video)
+2. [Panoramica del progetto](#panoramica-del-progetto) (aggiungere foto e video)
 3. [Materiali](#materiali) (da finire)
 4. [Circuito](#circuito)
 5. [Codice](#codice)
@@ -74,7 +74,7 @@ In sintesi, il progetto intende non solo dimostrare l'efficacia dei dispositivi 
 
 ## Prototipo
 
-Come anticipato, il prototipo consta di **tre tipologie di parcheggio**, ognuna con le proprie caratteristiche e funzionalità.
+Il prototipo dispone di **tre tipologie di parcheggio**, ognuna con le proprie caratteristiche e funzionalità.
 
 ### PARCHEGGIO **LIBERO**
 Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni* e di un *indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
@@ -122,7 +122,12 @@ Per praticità, sono stati apportati degli adattamenti a determinati parametri, 
 
 ## Applicazione
 
-Il progetto prevede anche un applicazione (Arduino IoT Cloud) che consenta di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot.
+Il progetto prevede anche un **applicazione** (ospitata su *Arduino IoT Cloud*) che consente di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot. Ciò può offrire svariati vantaggi, come agevolazione nella ricerca del parcheggio, stime sulla disponibilità futura, riduzione del traffico veicolare, contributo all'ambiente sostenibile, ottimizzazione della gestione urbana,...
+
+(foto con didascalia)
+*L'interfaccia è disponibile sia in versione "desktop" (orizzontale) che mobile (verticale)*.
+
+I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici facilitano l'analisi dei dati raccolti. Per un'indagine più dettagliata e su periodi più estesi, è disponibile il download del **file CSV** che contiene il riepilogo di tutti i dati storici, per poi essere analizzato tramite software appositi come Excel.
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
@@ -402,6 +407,13 @@ Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento r
 -----------------------------------------------------------------------------------------------------------
 
 # Collegamenti interdisciplinari
+Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplinari** tra le materie scolastiche.
+
+- **Informatica**: nascita ed evoluzione delle reti digitali (fenomeno della "*trasformazione digitale*");
+- **Letteratura italiana**: Giovanni Verga e il mito del progresso
+- **Letteratura inglese**:
+- **Storia dell'arte**: Art Nouveau, assemblamento a freddo di materiali smontabili, analogo al concetto di solderless della breadboard e del tipo di circuito impiegato
+
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
