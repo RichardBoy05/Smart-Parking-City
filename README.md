@@ -339,25 +339,25 @@ Lo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei 
 - Regolazione dell'accesso al parcheggio a pagamento.
 - Rilevazione dell'occupazione dei posti auto utilizzando i sensori di parcheggio.
 
-##### Funzione `connectionHandler()`
+#### Funzione `connectionHandler()`
 Verifica la **connessione** al cloud Arduino IoT e tenta di riconnettersi in caso di disconnessione, con un numero limitato di tentativi per evitare blocchi indefiniti del codice.
 
-##### Funzione `parkingAccessRegulator()`
+#### Funzione `parkingAccessRegulator()`
 Controlla l'**accesso** al parcheggio a pagamento utilizzando i sensori di ingresso e uscita e un servomotore per il movimento della sbarra. Gestisce le **luci** del sefamoro d'accesso e aggiorna il conteggio dei veicoli parcheggiati in tempo reale.
 
-##### Funzione `setServoAngle(int angle)`
+#### Funzione `setServoAngle(int angle)`
 Imposta l'**angolo** del servomotore per aprire o chiudere la sbarra, con un breve ritardo per consentire il corretto posizionamento del motore, per poi disconnetterlo al fine di evitare vibrazioni e ridurre il consumo energetico.
 
-##### Funzione `setupAutoLights()`
+#### Funzione `setupAutoLights()`
 **Calibra** il livello di soglia di oscurità basato sulla lettura iniziale del sensore di luce (LDR).
 
-##### Funzione `autoLights()`
+#### Funzione `autoLights()`
 Monitora il livello di luce utilizzando il sensore LDR e attiva o disattiva le **luci crepuscolari** in base al superamento della soglia di oscurità per un determinato periodo di tempo.
 
-##### Funzione `updateParkedVehiclesCount(int change)`
+#### Funzione `updateParkedVehiclesCount(int change)`
 **Aggiorna** il conteggio dei veicoli parcheggiati (aggiungendone o sottraendone uno) e **memorizza** il nuovo valore nella memoria interna EEPROM.
 
-##### Funzione `updateParkingOccupationPercentage()`
+#### Funzione `updateParkingOccupationPercentage()`
 Calcola la **percentuale** di occupazione del parcheggio sommando i conteggi dei posti occupati e aggiornando la variabile corrispondente.
 
 -----------------------------------------------------------------------------------------------------------
