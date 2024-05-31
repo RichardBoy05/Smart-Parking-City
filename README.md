@@ -135,8 +135,8 @@ I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici faci
 # Materiali :hammer_and_wrench:
 
 ## Modellino
-- Scatola di cartone 62,0 x 44,0 cm
-- Cartoncino (vari elementi 3D)
+- Scatola di cartone 62,0 x 44,0 cm x 
+- Scatola di cartone 34,0 cm x 18,5 cm x 
 - Nastro adesivo e biadesivo
 - Fogli di acetato
 - 
