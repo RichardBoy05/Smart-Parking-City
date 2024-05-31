@@ -78,6 +78,9 @@ Il progetto prevede la realizzazione di un prototipo di **sistema di parcheggio 
 -----------------------------------------------------------------------------------------------------------
 ![Foto 6](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto6.jpg)
 
+-----------------------------------------------------------------------------------------------------------
+![Foto 7](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto7.jpg)
+
 ## Scopo
 
 Il progetto si propone di dimostrare come l'introduzione di dispositivi IoT possa migliorare significativamente la **qualità della vita** delle persone, applicandosi nello specifico al contesto dei parcheggi urbani.
