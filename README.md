@@ -5,18 +5,18 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 -----------------------------------------------------------------------------------------------------------
 
 ## Indice
-1. [Il mondo dell'IoT](#il-mondo-delliot)
-2. [Panoramica del progetto](#panoramica-del-progetto) (aggiungere foto e video)
-3. [Materiali](#materiali) (da finire)
-4. [Circuito](#circuito)
-5. [Codice](#codice)
-6. [Collegamenti interdisciplinari](#collegamenti-interdisciplinari) (da fare)
-7. [Conclusioni sull'esperienza](#conclusioni-sullesperienza) (da fare)
+1. [Il mondo dell'IoT 🌐](#il-mondo-delliot-globe_with_meridians)
+2. [Panoramica del progetto 🚗](#panoramica-del-progetto-red_car) (aggiungere foto e video)
+3. [Materiali 🛠️](#materiali-hammer_and_wrench) (da finire)
+4. [Circuito 🔌](#circuito-electric_plug)
+5. [Codice 👨‍💻](#codice-man_technologist)
+6. [Collegamenti interdisciplinari 🔗](#collegamenti-interdisciplinari-link) (da fare)
+7. [Conclusioni sull'esperienza 💭](#conclusioni-sullesperienza-thought_balloon) (da fare)
    
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Il mondo dell'IoT
+# Il mondo dell'IoT :globe_with_meridians:
 Prima di esplorare il progetto in sé è opportuno fare un'introduzione al concetto di "*Internet of Things*".
 ## "Un mondo interconnesso"
 Il mondo sta assistendo ad una rapida diffusione delle reti digitali, che consentono ai dispositivi di connettersi e trasmettere informazioni. Questo fenomeno, noto come ***trasformazione digitale***, consiste nell’applicazione della tecnologia digitale al fine di stimolare innovazione ed progresso.
@@ -55,7 +55,7 @@ Allo stesso tempo, è importante considerare anche gli **svantaggi**: le imprese
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Panoramica del progetto
+# Panoramica del progetto :red_car:
 
 ## In breve...
 
@@ -132,7 +132,7 @@ I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici faci
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Materiali
+# Materiali :hammer_and_wrench:
 
 ## Modellino
 - Scatola di cartone 62,0 x 44,0 cm
@@ -170,7 +170,7 @@ La tabella sottostante riporta i diversi componenti impiegati nel circuito. Per 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Circuito
+# Circuito :electric_plug:
 
 ![Schema del circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_diagram.png)
 *Schema del circuito*
@@ -302,7 +302,7 @@ Il servo motore possiede 3 connettori: *rosso* per l'alimentazione, *marrone* pe
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Codice
+# Codice :man_technologist:
 Le funzionalità del progetto sono controllate e gestite attraverso il codice, il quale è redatto nell'editor cloud di Arduino e successivamente caricato sul microcontrollore. Quest'ultimo conserva una copia del codice e lo esegue immediatamente all'alimentazione.
 
 ## Linguaggio
@@ -406,7 +406,7 @@ Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento r
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Collegamenti interdisciplinari
+# Collegamenti interdisciplinari :link:
 Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplinari** tra le materie scolastiche.
 
 - **Informatica**: nascita ed evoluzione delle reti digitali (fenomeno della "*trasformazione digitale*");
@@ -417,5 +417,5 @@ Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplina
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Conclusioni sull'esperienza
+# Conclusioni sull'esperienza :thought_balloon:
 Partendo dall'esperienza di PCTO organizzata da Cisco Networking Academy, ho avuto l'opportunità di integrare conoscenze personali (programmazione) a compotenze acquisiste durante il mio percorso scolastico (circuiti) nella realizzazione di un progetto.
