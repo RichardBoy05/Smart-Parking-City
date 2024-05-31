@@ -6,7 +6,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 
 ## Indice
 1. [Il mondo dell'IoT 🌐](#il-mondo-delliot-globe_with_meridians)
-2. [Panoramica del progetto 🚗](#panoramica-del-progetto-red_car) (aggiungere foto e video)
+2. [Panoramica del progetto 🚗](#panoramica-del-progetto-red_car)
 3. [Materiali 🛠️](#materiali-hammer_and_wrench)
 4. [Circuito 🔌](#circuito-electric_plug)
 5. [Codice 👨‍💻](#codice-man_technologist)
@@ -61,7 +61,16 @@ Allo stesso tempo, è importante considerare anche gli **svantaggi**: le imprese
 
 Il progetto prevede la realizzazione di un prototipo di **sistema di parcheggio intelligente** implementato a livello comunale. Si tratta di un modellino in scala di un percorso stradale comunale con **tre diversi tipi di parcheggio**, ciascuno dei quali ha l'obiettivo di dimostrare una possibile applicazione IoT che ne agevoli la gestione. I dati raccolti dai sensori vengono trasmessi a un'applicazione di rete, che permette di monitorare l'occupazione dei parcheggi in tempo reale e di conservare i dati storici, consentendo così di effettuare analisi e previsioni future.
 
-(immagini)
+![Foto 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto1.jpg)
+
+-----------------------------------------------------------------------------------------------------------
+![Foto 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto2.jpg)
+
+-----------------------------------------------------------------------------------------------------------
+![Foto 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto3.jpg)
+
+-----------------------------------------------------------------------------------------------------------
+![Foto 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto4.jpg)
 
 ## Scopo
 
@@ -78,6 +87,8 @@ Il prototipo dispone di **tre tipologie di parcheggio**, ognuna con le proprie c
 
 ### PARCHEGGIO **LIBERO**
 Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni* e di un *indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
+
+![Video 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video1.jpg)
 
 ### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)**
 Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a prevedere tutte le funzionalità dei parcheggi liberi, questi possiedono anche un **limite massimo di occupazione**, valido esclusivamente dal lunedì al sabato tra le 8:00 e le 20:00. Durante questo intervallo, in caso venga superato tale limite (considerando comunque una certa tolleranza), l'indicatore LED dello slot inizierà a **lampeggiare** (in un contesto reale, potrebbe essere prevista una segnalazione automatica). Al di fuori di questo orario, il parcheggio è libero.
