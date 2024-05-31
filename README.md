@@ -88,7 +88,7 @@ Il prototipo dispone di **tre tipologie di parcheggio**, ognuna con le proprie c
 ### PARCHEGGIO **LIBERO**
 Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni* e di un *indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
 
-[[Watch the video](thumbnail.png)](https://www.youtube.com/watch?v=SzJ46YA_RaA)
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
 
 ### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)**
 Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a prevedere tutte le funzionalità dei parcheggi liberi, questi possiedono anche un **limite massimo di occupazione**, valido esclusivamente dal lunedì al sabato tra le 8:00 e le 20:00. Durante questo intervallo, in caso venga superato tale limite (considerando comunque una certa tolleranza), l'indicatore LED dello slot inizierà a **lampeggiare** (in un contesto reale, potrebbe essere prevista una segnalazione automatica). Al di fuori di questo orario, il parcheggio è libero.
