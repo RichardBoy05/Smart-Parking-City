@@ -97,12 +97,14 @@ Il prototipo dispone di **tre tipologie di parcheggio**, ognuna con le proprie c
 ### PARCHEGGIO **LIBERO**
 Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni* e di un *indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
 
-[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
+![Video 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video1.gif)
 
 ### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)**
 Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a prevedere tutte le funzionalità dei parcheggi liberi, questi possiedono anche un **limite massimo di occupazione**, valido esclusivamente dal lunedì al sabato tra le 8:00 e le 20:00. Durante questo intervallo, in caso venga superato tale limite (considerando comunque una certa tolleranza), l'indicatore LED dello slot inizierà a **lampeggiare** (in un contesto reale, potrebbe essere prevista una segnalazione automatica). Al di fuori di questo orario, il parcheggio è libero.
 
 **Curiosità** 💡: Il lampeggio del LED, segnale chiaro ed evidente a tutti, ha l'obiettivo di favorire il **rispetto delle regole** del parcheggio, poiché le persone sono naturalmente inclini a evitare comportamenti che le pongono in una luce negativa di fronte agli altri. Esiste infatti un principio psicologico secondo cui le persone tendono a modificare il proprio comportamento quando consapevoli di essere osservate o quando un'azione indesiderata viene resa visibile a tutti.
+
+![Video 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video2.gif)
 
 ### PARCHEGGIO A **PAGAMENTO**
 Il parcheggio a pagamento è composto da 5 posti auto, accessibili tramite un sistema di senso unico alternato. Dispone di una sbarra d'accesso (controllata da un *servo motore*), due *sensori ad infrarossi* per rilevare i veicoli, due *indicatori LED* in funzione di semaforo, un *fotoresistore* e altri tre *indicatori LED* per gestire l'illuminazione automatica. La copertura dei parcheggi è dotata di pannelli fotovoltaici fittizi, che in un contesto reale potrebbero fornire energia rinnovabile per alimentare i dispositivi del parcheggio.
@@ -122,8 +124,12 @@ Le entrate e le uscite dal parcheggio vengono monitorate tramite sensori che agg
 - La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
 - Solo a questo punto, il contatore dei parcheggi verrà decrementato di uno.
 
+![Video 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video3.gif)
+
 #### Illuminazione automatica
 Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita per un dato intervallo di tempo, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
+
+![Video 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video4.gif)
 
 ## Adattamento dei parametri
 
