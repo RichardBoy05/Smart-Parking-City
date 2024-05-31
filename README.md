@@ -7,10 +7,10 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 ## Indice
 1. [Il mondo dell'IoT 🌐](#il-mondo-delliot-globe_with_meridians)
 2. [Panoramica del progetto 🚗](#panoramica-del-progetto-red_car) (aggiungere foto e video)
-3. [Materiali 🛠️](#materiali-hammer_and_wrench) (da finire)
+3. [Materiali 🛠️](#materiali-hammer_and_wrench)
 4. [Circuito 🔌](#circuito-electric_plug)
 5. [Codice 👨‍💻](#codice-man_technologist)
-6. [Collegamenti interdisciplinari 🔗](#collegamenti-interdisciplinari-link) (da fare)
+6. [Collegamenti interdisciplinari 🔗](#collegamenti-interdisciplinari-link)
 7. [Conclusioni sull'esperienza 💭](#conclusioni-sullesperienza-thought_balloon) (da fare)
    
 -----------------------------------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 
 # Il mondo dell'IoT :globe_with_meridians:
 Prima di esplorare il progetto in sé è opportuno fare un'introduzione al concetto di "*Internet of Things*".
-## "Un mondo interconnesso"
+## Un mondo interconnesso
 Il mondo sta assistendo ad una rapida diffusione delle reti digitali, che consentono ai dispositivi di connettersi e trasmettere informazioni. Questo fenomeno, noto come ***trasformazione digitale***, consiste nell’applicazione della tecnologia digitale al fine di stimolare innovazione ed progresso.
 I **sensori** sono ovunque ormai: grazie ad essi è possibile raccogliere una grande quantità di dati che possono essere archiviati, analizzati e utilizzati per una moltitudine di scopi differenti, come monitorare l'ambiente, prevedere la crescita demografica, gestire i rifiuti, migliorare la sicurezza domestica, e molti altri.
 
@@ -135,11 +135,15 @@ I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici faci
 # Materiali :hammer_and_wrench:
 
 ## Modellino
-- Scatola di cartone 62,0 x 44,0 cm x 
-- Scatola di cartone 34,0 cm x 18,5 cm x 
-- Nastro adesivo e biadesivo
-- Fogli di acetato
-- 
+- Scatola di cartone con coperchio: 62,0 x 44,0 cm x 10,0 cm
+- Scatola di cartone argentato: 34,0 cm x 18,5 cm x 13,0 cm
+- Nastro adesivo (trasparente e colorato) e biadesivo
+- Cartone ondulato
+- Cartoncino
+- 3 legnetti
+- 4 stuzzicadenti
+- Plastilina grigia
+- Stecco del ghiacciolo
 
 ## Mappa
 ![Mappa](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/map/smart_parking_city_map.png)
@@ -409,10 +413,9 @@ Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento r
 # Collegamenti interdisciplinari :link:
 Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplinari** tra le materie scolastiche.
 
-- **Informatica**: Nascita ed evoluzione delle reti digitali (fenomeno della "*trasformazione digitale*");
-- **Letteratura italiana**: Giovanni Verga e il mito del progresso, interpretato sia nella sua "grandezza" che nei suoi rischi e pericoli.
-- **Letteratura inglese**:
-- **Storia dell'arte**: Art Nouveau, materiali assemblati a freddo e pertando smontabili (esempio: Palazzo di Cristallo di Paxton), in analogia al concetto al tipo di circuito solderless utilizzato, ovvero un tipo di circuito semipermanente molto pratico e comodo.
+- **Informatica**: Nascita ed evoluzione delle reti digitali, in particolare il fenomeno della "*trasformazione digitale*";
+- **Letteratura italiana**: Giovanni Verga e il mito del progresso, interpretato sia come "fiuamana" inarrestabile e grandiosa che nei suoi aspetti più negativi (si veda [Pro e contro dell'IoT](pro-e-contro)).
+- **Storia dell'arte**: Art Nouveau, l'uso di materiali assemblati a freddo e quindi smontabili (esempio: il Palazzo di Cristallo di Paxton) è analogo al concetto di circuito solderless, un tipo di circuito semipermanente molto pratico per progetti di questo genere.
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
