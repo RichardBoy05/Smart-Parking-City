@@ -151,7 +151,6 @@ Per praticità, sono stati apportati degli adattamenti a determinati parametri, 
 Il progetto prevede anche un **applicazione** (ospitata su *Arduino IoT Cloud*) che consente di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot. Ciò può offrire svariati vantaggi, come agevolazione nella ricerca del parcheggio, stime sulla disponibilità futura, riduzione del traffico veicolare, contributo all'ambiente sostenibile, ottimizzazione della gestione urbana,...
 
 ![Foto 8](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto8.jpg)
-![Foto 9](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto9.jpg)
 *L'interfaccia è disponibile sia in versione "desktop" (orizzontale) che mobile (verticale)*.
 
 I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici facilitano l'analisi dei dati raccolti. Per un'indagine più dettagliata e su periodi più estesi, è disponibile il download del **file CSV** che contiene il riepilogo di tutti i dati storici, per poi essere analizzato tramite software appositi come Excel.
