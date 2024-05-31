@@ -11,7 +11,7 @@ Prototipo di un sistema di parcheggio intelligente implementato a livello comuna
 4. [Circuito 🔌](#circuito-electric_plug)
 5. [Codice 👨‍💻](#codice-man_technologist)
 6. [Collegamenti interdisciplinari 🔗](#collegamenti-interdisciplinari-link)
-7. [Conclusioni sull'esperienza 💭](#conclusioni-sullesperienza-thought_balloon) (da fare)
+7. [Conclusioni sull'esperienza 💭](#conclusioni-sullesperienza-thought_balloon)
    
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
