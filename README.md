@@ -409,10 +409,10 @@ Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento r
 # Collegamenti interdisciplinari :link:
 Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplinari** tra le materie scolastiche.
 
-- **Informatica**: nascita ed evoluzione delle reti digitali (fenomeno della "*trasformazione digitale*");
-- **Letteratura italiana**: Giovanni Verga e il mito del progresso
+- **Informatica**: Nascita ed evoluzione delle reti digitali (fenomeno della "*trasformazione digitale*");
+- **Letteratura italiana**: Giovanni Verga e il mito del progresso, interpretato sia nella sua "grandezza" che nei suoi rischi e pericoli.
 - **Letteratura inglese**:
-- **Storia dell'arte**: Art Nouveau, assemblamento a freddo di materiali smontabili, analogo al concetto di solderless della breadboard e del tipo di circuito impiegato
+- **Storia dell'arte**: Art Nouveau, materiali assemblati a freddo e pertando smontabili (esempio: Palazzo di Cristallo di Paxton), in analogia al concetto al tipo di circuito solderless utilizzato, ovvero un tipo di circuito semipermanente molto pratico e comodo.
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
