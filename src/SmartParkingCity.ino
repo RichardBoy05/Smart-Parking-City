@@ -101,7 +101,7 @@ boolean servo_ready_to_close = false;
 
 const int LDR_CALIBRATION_TIME = 5000; // in milliseconds
 const int LDR_DETECTION_TIME = 2000; // in milliseconds
-const float DARKNESS_THRESHOLD_FACTOR = 0.7; // threshold factor of current light level to consider it dark
+const float DARKNESS_THRESHOLD_FACTOR = 0.5; // threshold factor of current light level to consider it dark
 float darkness_threshold;
 unsigned long ldr_detection_time = 0;
 unsigned long ldr_undetection_time = 0;
