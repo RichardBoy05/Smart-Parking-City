@@ -155,7 +155,8 @@ Il progetto prevede anche un **applicazione** (ospitata su *Arduino IoT Cloud*) 
 I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici facilitano l'analisi dei dati raccolti. Per un'indagine più dettagliata e su periodi più estesi, è disponibile il download del **file CSV** che contiene il riepilogo di tutti i dati storici, per poi essere analizzato tramite software appositi come Excel.
 
 ![Video 5](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video5.gif)
-*App in funzione.
+
+*App in funzione*.
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
