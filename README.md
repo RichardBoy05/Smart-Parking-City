@@ -177,7 +177,7 @@ I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici faci
 
 ## Mappa
 ![Mappa](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/map/smart_parking_city_map.png)
-*(realizzata tramite il software CorelDRAW Essentials 2021)*
+*(realizzata tramite il software CorelDRAW Essentials 2021; stampata grazie all'azienda "APA print and film technologies", a cui va un caloroso ringraziamento)*
 
 La mappa illustra un percorso stradale che presenta **3 tipologie di parcheggio** distinte, ciascuna con le proprie peculiarità e scopi dimostrativi.
 
