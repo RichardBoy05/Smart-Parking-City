@@ -180,6 +180,7 @@ I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici faci
 *(realizzata tramite il software CorelDRAW Essentials 2021)*
 
 La mappa illustra un percorso stradale che presenta **3 tipologie di parcheggio** distinte, ciascuna con le proprie peculiarità e scopi dimostrativi.
+
 **N.B.:** Si precisa che la mappa è concepita esclusivamente a fini **teorici e concettuali**, pertanto alcune delle sue caratteristiche potrebbero non essere praticamente applicabili in una situazione reale su strada.
 
 ## Componenti del circuito
