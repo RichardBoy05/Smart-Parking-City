@@ -445,6 +445,7 @@ Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento r
 Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplinari** tra le materie scolastiche.
 
 - **Informatica**: Nascita ed evoluzione delle reti digitali, in particolare il fenomeno della "*trasformazione digitale*";
+- **Fisica**: circuiti in corrente continua, prima legge di Ohm, onde infrarosse;
 - **Letteratura italiana**: Giovanni Verga e il mito del progresso, interpretato sia come "fiumana" inarrestabile e grandiosa che nei suoi aspetti più negativi (si veda [Pro e contro dell'IoT](#pro-e-contro)).
 - **Storia dell'arte**: Art Nouveau, l'uso di materiali assemblati a freddo e quindi smontabili (esempio: il "Palazzo di Cristallo" di Joseph Paxton) è analogo al concetto del circuito *solderless* utilizzato, ossia un tipo di circuito semipermanente molto pratico per progetti di questo genere.
 
