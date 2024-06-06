@@ -61,25 +61,25 @@ Allo stesso tempo, è importante considerare anche gli **svantaggi**: le imprese
 
 Il progetto prevede la realizzazione di un prototipo di **sistema di parcheggio intelligente** implementato a livello comunale. Si tratta di un modellino in scala di un percorso stradale comunale con **tre diversi tipi di parcheggio**, ciascuno dei quali ha l'obiettivo di dimostrare una possibile applicazione IoT che ne agevoli la gestione. I dati raccolti dai sensori vengono trasmessi a un'applicazione di rete, che permette di monitorare l'occupazione dei parcheggi in tempo reale e di conservare i dati storici, consentendo così di effettuare analisi e previsioni future.
 
-![Foto 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto1.jpg)
+![Foto 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_1.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto2.jpg)
+![Foto 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_2.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto3.jpg)
+![Foto 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_3.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto4.jpg)
+![Foto 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_4.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 5](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto5.jpg)
+![Foto 5](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_5.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 6](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto6.jpg)
+![Foto 6](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_6.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 7](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto7.jpg)
+![Foto 7](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_7.jpg)
 
 ## Scopo
 
@@ -97,14 +97,14 @@ Il prototipo dispone di **tre tipologie di parcheggio**, ognuna con le proprie c
 ### PARCHEGGIO **LIBERO**
 Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni* e di un *indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
 
-![Video 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video1.gif)
+![Video 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_1.gif)
 
 ### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)**
 Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a prevedere tutte le funzionalità dei parcheggi liberi, questi possiedono anche un **limite massimo di occupazione**, valido esclusivamente dal lunedì al sabato tra le 8:00 e le 20:00. Durante questo intervallo, in caso venga superato tale limite (considerando comunque una certa tolleranza), l'indicatore LED dello slot inizierà a **lampeggiare** (in un contesto reale, potrebbe essere prevista una segnalazione automatica). Al di fuori di questo orario, il parcheggio è libero.
 
 **Curiosità** 💡: Il lampeggio del LED, segnale chiaro ed evidente a tutti, ha l'obiettivo di favorire il **rispetto delle regole** del parcheggio, poiché le persone sono naturalmente inclini a evitare comportamenti che le pongono in una luce negativa di fronte agli altri. Esiste infatti un principio psicologico secondo cui le persone tendono a modificare il proprio comportamento quando consapevoli di essere osservate o quando un'azione indesiderata viene resa visibile a tutti.
 
-![Video 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video2.gif)
+![Video 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_2.gif)
 
 ### PARCHEGGIO A **PAGAMENTO**
 Il parcheggio a pagamento è composto da 5 posti auto, accessibili tramite un sistema di senso unico alternato. Dispone di una sbarra d'accesso (controllata da un *servo motore*), due *sensori ad infrarossi* per rilevare i veicoli, due *indicatori LED* in funzione di semaforo, un *fotoresistore* e altri tre *indicatori LED* per gestire l'illuminazione automatica. La copertura dei parcheggi è dotata di pannelli fotovoltaici fittizi, che in un contesto reale potrebbero fornire energia rinnovabile per alimentare i dispositivi del parcheggio.
@@ -124,12 +124,12 @@ Le entrate e le uscite dal parcheggio vengono monitorate tramite sensori che agg
 - La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
 - Solo a questo punto, il contatore dei parcheggi verrà decrementato di uno.
 
-![Video 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video3.gif)
+![Video 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_3.gif)
 
 #### Illuminazione automatica
 Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita per un dato intervallo di tempo, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
 
-![Video 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video4.gif)
+![Video 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_4.gif)
 
 ## Adattamento dei parametri
 
@@ -148,14 +148,14 @@ Per praticità, sono stati apportati degli adattamenti a determinati parametri, 
 
 ## Applicazione
 
-![Foto 8](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto8.jpg)
+![Foto 8](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_8.jpg)
 *L'interfaccia è disponibile sia in versione "desktop" (orizzontale) che mobile (verticale)*.
 
 Il progetto prevede anche un **applicazione** (ospitata su *Arduino IoT Cloud*) che consente di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot. Ciò può offrire svariati vantaggi, come agevolazione nella ricerca del parcheggio, stime sulla disponibilità futura, riduzione del traffico veicolare, contributo all'ambiente sostenibile, ottimizzazione della gestione urbana,...
 
 I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici facilitano l'analisi dei dati raccolti. Per un'indagine più dettagliata e su periodi più estesi, è disponibile il download del **file CSV** che contiene il riepilogo di tutti i dati storici, per poi essere analizzato tramite software appositi come Excel.
 
-![Video 5](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video5.gif)
+![Video 5](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_5.gif)
 
 *App in funzione*.
 
