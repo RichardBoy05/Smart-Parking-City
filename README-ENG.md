@@ -21,147 +21,152 @@ Prototype of a smart parking system implemented at the municipal level, designed
 -----------------------------------------------------------------------------------------------------------
 
 # The world of IoT :globe_with_meridians:
-Prima di esplorare il progetto in sé è opportuno fare un'introduzione al concetto di "*Internet of Things*".
-## Un mondo interconnesso
-Il mondo sta assistendo ad una rapida diffusione delle reti digitali, che consentono ai dispositivi di connettersi e trasmettere informazioni. Questo fenomeno, noto come ***trasformazione digitale***, consiste nell’applicazione della tecnologia digitale al fine di stimolare innovazione ed progresso.
-I **sensori** sono ovunque ormai: grazie ad essi è possibile raccogliere una grande quantità di dati che possono essere archiviati, analizzati e utilizzati per una moltitudine di scopi differenti, come monitorare l'ambiente, prevedere la crescita demografica, gestire i rifiuti, migliorare la sicurezza domestica, e molti altri.
 
-**Curiosità** 💡: La diffusione di processori economici e reti wireless ha facilitato la diffusione dei dispositivi IoT. Si prevede che entro il 2025 ci saranno 38,6 miliardi di dispositivi connessi a Internet, aumentando a 50 miliardi entro il 2030, con una media di 190 milioni di nuovi dispositivi ogni mese.
+Before diving into the project itself, it's worth introducing the concept of the "*Internet of Things*".
+## An interconnected world
+The world is witnessing a rapid expansion of digital networks, enabling devices to connect and share information. This phenomenon, known as ***digital transformation***, involves applying digital technology to foster innovation and progress.
+**Sensors** are now everywhere: they allow the collection of vast amounts of data, which can be stored, analyzed, and used for a variety of purposes, such as monitoring the environment, predicting population growth, managing waste, enhancing home security, and much more.
 
-![Un mondo sempre più "interconnesso"...](https://eu-images.contentstack.com/v3/assets/blt10e444bce2d36aa8/blt212253f30ff67b32/6525326cb528befd7b152b76/IoT-internet-of-things-.jpg)
+**Fun Fact** 💡: The proliferation of affordable processors and wireless networks has facilitated the spread of IoT devices. It is predicted that by 2025, there will be 38.6 billion devices connected to the Internet, increasing to 50 billion by 2030, with an average of 190 million new devices every month.
+
+![An increasingly "interconnected" world...](https://eu-images.contentstack.com/v3/assets/blt10e444bce2d36aa8/blt212253f30ff67b32/6525326cb528befd7b152b76/IoT-internet-of-things-.jpg)
 
 ## Internet of Things
-### Cosa s'intende per IoT?
-> **“*Internet of Things*” (IoT) è una rete interconnessa di dispositivi fisici (*things*), che comunicano e scambiano dati per migliorare l'efficienza e l'esperienza umana in svariati settori, tramite l’utilizzo di sensori, attuatori ed altre tecnologie.**
+### What is IoT?
+> **“*Internet of Things*” (IoT) is an interconnected network of physical devices (*things*) that communicate and exchange data to improve efficiency and human experience in various sectors, using sensors, actuators, and other technologies.**
 
-## Quali caratteristiche deve possedere un oggetto IoT?
-- **Connettività:** capacità di connettersi in modo affidabile a reti, tramite tecnologie e protocolli di comunicazione efficaci.
-- **Sensori e attuatori**: capacità di percepire l’ambiente attraverso sensori e di agire su di esso tramite attuatori; questa funzionalità consente al dispositivo di raccogliere dati, prendere decisioni basate su tali dati e potenzialmente influenzare l'ambiente circostante.
-- **Automazione:** implementare processi autogestiti che riducono, per poi eventualmente eliminare, la necessità dell’intervento umano; l’IoT apre un nuovo mondo in cui le attività che prima richiedevano l’intervento umano possono diventare automatizzate.
-- **Scalabilità:** dato che gli ambienti IoT possono variare notevolmente in termini di dimensioni e complessità, i dispositivi dovrebbero essere progettati per scalare facilmente in modo da poter essere utilizzati in piccole reti domestiche o in grandi reti industriali.
-- **Sicurezza:** l'integrità e la sicurezza dei dati sono cruciali nell'ambito dell'IoT, specialmente quando si tratta di informazioni sensibili o di dispositivi critici.
-- **Interoperabilità:** capacità di interagire con altri dispositivi e sistemi, essenziale per consentire una comunicazione efficace tra dispositivi di diversi produttori e piattaforme.
-- **Efficienza energetica:** molti dispositivi IoT sono alimentati da batterie o sorgenti di energia limitate; l'efficienza energetica è un aspetto chiave per garantire una lunga durata della batteria e ridurre l'impatto ambientale.
-- **Manutenzione remota e aggiornamenti:** essenziale per garantire che i dispositivi IoT rimangano sicuri e aggiornati nel tempo.
+## What characteristics should an IoT device have?
+- **Connectivity:** The ability to reliably connect to networks using effective communication technologies and protocols.
+- **Sensors and Actuators:** The ability to sense the environment through sensors and act on it via actuators; this functionality allows the device to collect data, make decisions based on that data, and potentially influence the surrounding environment.
+- **Automation:** The implementation of self-managed processes that reduce and eventually eliminate the need for human intervention; IoT opens a new world where activities that previously required human involvement can become automated.
+- **Scalability:** As IoT environments can vary greatly in size and complexity, devices should be designed to scale easily, allowing them to be used in small home networks or large industrial networks.
+- **Security:** Data integrity and security are crucial in the IoT realm, especially when dealing with sensitive information or critical devices.
+- **Interoperability:** The ability to interact with other devices and systems, essential for effective communication between devices from different manufacturers and platforms.
+- **Energy Efficiency:** Many IoT devices are powered by batteries or limited energy sources; energy efficiency is key to ensuring long battery life and reducing environmental impact.
+- **Remote Maintenance and Updates:** Essential to ensure that IoT devices remain secure and up-to-date over time.
 
-## Come si collegano alla rete gli oggetti IoT?
-Un **sensore** deve essere collegato a una rete in modo che i dati raccolti possano essere archiviati e condivisi.
-Il **controllore** si occupa di raccogliere i dati dai sensori e di garantire la connettività: può avere la capacità di prendere decisioni immediate, oppure può inviare dati a un computer più potente per l’analisi.
-Tali elementi solitamente lavorano insieme a un dispositivo chiamato **attuatore**. Gli attuatori ricevono l'input elettrico e lo convertono in azione fisica.
+## How do IoT devices connect to the network?
+A **sensor** must be connected to a network so that the collected data can be stored and shared.
+The **controller** is responsible for gathering data from sensors and ensuring connectivity: it can either make immediate decisions or send data to a more powerful computer for analysis.
+These elements typically work together with a device called an **actuator**. Actuators receive electrical input and convert it into physical action.
 
 ![](https://www.electricaltechnology.org/wp-content/uploads/2021/11/Sensor-Actuator.png)
 
-## Pro e contro
-L’IoT offre numerosi **vantaggi**, consentendo la raccolta e l'analisi efficace dei dati provenienti dai sensori. Le aziende traggono beneficio da informazioni dettagliate sui loro prodotti e clienti, ottimizzando la produzione e indirizzando il marketing in modo mirato. Le città gestiscono il traffico, il riciclaggio, le esigenze sanitarie e di trasporto. Gli individui traggono benefici in termini di salute, sicurezza domestica e costi energetici ridotti.
+## Pros and cons
+The IoT offers numerous **advantages**, enabling the efficient collection and analysis of data from sensors. Companies benefit from detailed insights into their products and customers, optimizing production and targeting marketing effectively. Cities manage traffic, recycling, healthcare, and transportation needs. Individuals benefit in terms of health, home security, and reduced energy costs.
 
-Allo stesso tempo, è importante considerare anche gli **svantaggi**: le imprese che sviluppano dispositivi indossabili hanno accesso a informazioni personali sugli utenti; affidarsi prettamente ad acquisti online potrebbe comportare la perdita di posti di lavoro; i rivenditori sono a conoscenza di tutti gli acquisti effettuati; un'interruzione della rete può avere conseguenze catastrofiche.
+At the same time, it’s important to consider the **disadvantages**: companies developing wearable devices have access to users' personal information; reliance solely on online purchases could lead to job losses; retailers know all the purchases made; a network disruption can have catastrophic consequences.
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
 # Project overview :red_car:
 
-## In breve...
+## Briefly...
 
-Il progetto prevede la realizzazione di un prototipo di **sistema di parcheggio intelligente** implementato a livello comunale. Si tratta di un modellino in scala di un percorso stradale comunale con **tre diversi tipi di parcheggio**, ciascuno dei quali ha l'obiettivo di dimostrare una possibile applicazione IoT che ne agevoli la gestione. I dati raccolti dai sensori vengono trasmessi a un'applicazione di rete, che permette di monitorare l'occupazione dei parcheggi in tempo reale e di conservare i dati storici, consentendo così di effettuare analisi e previsioni future.
+The project involves developing a prototype of a **smart parking system** implemented at the municipal level. It consists of a scaled model of a municipal road with **three different types of parking spaces**, each demonstrating a potential IoT application to facilitate management. Data collected by sensors is transmitted to a network application, allowing real-time monitoring of parking occupancy and storing historical data for analysis and future predictions.
 
-![Foto 1](resources/media/foto_1.jpg)
-
------------------------------------------------------------------------------------------------------------
-![Foto 2](resources/media/foto_2.jpg)
+![Photo 1](resources/media/foto_1.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 3](resources/media/foto_3.jpg)
+![Photo 2](resources/media/foto_2.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 4](resources/media/foto_4.jpg)
+![Photo 3](resources/media/foto_3.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 5](resources/media/foto_5.jpg)
+![Photo 4](resources/media/foto_4.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 6](resources/media/foto_6.jpg)
+![Photo 5](resources/media/foto_5.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 7](resources/media/foto_7.jpg)
+![Photo 6](resources/media/foto_6.jpg)
 
-## Scopo
+-----------------------------------------------------------------------------------------------------------
+![Photo 7](resources/media/foto_7.jpg)
 
-Il progetto si propone di dimostrare come l'introduzione di dispositivi IoT possa migliorare significativamente la **qualità della vita** delle persone, applicandosi nello specifico al contesto dei parcheggi urbani.
+## Purpose
 
-L'integrazione di tali tecnologie offre diversi vantaggi pratici, tra cui la possibilità di ricevere **aggiornamenti in tempo reale** sulla disponibilità dei posti auto, riducendo così il tempo e lo stress associati alla ricerca di un parcheggio. Inoltre, l'uso di sensori e algoritmi di previsione consente di effettuare **stime accurate** sulla disponibilità futura dei parcheggi, aiutando gli automobilisti a pianificare meglio i loro spostamenti. Grazie a queste innovazioni, è possibile ridurre il traffico veicolare causato dalla ricerca di parcheggio, migliorare l'efficienza dei trasporti urbani e contribuire a un ambiente più sostenibile, riducendo le emissioni di CO<sub>2</sub>. I dati raccolti possono essere inoltre utilizzati dalle amministrazioni comunali per ottimizzare la gestione degli spazi urbani, identificando aree con alta domanda di parcheggi e pianificando interventi infrastrutturali mirati.
-Un ulteriore vantaggio è rappresentato dalla possibilità di integrare sistemi di pagamento automatizzati, che consentono agli utenti di prenotare e pagare il parcheggio tramite app, rendendo il processo più rapido e conveniente.
+The project aims to demonstrate how the introduction of IoT devices can significantly improve the **quality of life** by focusing on urban parking contexts.
 
-In sintesi, il progetto intende non solo dimostrare l'efficacia dei dispositivi IoT nel migliorare la gestione dei parcheggi, ma anche evidenziare come queste tecnologie possano contribuire a creare città più **intelligenti e vivibili**, migliorando la qualità della vita dei cittadini attraverso soluzioni innovative e sostenibili.
+Integrating these technologies offers several practical advantages, including receiving **real-time updates** on parking space availability, thereby reducing the time and stress associated with finding parking. Moreover, using sensors and prediction algorithms enables **accurate estimates** of future parking availability, helping drivers better plan their trips. These innovations can reduce traffic congestion caused by parking search, enhance urban transport efficiency, and contribute to a more sustainable environment by reducing CO<sub>2</sub> emissions. The data collected can also assist municipal administrations in optimizing urban space management by identifying areas with high parking demand and planning targeted infrastructure interventions. Another advantage is the ability to integrate automated payment systems, allowing users to reserve and pay for parking via an app, making the process quicker and more convenient.
 
-## Prototipo
+In summary, the project not only aims to demonstrate the effectiveness of IoT devices in improving parking management but also highlights how these technologies can contribute to creating smarter and more livable cities, enhancing citizens' quality of life through innovative and sustainable solutions.
 
-Il prototipo dispone di **tre tipologie di parcheggio**, ognuna con le proprie caratteristiche e funzionalità.
+## Prototype
 
-### PARCHEGGIO **LIBERO**
-Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni* e di un *indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
+The prototype features **three types of parking spaces**, each with unique characteristics and functionalities.
+
+### **Free parking**
+
+The project includes two free parking spaces with indefinite free parking. Each is equipped with an *ultrasonic sensor* and an *LED indicator* that shows its **status**. When the sensor detects an obstruction for a certain period, the parking space is marked as occupied (LED on). Conversely, if no obstruction is detected for a certain period, the space is indicated as vacant (LED off).
 
 ![Video 1](resources/media/video_1.gif)
 
-### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)**
-Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a prevedere tutte le funzionalità dei parcheggi liberi, questi possiedono anche un **limite massimo di occupazione**, valido esclusivamente dal lunedì al sabato tra le 8:00 e le 20:00. Durante questo intervallo, in caso venga superato tale limite (considerando comunque una certa tolleranza), l'indicatore LED dello slot inizierà a **lampeggiare** (in un contesto reale, potrebbe essere prevista una segnalazione automatica). Al di fuori di questo orario, il parcheggio è libero.
+### **Timed parking**
 
-**Curiosità** 💡: Il lampeggio del LED, segnale chiaro ed evidente a tutti, ha l'obiettivo di favorire il **rispetto delle regole** del parcheggio, poiché le persone sono naturalmente inclini a evitare comportamenti che le pongono in una luce negativa di fronte agli altri. Esiste infatti un principio psicologico secondo cui le persone tendono a modificare il proprio comportamento quando consapevoli di essere osservate o quando un'azione indesiderata viene resa visibile a tutti.
+The project also includes two timed parking spaces for short-term parking. In addition to the functionalities of free parking spaces, these spaces have a **maximum occupancy limit**, valid only from Monday to Saturday between 8:00 AM and 8:00 PM. During this interval, if the limit is exceeded (with a certain tolerance), the LED indicator of the slot will begin **flashing** (in a real scenario, automatic notification could be implemented). Outside of these hours, the parking space is free.
+
+**Fun fact** 💡: The flashing LED, a clear and visible signal to all, aims to promote **parking rules compliance**, as people naturally tend to avoid behaviors that might cast them in a negative light. There exists a psychological principle where people adjust their behavior when aware of being observed or when undesired actions are made visible to all.
 
 ![Video 2](resources/media/video_2.gif)
 
-### PARCHEGGIO A **PAGAMENTO**
-Il parcheggio a pagamento è composto da 5 posti auto, accessibili tramite un sistema di senso unico alternato. Dispone di una sbarra d'accesso (controllata da un *servo motore*), due *sensori ad infrarossi* per rilevare i veicoli, due *indicatori LED* in funzione di semaforo, un *fotoresistore* e altri tre *indicatori LED* per gestire l'illuminazione automatica. La copertura dei parcheggi è dotata di pannelli fotovoltaici fittizi, che in un contesto reale potrebbero fornire energia rinnovabile per alimentare i dispositivi del parcheggio.
+### **Paid parking**
 
-#### Regolazione degli accessi
-Le entrate e le uscite dal parcheggio vengono monitorate tramite sensori che aggiornano costantemente il **conteggio dei veicoli** presenti. Il semaforo verde segnala che sono ancora disponibili posti auto e quindi è consentito l'ingresso, mentre il rosso indica che tutti i posti sono occupati e l'accesso è temporaneamente negato.
+The paid parking consists of 5 parking spaces, accessible via a one-way alternating traffic system. It features an access barrier (controlled by a *servo motor*), two *infrared sensors* to detect vehicles, two *LED indicators* functioning as traffic lights, a *photoresistor*, and three additional *LED indicators* for managing automatic lighting. The parking cover includes dummy photovoltaic panels, which in a real context could provide renewable energy to power parking devices.
 
-**Ingresso nel parcheggio**:
-- L'utente si avvicina al sensore situato all'ingresso.
-- Se gli spazi non sono tutti occupati (semaforo verde), dopo un breve periodo di rilevamento, l'utente ritira il ticket per il pagamento.
-- La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
-- Solo a questo punto il contatore dei parcheggi verrà incrementato di uno.
+#### Access regulation
 
-**Uscita dal parcheggio**:
-- L'utente si avvicina al sensore situato all'uscita.
-- Dopo un breve periodo di rilevamento, l'utente riconsegna il ticket pagato.
-- La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
-- Solo a questo punto, il contatore dei parcheggi verrà decrementato di uno.
+Entries and exits from the parking lot are monitored by sensors that constantly update the **vehicle count**. A green light signals available parking spaces, allowing entry, while red indicates all spaces are occupied and entry is temporarily denied.
+
+**Entry to the parking lot**:
+- The user approaches the sensor at the entrance.
+- If spaces are not all occupied (green light), after a brief detection period, the user retrieves a ticket for payment.
+- The barrier opens, closing only when the sensor beyond the barrier is activated and then deactivated, indicating the vehicle has completely passed through.
+- Only at this point will the parking counter be incremented by one.
+
+**Exit from the parking lot**:
+- The user approaches the sensor at the exit.
+- After a brief detection period, the user returns the paid ticket.
+- The barrier opens, closing only when the sensor beyond the barrier is activated and then deactivated, indicating the vehicle has completely passed through.
+- Only at this point will the parking counter be decremented by one.
 
 ![Video 3](resources/media/video_3.gif)
 
-#### Illuminazione automatica
-Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita per un dato intervallo di tempo, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
+#### Automatic lighting
+
+The parking lot features an automatic lighting system activated by a **photoresistor**. This sensor detects when the brightness level falls below a preset threshold for a given time interval, thereby activating the three white LEDs used for parking lot illumination.
 
 ![Video 4](resources/media/video_4.gif)
 
-## Adattamento dei parametri
+## Parameter adaptation
 
-Per praticità, sono stati apportati degli adattamenti a determinati parametri, i cui valori **differiscono da quelli reali**. Di seguito è riportata una tabella riassuntiva.
+For practicality, adjustments have been made to certain parameters, with values **differing from real-world settings**. Below is a summary table.
 
-| Parametro | Valore reale | Valore dimostrativo | Descrizione
+| Parameter | Real value | Demonstrative value | Description |
 | --- | --- | --- | --- |
-| Tempo di rilevamento | 30 secondi | 3 secondi | Tempo necessario per il rilevamento di un veicolo da parte di un sensore, per prevenire errori causati da interferenze momentanee.
-| Distanza di rilevamento | 2,5 metri | 5 cm | Distanza di soglia entro cui un veicolo viene rilevato in un parcheggio.
-| Tempo massimo della zona disco | 1 ora (+ 15 minuti di tolleranza) | 16 secondi (+ 4 secondi di tolleranza) | Tempo massimo di occupazione di un parcheggio a zona disco, con tolleranza del 25%.
-| Tempo di stabilizzazione della luminosità | 20 secondi | 2 secondi | Tempo necessario prima dell'accensione o dello spegnimento delle luci crepuscolari, per evitare sfarfallii quando la luminosità è vicina alla soglia.
+| Detection time | 30 seconds | 3 seconds | Time required for a sensor to detect a vehicle, to prevent errors caused by momentary interference. |
+| Detection distance | 2.5 meters | 5 cm | Threshold distance within which a vehicle is detected in a parking space. |
+| Maximum time in timed zone | 1 hour (+ 15 minutes tolerance) | 16 seconds (+ 4 seconds tolerance) | Maximum time for occupying a disc parking space, with a 25% tolerance. |
+| Brightness stabilization Time | 20 seconds | 2 seconds | Time required before dusk lights turn on or off, to prevent flickering when brightness is near the threshold.
 
-#### Note
-- Non si è prevista un’uscita separata poiché la zona di parcheggio è relativamente piccola e in quanto non necessario ai fini dimostrativi del progetto. In alternativa, si è introdotta una funzione che impedisce l'ingresso e l'uscita (attraverso l'accensione del semaforo rosso) quando entrambi i sensori sono attivati, indicando due veicoli provenienti contemporaneamente in senso opposto.
-- Il sistema di pagamento non è stato incluso poiché non rilevante ai fini dimostrativi del progetto, ma sarebbe necessariamente implementato in un contesto reale.
+#### Notes
+- Separate exit was not provided due to the relatively small parking area and its non-necessity for project demonstration purposes. Alternatively, a function preventing entry and exit (by turning on the red light) when both sensors are activated, indicating two vehicles approaching simultaneously from opposite directions, was introduced.
+- The payment system was not included as it was irrelevant for project demonstration purposes but would be essential in a real-world implementation.
 
-## Applicazione
+## Application
 
-![Foto 8](resources/media/foto_8.jpg)
-*L'interfaccia è disponibile sia in versione "desktop" (orizzontale) che mobile (verticale)*.
+![Photo 8](resources/media/foto_8.jpg)
+*The interface is available in both "desktop" (horizontal) and mobile (vertical) versions.*
 
-Il progetto prevede anche un'**applicazione** (ospitata su *Arduino IoT Cloud*) che consente di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot. Ciò può offrire svariati vantaggi, come agevolazione nella ricerca del parcheggio, stime sulla disponibilità futura, riduzione del traffico veicolare, contributo all'ambiente sostenibile, ottimizzazione della gestione urbana,...
+The project also includes an **application** (hosted on *Arduino IoT Cloud*) that allows checking the **real-time status** of parking spaces, analyzing **historical data** on parking occupancy, and providing information on hourly distribution of slot occupancy. This can offer various advantages such as facilitating parking search, estimating future availability, reducing traffic congestion, contributing to a sustainable environment, and optimizing urban management...
 
-I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici facilitano l'analisi dei dati raccolti. Per un'indagine più dettagliata e su periodi più estesi, è disponibile il download del **file CSV** che contiene il riepilogo di tutti i dati storici, per poi essere analizzato tramite software appositi come Excel.
+Indicators display the status of individual parking spaces, while graphs facilitate analysis of collected data. For more detailed and extended periods of investigation, downloading a **CSV file** containing a summary of all historical data allows further analysis using specialized software such as Excel.
 
 ![Video 5](resources/media/video_5.gif)
 
-*App in funzione*.
+*App in action*.
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
