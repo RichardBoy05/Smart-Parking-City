@@ -1,4 +1,8 @@
 # Smart Parking City 🚗
+
+[![ita](https://img.shields.io/badge/lang-ita-green.svg)]()
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/RichardBoy05/Smart-Parking-City/edit/main/README-ENG.md)
+
 Prototipo di un sistema di parcheggio intelligente implementato a livello comunale, il cui obiettivo è dimostrare come l’introduzione di **dispositivi IoT** (*Internet of Things*) possa agevolare la vita delle persone.
 
 -----------------------------------------------------------------------------------------------------------
