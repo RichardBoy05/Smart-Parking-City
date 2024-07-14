@@ -65,25 +65,25 @@ Allo stesso tempo, è importante considerare anche gli **svantaggi**: le imprese
 
 Il progetto prevede la realizzazione di un prototipo di **sistema di parcheggio intelligente** implementato a livello comunale. Si tratta di un modellino in scala di un percorso stradale comunale con **tre diversi tipi di parcheggio**, ciascuno dei quali ha l'obiettivo di dimostrare una possibile applicazione IoT che ne agevoli la gestione. I dati raccolti dai sensori vengono trasmessi a un'applicazione di rete, che permette di monitorare l'occupazione dei parcheggi in tempo reale e di conservare i dati storici, consentendo così di effettuare analisi e previsioni future.
 
-![Foto 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_1.jpg)
+![Foto 1](resources/media/foto_1.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_2.jpg)
+![Foto 2](resources/media/foto_2.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_3.jpg)
+![Foto 3](resources/media/foto_3.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_4.jpg)
+![Foto 4](resources/media/foto_4.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 5](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_5.jpg)
+![Foto 5](resources/media/foto_5.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 6](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_6.jpg)
+![Foto 6](resources/media/foto_6.jpg)
 
 -----------------------------------------------------------------------------------------------------------
-![Foto 7](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_7.jpg)
+![Foto 7](resources/media/foto_7.jpg)
 
 ## Scopo
 
@@ -101,14 +101,14 @@ Il prototipo dispone di **tre tipologie di parcheggio**, ognuna con le proprie c
 ### PARCHEGGIO **LIBERO**
 Nel progetto sono presenti due parcheggi liberi, con sosta gratuita a tempo indeterminato. Ognuno è dotato di un *sensore ad ultrasuoni* e di un *indicatore LED* che ne segnala lo **stato**. Quando il sensore rileva un ostacolo per un determinato periodo di tempo, il parcheggio viene indicato come occupato (LED acceso). Al contrario, se il sensore non rileva alcun ostacolo per un certo periodo, il parcheggio è segnalato come vuoto (LED spento).
 
-![Video 1](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_1.gif)
+![Video 1](resources/media/video_1.gif)
 
 ### PARCHEGGIO A **ZONA DISCO (o a SOSTA BREVE)**
 Il progetto include due parcheggi a zona disco (o a sosta breve). Oltre a prevedere tutte le funzionalità dei parcheggi liberi, questi possiedono anche un **limite massimo di occupazione**, valido esclusivamente dal lunedì al sabato tra le 8:00 e le 20:00. Durante questo intervallo, in caso venga superato tale limite (considerando comunque una certa tolleranza), l'indicatore LED dello slot inizierà a **lampeggiare** (in un contesto reale, potrebbe essere prevista una segnalazione automatica). Al di fuori di questo orario, il parcheggio è libero.
 
 **Curiosità** 💡: Il lampeggio del LED, segnale chiaro ed evidente a tutti, ha l'obiettivo di favorire il **rispetto delle regole** del parcheggio, poiché le persone sono naturalmente inclini a evitare comportamenti che le pongono in una luce negativa di fronte agli altri. Esiste infatti un principio psicologico secondo cui le persone tendono a modificare il proprio comportamento quando consapevoli di essere osservate o quando un'azione indesiderata viene resa visibile a tutti.
 
-![Video 2](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_2.gif)
+![Video 2](resources/media/video_2.gif)
 
 ### PARCHEGGIO A **PAGAMENTO**
 Il parcheggio a pagamento è composto da 5 posti auto, accessibili tramite un sistema di senso unico alternato. Dispone di una sbarra d'accesso (controllata da un *servo motore*), due *sensori ad infrarossi* per rilevare i veicoli, due *indicatori LED* in funzione di semaforo, un *fotoresistore* e altri tre *indicatori LED* per gestire l'illuminazione automatica. La copertura dei parcheggi è dotata di pannelli fotovoltaici fittizi, che in un contesto reale potrebbero fornire energia rinnovabile per alimentare i dispositivi del parcheggio.
@@ -128,12 +128,12 @@ Le entrate e le uscite dal parcheggio vengono monitorate tramite sensori che agg
 - La sbarra si apre, per poi chiudersi solo quando il sensore oltre la sbarra viene prima attivato e poi disattivato, indicando il passaggio completo del veicolo.
 - Solo a questo punto, il contatore dei parcheggi verrà decrementato di uno.
 
-![Video 3](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_3.gif)
+![Video 3](resources/media/video_3.gif)
 
 #### Illuminazione automatica
 Il parcheggio è dotato di un sistema di illuminazione automatica che si attiva tramite un **fotoresistore**. Questo sensore rileva quando il livello di luminosità scende al di sotto di una soglia prestabilita per un dato intervallo di tempo, attivando così i tre LED bianchi adibiti all'illuminazione del parcheggio.
 
-![Video 4](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_4.gif)
+![Video 4](resources/media/video_4.gif)
 
 ## Adattamento dei parametri
 
@@ -152,14 +152,14 @@ Per praticità, sono stati apportati degli adattamenti a determinati parametri, 
 
 ## Applicazione
 
-![Foto 8](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/foto_8.jpg)
+![Foto 8](resources/media/foto_8.jpg)
 *L'interfaccia è disponibile sia in versione "desktop" (orizzontale) che mobile (verticale)*.
 
 Il progetto prevede anche un'**applicazione** (ospitata su *Arduino IoT Cloud*) che consente di verificare lo **stato dei parcheggi in tempo reale**, analizzare i **dati storici** sull’occupazione dei parcheggi e fornire informazioni relative alla distribuzione oraria dell’occupazione dello slot. Ciò può offrire svariati vantaggi, come agevolazione nella ricerca del parcheggio, stime sulla disponibilità futura, riduzione del traffico veicolare, contributo all'ambiente sostenibile, ottimizzazione della gestione urbana,...
 
 I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici facilitano l'analisi dei dati raccolti. Per un'indagine più dettagliata e su periodi più estesi, è disponibile il download del **file CSV** che contiene il riepilogo di tutti i dati storici, per poi essere analizzato tramite software appositi come Excel.
 
-![Video 5](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/media/video_5.gif)
+![Video 5](resources/media/video_5.gif)
 
 *App in funzione*.
 
@@ -180,7 +180,7 @@ I segnalatori mostrano lo stato dei parcheggi individuali, mentre i grafici faci
 - Stecco del ghiacciolo
 
 ## Mappa
-![Mappa](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/map/smart_parking_city_map.png)
+![Mappa](resources/map/smart_parking_city_map.png)
 *(realizzata tramite il software CorelDRAW Essentials 2021)*
 
 La mappa illustra un percorso stradale che presenta **3 tipologie di parcheggio** distinte, ciascuna con le proprie peculiarità e scopi dimostrativi.
@@ -204,34 +204,34 @@ La tabella sottostante riporta i diversi componenti impiegati nel circuito. Per 
 | [`Batterie AA`](https://www.amazon.it/GP-Batterie-alcaline-extra-Pack/dp/B07QLY7GJM/ref=sr_1_51?adgrpid=52877419152&dib=eyJ2IjoiMSJ9.7qd2mWgPWlRveGEJRbjXJNr_1e9RKYC6IRoJ2DMJVN8DdBdwJqCzqK73YUGTu7Fp6M8yQAk3qMl9dYuvGwGbMX7USwwgVBXJGIIQ5_AyID0oKvImWeARVVw5WJEQ0Yu4qGTWo3c7yk3QvBtwPNUi0jkd5V4RcMvFwj5okyh7y0IhIXa5eOPrGXhx_wAhMs2IetHvDGn6JOylqSXNwCbYjeA4Rl0DjkUd5rvQNbVtBsfFoNIqIcWG39teBqrWrV3nV3eMhC6yga41q2zkZMfY9eRJsmqzn6z_76V3YKGhaRc.uM6QNZjC_zp7i0GUddvcEFiaSM3V_ZWUb_dckQprSA4&dib_tag=se&hvadid=591172535230&hvdev=c&hvlocphy=20530&hvnetw=g&hvqmt=e&hvrand=7053405220002942603&hvtargid=kwd-297014870873&hydadcr=16358_2167162&keywords=batterie+aa&qid=1714133456&sr=8-51) | 4 | La batteria AA è una fonte di energia **portatile** di dimensione standard, comunemente utilizzata in dispositivi elettronici di piccole dimensioni. <li>Tensione: 1,5 V</li><li>Composizione: alcalina</li> |
 | [`6V case per batterie AA`](https://www.amazon.it/GTIWUNG-Portabatterie-Batteries-Titolare-Batteria/dp/B07WJ3HFSP/ref=sr_1_4_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1H1FAUSVDY2ZO&dib=eyJ2IjoiMSJ9.VaIPkWXh1vEz2NWlzy-bskl9fVmzWq7qeBQ8_ApM4FPnZ8V06gFMpukyYOf0ioPXd84rmuTRhwcCTQ-VyXnU4EB3BAxMwPgJyKHS5BD2nhbk5AyTJEGofYvVUIhDMtfrEYWUxj76uI_8QnKTrhU6xVS8KeJ8W6aC3NxHL-sjlnikRBs7oRnvvSmNphDlNJrFtqXkM1Psx928dYTdv8xYIyf37HDewKhmBF5k6ltBX6ugh2mP0TILY5vQ6Vt7XLJGf1b0Tg2dlh3lrgPXofts5vrMIoWyVe_076TEcwlvY2E.PCfiGvevFAiXFAPFaMBk1aE8f2rlIRc813mSuyq8xkc&dib_tag=se&keywords=aa%2Bbattery%2Bholder&qid=1711374901&sprefix=aa%2Bbattery%2Bhgolder%2Caps%2C109&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) | 1 | Contenitore utilizzato per collegare 4 batterie AA in serie, generando una tensione totale di 6V. |
 
-![Componenti del circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_components.png)
+![Componenti del circuito](resources/circuit/smart_parking_city_components.png)
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
 # Circuito :electric_plug:
 
-![Schema del circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_diagram.png)
+![Schema del circuito](resources/circuit/smart_parking_city_circuit_diagram.png)
 *Schema del circuito*
 
 -----------------------------------------------------------------------------------------------------------
-![Circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit.png)
+![Circuito](resources/circuit/smart_parking_city_circuit.png)
 *Vista dall'alto*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 1 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_1.png)
+![Zoom 1 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_1.png)
 *Particolare*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 2 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_2.png)
+![Zoom 2 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_2.png)
 *Particolare*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 3 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_3.png)
+![Zoom 3 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_3.png)
 *Particolare*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 4 sul circuito](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/resources/circuit/smart_parking_city_circuit_zoomed_4.png)
+![Zoom 4 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_4.png)
 *Particolare*
 
 -----------------------------------------------------------------------------------------------------------
@@ -351,7 +351,7 @@ Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un 
 
 Di seguito viene descritto in linea generale il funzionamento dei vari file di codice del progetto (definiti "*sketches*" nell'ecosistema Arduino). Per ulteriori approfondimenti, è possibile consultare direttamente i file, **commentati** nei minimi dettagli.
 
-### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
+### - [`SmartParkingCity.ino`](src/SmartParkingCity.ino)
 
 Lo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei posti auto, regolare ingresso e uscita nel parcheggio a pagamento, adattare l'illuminazione in base ai livelli di luce ambientale, gestire la connettività al cloud e visualizzare lo stato del sistema su una matrice LED incorporata.
 
@@ -401,7 +401,7 @@ Calcola la **percentuale** di occupazione del parcheggio sommando i conteggi dei
 
 -----------------------------------------------------------------------------------------------------------
   
-### - [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
+### - [`ParkingSensor.h`](src/ParkingSensor.h)
 
 Lo sketch implementa una classe `ParkingSensor` per l'utilizzo dei **sensori ad ultrasuoni**, destinati al rilevamento dei veicoli nei parcheggi. Essi consentono di misurare la distanza di oggetti e determinare se un posto è occupato o libero. Il codice gestisce anche degli indicatori LED che segnalano lo stato dei parcheggi e aggiorna le corrispondenti variabili nel cloud.
 
@@ -427,12 +427,12 @@ Verifica se il **tempo massimo** di occupazione è superato per i parcheggi a zo
 
 -----------------------------------------------------------------------------------------------------------
 
-### - [`thingProperties.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
+### - [`thingProperties.h`](src/thingProperties.h)
 Lo sketch connette il dispositivo alla rete **Wi-Fi** e utilizza il cloud di Arduino IoT per monitorare e aggiornare lo stato dei parcheggi. Include variabili booleane, per indicare la disponibilità dei posti, e variabili intere, per contare i veicoli parcheggiati e calcolare la percentuale di occupazione. Le proprietà sono definite e registrate nel cloud di Arduino IoT per consentire il monitoraggio e gli aggiornamenti in tempo reale.
 
 -----------------------------------------------------------------------------------------------------------
 
-### - [`LedMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/LedMatrixConfig.h)
+### - [`LedMatrixConfig.h`](src/LedMatrixConfig.h)
 
 Lo sketch definisce quattro **matrici bidimensionali** che rappresentano diversi stati visivi per un display grafico. Queste matrici sono progettate per essere visualizzate sulla matrice LED integrata nell'Arduino UNO R4 WiFi. Ognuna rappresenta uno stato specifico:
 - "*running_matrix*": rappresenta la forma di un cuore, che indica uno stato normale e funzionante.
