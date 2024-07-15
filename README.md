@@ -314,6 +314,7 @@ Il valore idoneo della resistenza è stabilito dalla **prima legge di Ohm**:
 > **"La differenza di potenziale ai capi di un resistore è uguale al prodotto della resistenza per l'intensità della corrente che lo attraversa."**
 
 Definendo quindi *Vs* come tensione di alimentazione, pari a *5V* (standard erogato dai GPIO pin di Arduino), possiamo determinare il valore dei resistori in base alla seguente formula:
+
 $$R=\frac{Vs - Vf}{If}$$
 
 Possiamo dunque determinare il valore della resistenza per ogni colore di LED utilizzato.
