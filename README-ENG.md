@@ -248,7 +248,7 @@ The circuit that manages the operation of the prototype handles the following fu
 
 Let's now examine the characteristics in detail.
 
-## Power Supply
+## Power supply
 
 ### Arduino
 Among the various power supply options for the board, it was chosen to use the **integrated USB-C® connector**. It is the most common, simple, and safe method, as the voltage (*5 V*) and current (*500 mA max*) are **regulated and standardized** according to USB specifications. Besides powering the Arduino, the USB connector also allows powering the various components connected to the *5v* pin on the board.
@@ -257,8 +257,8 @@ Given that the maximum allowable current is 500 mA, it was necessary to ensure t
 
 | Component | Maximum Current | Quantity | Total Maximum Current |
 | --- | --- | --- | --- |
-| Ultrasonic Sensor | ~5 mA | 4 | ~5 mA x 4 = **~20 mA** |
-| Infrared Sensor | ~5 mA | 2 | ~5 mA x 2 = **~10 mA** |
+| Ultrasonic sensor | ~5 mA | 4 | ~5 mA x 4 = **~20 mA** |
+| Infrared sensor | ~5 mA | 2 | ~5 mA x 2 = **~10 mA** |
 | LED | ~20 mA | 9 | 20 mA x 9 = **~180 mA** |
 
 *(The servo motor control pin and the photoresistor consume such a low amount of current that they can be considered negligible).*
@@ -266,27 +266,27 @@ Given that the maximum allowable current is 500 mA, it was necessary to ensure t
 The total maximum current is therefore approximately 210 mA, well within the 500 mA limit.                                         
 **N.B.:** although theoretically, the maximum current consumed by each LED is ~20 mA, in the circuit it never exceeds 8 mA (for reasons that will be explained later). Thus, the maximum current (**~100 mA**) used is even lower.
 
-### Servo Motor
+### Servo motor
 The servo motor stands out from the other components due to its **unstable** current consumption, characterized by high current peaks that could damage the microcontroller. For this reason, it is advisable to power it through an external source, with a voltage between 4.8 and 6 V. Consequently, **4 AA batteries** (1.5 V each) connected in series were chosen.
 
 ## Sensors
 The sensors are responsible for detecting certain environmental conditions to communicate them to the controller.
 
-### Ultrasonic Sensors
+### Ultrasonic sensors
 An ultrasonic sensor works by emitting high-frequency sound pulses, beyond the range of human hearing, and measuring the time it takes for these pulses to reflect off an object and return to the sensor. Knowing the speed of sound in air, the sensor calculates the distance based on the time it takes for the pulses to travel back and forth, using the following formula:
 
 $$distance =\frac{speed\ of\ sound \times time}{2}$$
   
-![Ultrasonic Sensor Working](https://cdn.shopify.com/s/files/1/0550/8091/0899/files/How-Ultrasonic-Sensors-Work_2_bbe85036-facc-4a57-a46d-c1e7f56312ba_600x600.gif?v=1677693349)
+![Ultrasonic sensor working](https://cdn.shopify.com/s/files/1/0550/8091/0899/files/How-Ultrasonic-Sensors-Work_2_bbe85036-facc-4a57-a46d-c1e7f56312ba_600x600.gif?v=1677693349)
 
 The sensor has 4 connectors: *VCC* for power, *GND* for ground, *ECHO* and *TRIG* for control. The first two are connected to the *5v* and *GND* pins of the Arduino, respectively, through the breadboard. The *ECHO* and *TRIG* connectors manage the sending and receiving of ultrasounds and can be connected to the same GPIO (*General Purpose Input/Output*) pin of the microcontroller, as they operate alternately.
 
 The choice of this sensor for parking detection is due to its **precision** in measuring the distance of vehicles, allowing for **easy adjustment** to adapt to various types of parking. Moreover, it is not affected by light, smoke, dust, and reflective surface characteristics (except for soft surfaces, which may absorb ultrasounds instead of reflecting them; however, this is not an issue in the context of parking detection).
 
-### Active Infrared Sensors
+### Active infrared sensors
 An active infrared sensor works by emitting a beam of infrared light and then detecting its reflection. When an object is in the path of the beam, the infrared light is reflected towards the sensor, which detects the presence of the object. This change in light reflection is interpreted as the presence of an object in front of the sensor.
 
-![Infrared Sensor Working](https://circuitdigest.com/sites/default/files/inlineimages/u4/IR-Sensor-Working.gif)
+![Infrared sensor working](https://circuitdigest.com/sites/default/files/inlineimages/u4/IR-Sensor-Working.gif)
 
 The sensor has 3 connectors: *VCC* for power, *GND* for ground, and *OUT* for control. The connection to Arduino is similar to that of the ultrasonic sensor.
 
@@ -309,11 +309,11 @@ The actuators convert the microcontroller's signals into physical actions.
 ### LED
 The circuit uses 9 LEDs, semiconductor diodes that emit **light** when current passes through them. Each LED is controlled via a digital GPIO pin of the Arduino, with the exception of 3 LEDs connected to analog pins, which can also function as digital pins (however, this flexibility does not work the other way around, as digital pins cannot function as analog). Specifically, each LED has an *anode* (positive terminal) connected to the board pin and a *cathode* (negative terminal) connected to the microcontroller's *GND*.
 
-![LED Anatomy](https://www.emanuelegenovese.it/wp-content/uploads/2018/03/LED-anatomia.png)
+![LED anatomy](https://www.emanuelegenovese.it/wp-content/uploads/2018/03/LED-anatomia.png)
 
 Each LED has 2 important properties:
-- ***Forward Voltage Drop** (Vf)*: the voltage required for current to flow through the LED.
-- ***Maximum Forward Current** (If)*: the maximum current that can flow through the LED without damaging it. For the LEDs used, this is **20 mA**.
+- ***Forward voltage drop** (Vf)*: the voltage required for current to flow through the LED.
+- ***Maximum forward current** (If)*: the maximum current that can flow through the LED without damaging it. For the LEDs used, this is **20 mA**.
 
 Additionally, each GPIO pin on the *Arduino UNO R4 WiFi* has a maximum current limit that can be drawn by a connected device without damaging the pin, which is **8 mA**. Therefore, to ensure that the current flowing through the LED is less than 8 mA, it is necessary to add a **series resistor** to each LED. For added safety, an even lower current, such as **7 mA**, is chosen.
 
@@ -321,6 +321,7 @@ The appropriate resistor value is determined by **Ohm's First Law**:
 > **"The potential difference across a resistor is equal to the product of the resistance and the current flowing through it."**
 
 Defining *Vs* as the supply voltage, equal to *5V* (standard supplied by the Arduino GPIO pins), we can determine the resistor value using the following formula:
+
 $$R=\frac{Vs - Vf}{If}$$
 
 We can then determine the resistance value for each color of LED used.
@@ -330,20 +331,18 @@ We can then determine the resistance value for each color of LED used.
 | Blue | 2.7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
 | White | 2.7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
 | Green | 2.5 V | 7 mA | $$\frac{5,0 V - 2,5 V}{7 mA} = 357,1 Ω $$ |
-| Red | 1.9 V | 
-
-7 mA | $$\frac{5,0 V - 1,9 V}{7 mA} = 442,9 Ω $$ |
+| Red | 1.9 V | 7 mA | $$\frac{5,0 V - 1,9 V}{7 mA} = 442,9 Ω $$ |
 | Yellow | 1.9 V | 7 mA | $$\frac{5,0 V - 1,9 V}{7 mA} = 442,9 Ω $$ |
 
 After performing the calculations and considering the availability of the resistor set, the best option is to use **a 470 Ω resistor for each LED**, ensuring that the direct current through each is well below the maximum limit of 8 mA.
 
-**Fun Fact** 💡: the resistance value of a resistor is determined by the **colored bands** visible on its surface, making them easily identifiable through appropriate tables or [online tools](https://www.digikey.it/en/resources/conversion-calculators/conversion-calculator-resistor-color-code).
+**Fun fact** 💡: the resistance value of a resistor is determined by the **colored bands** visible on its surface, making them easily identifiable through appropriate tables or [online tools](https://www.digikey.it/en/resources/conversion-calculators/conversion-calculator-resistor-color-code).
 
-### Servo Motor
+### Servo motor
 The servo motor is a low-power device used to convert a control signal into a **precise and controlled movement**. This process is made possible through a modulation technique called ***PWM (Pulse Width Modulation)***. A PWM signal consists of a series of electrical pulses with a constant frequency but with **variable duration**. These pulses take the form of *square waves*, where the value can only be *HIGH* (*5V*) or *LOW* (*0V*). 
 When Arduino controls a servo motor, it generates PWM signals with different widths (representing the duration). For example, to move the servo motor to a desired position, Arduino sends PWM pulses with a width **proportional** to that position. This relationship between pulse width and servo motor position is established in the servo motor's *datasheet* and is used by Arduino to control it precisely and deterministically.
 
-![Servo Motor Working](https://lastminuteengineers.com/wp-content/uploads/arduino/Servo-Motor-Working-Animation.gif)
+![Servo motor working](https://lastminuteengineers.com/wp-content/uploads/arduino/Servo-Motor-Working-Animation.gif)
 
 The servo motor has 3 connectors: *red* for power, *brown* for ground, and *orange* for control. The first two are connected to the *6V* generator, while the control wire is connected to a digital PWM GPIO, specifically pin *D10*.
 
@@ -352,126 +351,144 @@ The servo motor has 3 connectors: *red* for power, *brown* for ground, and *oran
 -----------------------------------------------------------------------------------------------------------
 
 # Code :man_technologist:
-Le funzionalità del progetto sono controllate e gestite attraverso il codice, il quale è redatto nell'editor cloud di Arduino e successivamente caricato sul microcontrollore. Quest'ultimo conserva una copia del codice e lo esegue immediatamente all'alimentazione.
 
-## Linguaggio
-Il linguaggio di programmazione utilizzato nel progetto è ***Arduino***. È un linguaggio di alto livello basato su **C/C++** che include librerie e funzioni specializzate per interagire con l'hardware specifico di Arduino, come sensori, attuatori e moduli di comunicazione. 
+The project's functionalities are controlled and managed through the code, which is written in the Arduino cloud editor and then uploaded to the microcontroller. The latter stores a copy of the code and executes it immediately upon power-up.
+
+## Language
+
+The programming language used in the project is ***Arduino***. It is a high-level language based on **C/C++** that includes specialized libraries and functions for interacting with Arduino-specific hardware such as sensors, actuators, and communication modules.
 
 ## Sketches
 
-Di seguito viene descritto in linea generale il funzionamento dei vari file di codice del progetto (definiti "*sketches*" nell'ecosistema Arduino). Per ulteriori approfondimenti, è possibile consultare direttamente i file, **commentati** nei minimi dettagli.
+Below is a general description of the operation of the various project code files (referred to as "*sketches*" in the Arduino ecosystem). For more detailed information, you can directly consult the files, **commented** in great detail.
 
 ### - [`SmartParkingCity.ino`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/SmartParkingCity.ino)
 
-Lo sketch sfrutta diversi sensori e componenti per monitorare l'occupazione dei posti auto, regolare ingresso e uscita nel parcheggio a pagamento, adattare l'illuminazione in base ai livelli di luce ambientale, gestire la connettività al cloud e visualizzare lo stato del sistema su una matrice LED incorporata.
+The sketch utilizes various sensors and components to monitor parking space occupancy, regulate entry and exit in the paid parking lot, adjust lighting based on ambient light levels, manage cloud connectivity, and display the system status on an integrated LED matrix.
 
-#### Librerie
-- `Servo.h`: controllo del servomotore.
-- `EEPROM.h`: memorizzazione permanente dei dati.
-- `NewPing.h`: uso dei sensori ad ultrasuoni.
-- `thingProperties.h`, `ParkingSensor.h`, `LedMatrixConfig.h`, `Arduino_LED_Matrix.h`: gestione delle proprietà del dispositivo IoT, dei sensori di parcheggio e della matrice LED.
+#### Libraries
 
-#### Funzione `setup()`
-È eseguita **una volta** all'avvio del sistema e comprende:
-- Inizializzazione della matrice LED e visualizzazione dello stato di setup.
-- Connessione al cloud Arduino IoT.
-- Configurazione delle modalità dei pin per i vari componenti.
-- Inizializzazione delle luci automatiche e del servomotore.
-- Lettura dei dati memorizzati nella memoria EEPROM.
-- Impostazione delle luci dei LED allo stato iniziale.
+- `Servo.h`: Controls the servo motor.
+- `EEPROM.h`: Permanent data storage.
+- `NewPing.h`: Use of ultrasonic sensors.
+- `thingProperties.h`, `ParkingSensor.h`, `LedMatrixConfig.h`, `Arduino_LED_Matrix.h`: Manages IoT device properties, parking sensors, and the LED matrix.
 
-#### Funzione `loop()`
-È eseguita in **modo continuo** e include:
-- Gestione della connettività con il cloud Arduino IoT.
-- Aggiornamento della percentuale di occupazione del parcheggio.
-- Gestione automatica delle luci in base alla luce ambientale.
-- Regolazione dell'accesso al parcheggio a pagamento.
-- Rilevazione dell'occupazione dei posti auto utilizzando i sensori di parcheggio.
+#### `setup()` function
 
-#### Funzione `connectionHandler()`
-Verifica la **connessione** al cloud Arduino IoT e tenta di riconnettersi in caso di disconnessione, con un numero limitato di tentativi per evitare blocchi indefiniti del codice.
+Executed **once** at system startup and includes:
+- Initialization of the LED matrix and display of the setup status.
+- Connection to the Arduino IoT cloud.
+- Configuration of pin modes for various components.
+- Initialization of automatic lights and the servo motor.
+- Reading data stored in the EEPROM memory.
+- Setting LED lights to the initial state.
 
-#### Funzione `parkingAccessRegulator()`
-Controlla l'**accesso** al parcheggio a pagamento utilizzando i sensori di ingresso e uscita e un servomotore per il movimento della sbarra. Gestisce le **luci** del sefamoro d'accesso e aggiorna il conteggio dei veicoli parcheggiati in tempo reale.
+#### `loop()` function
 
-#### Funzione `setServoAngle(int angle)`
-Imposta l'**angolo** del servomotore per aprire o chiudere la sbarra, con un breve ritardo per consentire il corretto posizionamento del motore, per poi disconnetterlo al fine di evitare vibrazioni e ridurre il consumo energetico.
+Executed **continuously** and includes:
+- Management of the connection to the Arduino IoT cloud.
+- Updating the parking occupancy percentage.
+- Automatic light management based on ambient light.
+- Regulation of access to the paid parking lot.
+- Detection of parking space occupancy using parking sensors.
 
-#### Funzione `setupAutoLights()`
-**Calibra** il livello di soglia di oscurità basato sulla lettura iniziale del sensore di luce (LDR).
+#### `connectionHandler()` function
 
-#### Funzione `autoLights()`
-Monitora il livello di luce utilizzando il sensore LDR e attiva o disattiva le **luci crepuscolari** in base al superamento della soglia di oscurità per un determinato periodo di tempo.
+Checks the **connection** to the Arduino IoT cloud and attempts to reconnect in case of disconnection, with a limited number of attempts to avoid indefinite code blocks.
 
-#### Funzione `updateParkedVehiclesCount(int change)`
-**Aggiorna** il conteggio dei veicoli parcheggiati (aggiungendone o sottraendone uno) e **memorizza** il nuovo valore nella memoria interna EEPROM.
+#### `parkingAccessRegulator()` function
 
-#### Funzione `updateParkingOccupationPercentage()`
-Calcola la **percentuale** di occupazione del parcheggio sommando i conteggi dei posti occupati e aggiornando la variabile corrispondente.
+Controls **access** to the paid parking lot using entry and exit sensors and a servo motor for the barrier movement. Manages the **access semaphore lights** and updates the real-time count of parked vehicles.
+
+#### `setServoAngle(int angle)` function
+
+Sets the **angle** of the servo motor to open or close the barrier, with a short delay to allow the motor to position correctly, then disconnects it to avoid vibrations and reduce power consumption.
+
+#### `setupAutoLights()` function
+
+**Calibrates** the darkness threshold level based on the initial reading of the light sensor (LDR).
+
+#### `autoLights()` Function
+
+Monitors the light level using the LDR sensor and activates or deactivates the **twilight lights** based on the darkness threshold being exceeded for a certain period.
+
+#### `updateParkedVehiclesCount(int change)` function
+
+**Updates** the count of parked vehicles (adding or subtracting one) and **stores** the new value in the internal EEPROM memory.
+
+#### `updateParkingOccupationPercentage()` Function
+
+Calculates the **percentage** of parking occupancy by summing the counts of occupied spaces and updating the corresponding variable.
 
 -----------------------------------------------------------------------------------------------------------
-  
+
 ### - [`ParkingSensor.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/ParkingSensor.h)
 
-Lo sketch implementa una classe `ParkingSensor` per l'utilizzo dei **sensori ad ultrasuoni**, destinati al rilevamento dei veicoli nei parcheggi. Essi consentono di misurare la distanza di oggetti e determinare se un posto è occupato o libero. Il codice gestisce anche degli indicatori LED che segnalano lo stato dei parcheggi e aggiorna le corrispondenti variabili nel cloud.
+The sketch implements a `ParkingSensor` class for the use of **ultrasonic sensors** intended for vehicle detection in parking spaces. They measure object distances and determine if a space is occupied or free. The code also manages LED indicators that signal the status of the parking spaces and updates the corresponding variables in the cloud.
 
-#### Librerie
-- `Time.h`: funzionalità di gestione del tempo.
-- `NewPing.h`: uso dei sensori ad ultrasuoni.
+#### Libraries
 
-#### Metodo pubblico `detectParking()`
-**Rileva la presenza di un veicolo** nel posto auto e aggiorna l'indicatore LED di conseguenza. Nello specifico:
-- Misura la durata dell'ultrasuono e calcola la distanza dall'oggetto rilevato.
-- Se un veicolo è rilevato, registra il tempo di rilevamento e controlla il tempo massimo di occupazione.
-- Se il parcheggio è occupato per un certo periodo, accende il LED e aggiorna la variabile cloud.
-- Nel momento in cui non è più rilevato alcun veicolo, registra il tempo di assenza e spegne il LED dopo un certo periodo.
+- `Time.h`: Time management functionality.
+- `NewPing.h`: Use of ultrasonic sensors.
 
-#### Metodo privato `updateCloudVariable(boolean state)`
-Assegna lo **stato di un parcheggio** (occupato o libero) alle rispettive variabili nel cloud.
+#### Public Method `detectParking()`
 
-#### Metodo privato `checkMaxOccupationTime()`
-Verifica se il **tempo massimo** di occupazione è superato per i parcheggi a zona disco. Nello specifico:
-- Verifica se l'ID inizia con "T", indicando un posto a sosta breve.
-- Ottiene il timestamp corrente dal cloud.
-- Se non è domenica e l'ora è tra le 8:00 e le 20:00, verifica il tempo di occupazione del parcheggio: in caso superi il tempo massimo consentito, attiva il lampeggio del rispettivo LED.
+**Detects the presence of a vehicle** in the parking space and updates the LED indicator accordingly. Specifically:
+- Measures the duration of the ultrasonic wave and calculates the distance from the detected object.
+- If a vehicle is detected, it records the detection time and checks the maximum occupation time.
+- If the parking space is occupied for a certain period, it turns on the LED and updates the cloud variable.
+- When no vehicle is detected anymore, it records the absence time and turns off the LED after a certain period.
+
+#### Private Method `updateCloudVariable(boolean state)`
+
+Assigns the **state of a parking space** (occupied or free) to the respective variables in the cloud.
+
+#### Private Method `checkMaxOccupationTime()`
+
+Checks if the **maximum occupation time** is exceeded for time-limited parking spaces. Specifically:
+- Verifies if the ID starts with "T", indicating a short-stay parking space.
+- Obtains the current timestamp from the cloud.
+- If it's not Sunday and the time is between 8:00 AM and 8:00 PM, it checks the parking occupation time: if it exceeds the maximum allowed time, it activates the respective LED blinking.
 
 -----------------------------------------------------------------------------------------------------------
 
 ### - [`thingProperties.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/thingProperties.h)
-Lo sketch connette il dispositivo alla rete **Wi-Fi** e utilizza il cloud di Arduino IoT per monitorare e aggiornare lo stato dei parcheggi. Include variabili booleane, per indicare la disponibilità dei posti, e variabili intere, per contare i veicoli parcheggiati e calcolare la percentuale di occupazione. Le proprietà sono definite e registrate nel cloud di Arduino IoT per consentire il monitoraggio e gli aggiornamenti in tempo reale.
+
+The sketch connects the device to the **Wi-Fi** network and uses the Arduino IoT cloud to monitor and update the status of the parking spaces. It includes boolean variables to indicate space availability and integer variables to count parked vehicles and calculate the occupancy percentage. The properties are defined and registered in the Arduino IoT cloud to allow real-time monitoring and updates.
 
 -----------------------------------------------------------------------------------------------------------
 
 ### - [`LedMatrixConfig.h`](https://github.com/RichardBoy05/Smart-Parking-City/blob/main/src/LedMatrixConfig.h)
 
-Lo sketch definisce quattro **matrici bidimensionali** che rappresentano diversi stati visivi per un display grafico. Queste matrici sono progettate per essere visualizzate sulla matrice LED integrata nell'Arduino UNO R4 WiFi. Ognuna rappresenta uno stato specifico:
-- "*running_matrix*": rappresenta la forma di un cuore, che indica uno stato normale e funzionante.
-- "*setup_matrix*": rappresenta la forma di una clessidra, che indica uno stato iniziale di configurazione.
-- "*attempting_reconnection_matrix*": rappresenta il simbolo del WiFi, che indica un tentativo di riconnessione.
-- "*no_connection_matrix*": rappresenta una faccia morta, che indica l'incapacità di stabilire una connessione di rete.
+The sketch defines four **two-dimensional matrices** representing different visual states for a graphical display. These matrices are designed to be displayed on the integrated LED matrix of the Arduino UNO R4 WiFi. Each represents a specific state:
+- "*running_matrix*": depicts a heart shape, indicating a normal and functioning state.
+- "*setup_matrix*": depicts an hourglass shape, indicating an initial setup state.
+- "*attempting_reconnection_matrix*": depicts the WiFi symbol, indicating a reconnection attempt.
+- "*no_connection_matrix*": depicts a dead face, indicating the inability to establish a network connection.
 
-Ogni matrice è definita come una serie di righe e colonne, dove ogni elemento rappresenta lo stato di un singolo LED sulla matrice. I valori binari sono utilizzati per indicare se un LED è acceso (1) o spento (0).
-
------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------
-
-# Interdisciplinary connections :link:
-Il progetto si presta inoltre ad alcuni possibili **collegamenti interdisciplinari** tra le materie scolastiche.
-
-- **Informatica**: Nascita ed evoluzione delle reti digitali, in particolare il fenomeno della "*trasformazione digitale*";
-- **Fisica**: circuiti in corrente continua, prima legge di Ohm, onde infrarosse;
-- **Letteratura italiana**: Giovanni Verga e il mito del progresso, interpretato sia come "fiumana" inarrestabile e grandiosa che nei suoi aspetti più negativi (si veda [Pro e contro dell'IoT](#pro-e-contro)).
-- **Storia dell'arte**: Art Nouveau, l'uso di materiali assemblati a freddo e quindi smontabili (esempio: il "Palazzo di Cristallo" di Joseph Paxton) è analogo al concetto del circuito *solderless* utilizzato, ossia un tipo di circuito semipermanente molto pratico per progetti di questo genere.
+Each matrix is defined as a series of rows and columns, where each element represents the state of a single LED on the matrix. Binary values are used to indicate whether an LED is on (1) or off (0).
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Conclusions on the experience :thought_balloon:
+# Interdisciplinary Connections :link:
 
-Il progetto ha avuto origine grazie all'esperienza di PCTO "*Programma in rete*" 2023, organizzata dalla *Cisco Networking Academy*, durante il quale ho avuto la fortuna di conoscere per la prima volta il mondo dell'*Internet of Things*. Il corso mi ha permesso di acquisire molte competenze che, insieme alle mie conoscenze pregresse di programmazione, mi hanno consentito di provare a cimentarmi in questa attività.
+The project also lends itself to some possible **interdisciplinary connections** between school subjects.
 
-Dopo mesi passati alla ricerca di un'idea da trasformare in un prototipo, il 3 marzo 2024 ho pensato di coniugare questa mia ambizione con una delle difficoltà che mi "attanagliava" di più in quel periodo: il **parcheggio**, nel tentativo di ottenere la tanto agoniata patente di guida. Nonostante le mie difficoltà fossero principalmente legate a "lacune tecniche", per empatia verso altri guidatori (meno "imbranati") ho pensato che quanto ho imparato potesse perlomeno aiutarli nel **trovare un parcheggio**...
+- **Computer Science**: The birth and evolution of digital networks, particularly the phenomenon of "*digital transformation*";
+- **Physics**: Direct current circuits, Ohm's first law, infrared waves;
+- **Italian Literature**: Giovanni Verga and the myth of progress, interpreted both as an unstoppable and grand "flood" and in its more negative aspects (see [Pros and cons of IoT](#pros-and-cons)).
+- **Art History**: Art Nouveau, the use of materials assembled cold and thus detachable (example: Joseph Paxton's "Crystal Palace") is analogous to the *solderless* circuit concept used, a very practical type of semi-permanent circuit for projects like this.
 
-Dopo quasi un mese di studio, documentazione e calcoli per la realizzazione del circuito, ho finalmente potuto iniziare a "divertirmi" con la corrente elettrica. Al di là di qualche sensore fuso e numerosi problemi da risolvere (sia hardware che software), col tempo sono riuscito a completare il circuito sperimentale. Pensando erroneamente di aver superato l'ostacolo più difficile, nei mesi seguenti mi sono trovato a dover affrontare la costruzione materiale del progetto, che si è rivelata più impegnativa del previsto, ma anche parecchio gratificante.
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
-Nel complesso, questa esperienza non solo mi ha permesso di migliorare le mie competenze in un ambito che mi appassiona, ma mi ha anche insegnato l'importanza di **non arrendersi** di fronte alle difficoltà (e ce ne sono state molte...), di **ripudiare l'eccessivo perfezionismo** e di affrontare i problemi più ostici provando ad osservarli da una **prospettiva diversa**. Oltre alla soddisfazione del risultato finale, l'aspetto stimolante dell'esperienza è stato il processo nella sua interezza, di cui idea, studio, progettazione ed effettiva realizzazione. 
+# Conclusions on the Experience :thought_balloon:
+
+The project originated from the PCTO experience "*Programma in rete*" 2023, organized by the *Cisco Networking Academy*, during which I had the opportunity to get acquainted with the world of the *Internet of Things*. The course allowed me to acquire many skills which, combined with my previous programming knowledge, enabled me to attempt this activity.
+
+After months of searching for an idea to turn into a prototype, on March 3, 2024, I decided to combine this ambition with one of the challenges that "tormented" me the most at the time: **parking**, as I was trying to obtain my much-desired driver's license. Although my difficulties were mainly due to "technical gaps," I thought that what I had learned could at least help other drivers (less "clumsy") in **finding a parking spot** out of empathy.
+
+After almost a month of study, documentation, and calculations for circuit realization, I was finally able to "have fun" with electricity. Despite some fried sensors and numerous problems to solve (both hardware and software), over time I managed to complete the experimental circuit. Mistakenly thinking I had overcome the hardest obstacle, in the following months, I had to face the actual construction of the project, which proved more challenging than expected but also very rewarding.
+
+Overall, this experience not only allowed me to improve my skills in an area I'm passionate about, but it also taught me the importance of **not giving up** in the face of difficulties (and there were many...), to **reject excessive perfectionism**, and to tackle the toughest problems by trying to look at them from a **different perspective**. Beyond the satisfaction of the final result, the most stimulating aspect of the experience was the process in its entirety, from idea, study, design, to actual implementation.
