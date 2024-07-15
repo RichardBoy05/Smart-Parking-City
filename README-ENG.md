@@ -148,8 +148,8 @@ For practicality, adjustments have been made to certain parameters, with values 
 | --- | --- | --- | --- |
 | Detection time | 30 seconds | 3 seconds | Time required for a sensor to detect a vehicle, to prevent errors caused by momentary interference. |
 | Detection distance | 2.5 meters | 5 cm | Threshold distance within which a vehicle is detected in a parking space. |
-| Maximum time in timed zone | 1 hour (+ 15 minutes tolerance) | 16 seconds (+ 4 seconds tolerance) | Maximum time for occupying a disc parking space, with a 25% tolerance. |
-| Brightness stabilization Time | 20 seconds | 2 seconds | Time required before dusk lights turn on or off, to prevent flickering when brightness is near the threshold.
+| Maximum time in timed zone | 1 hour (+ 15 minutes tolerance) | 16 seconds (+ 4 seconds tolerance) | Maximum time for occupying a timed parking space, with a 25% tolerance. |
+| Brightness stabilization Time | 20 seconds | 2 seconds | Time required before twilight lights turn on or off, to prevent flickering when brightness is near the threshold.
 
 #### Notes
 - Separate exit was not provided due to the relatively small parking area and its non-necessity for project demonstration purposes. Alternatively, a function preventing entry and exit (by turning on the red light) when both sensors are activated, indicating two vehicles approaching simultaneously from opposite directions, was introduced.
@@ -217,131 +217,135 @@ The table below lists the different components used in the circuit. For complete
 
 # Circuit :electric_plug:
 
-![Schema del circuito](resources/circuit/smart_parking_city_circuit_diagram.png)
-*Schema del circuito*
+![Circuit scheme](resources/circuit/smart_parking_city_circuit_diagram.png)
+*Circuit diagram*
 
 -----------------------------------------------------------------------------------------------------------
-![Circuito](resources/circuit/smart_parking_city_circuit.png)
-*Vista dall'alto*
+![Circuit](resources/circuit/smart_parking_city_circuit.png)
+*View from above*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 1 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_1.png)
-*Particolare*
+![Zoom 1 on the circuit](resources/circuit/smart_parking_city_circuit_zoomed_1.png)
+*Detail*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 2 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_2.png)
-*Particolare*
+![Zoom 2 on the circuit](resources/circuit/smart_parking_city_circuit_zoomed_2.png)
+*Detail*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 3 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_3.png)
-*Particolare*
+![Zoom 3 on the circuit](resources/circuit/smart_parking_city_circuit_zoomed_3.png)
+*Detail*
 
 -----------------------------------------------------------------------------------------------------------
-![Zoom 4 sul circuito](resources/circuit/smart_parking_city_circuit_zoomed_4.png)
-*Particolare*
+![Zoom 4 on the circuit](resources/circuit/smart_parking_city_circuit_zoomed_4.png)
+*Detail*
 
 -----------------------------------------------------------------------------------------------------------
-Il circuito che gestisce il funzionamento del prototipo si occupa delle seguenti funzioni:
-- **Alimentare** il microcontrollore Arduino e il servo motore.
-- **Connettere** i vari sensori e attuatori ad Arduino in modo che possano essere **controllati** tramite codice.
 
-Analizziamone ora le caratteristiche nello specifico.
+The circuit that manages the operation of the prototype handles the following functions:
+- **Powering** the Arduino microcontroller and the servo motor.
+- **Connecting** the various sensors and actuators to Arduino so they can be **controlled** through code.
 
-## Alimentazione
+Let's now examine the characteristics in detail.
+
+## Power Supply
 
 ### Arduino
-Tra le varie opzioni di alimentazione per la scheda, si è scelto di utilizzare il **connettore USB-C® integrato**. È il metodo più comune, semplice e sicuro, poiché la tensione (*5 V*) e la corrente (*500 mA max*) sono **regolate e standardizzate** secondo le specifiche USB. Oltre all'Arduino, il connettore USB consente di alimentare anche i vari componenti connessi al pin *5v* della scheda.
+Among the various power supply options for the board, it was chosen to use the **integrated USB-C® connector**. It is the most common, simple, and safe method, as the voltage (*5 V*) and current (*500 mA max*) are **regulated and standardized** according to USB specifications. Besides powering the Arduino, the USB connector also allows powering the various components connected to the *5v* pin on the board.
 
-Dato che la massima intensità di corrente concessa è di 500 mA, è stato necessario verificare che i dispositivi collegati ad Arduino non superassero complessivamente questo limite.
+Given that the maximum allowable current is 500 mA, it was necessary to ensure that the devices connected to Arduino did not collectively exceed this limit.
 
-| Componente | Corrente massima | Quantità | Corrente totale massima
-| --- | --- | ---| --- |
-| `Sensore ad ultrasuoni` | ~5 mA | 4 | ~5 mA x 4 = **~20 mA** |
-| `Sensore ad infrarossi` | ~5 mA | 2 | ~5 mA x 4 = **~10 mA** |
-| `LED` | ~20 mA | 9 | 20 mA x 9 = **~180 mA** |
+| Component | Maximum Current | Quantity | Total Maximum Current |
+| --- | --- | --- | --- |
+| Ultrasonic Sensor | ~5 mA | 4 | ~5 mA x 4 = **~20 mA** |
+| Infrared Sensor | ~5 mA | 2 | ~5 mA x 2 = **~10 mA** |
+| LED | ~20 mA | 9 | 20 mA x 9 = **~180 mA** |
 
-*(Il pin di controllo del servo motore e il fotoresistore consumano una quantità di corrente talmente bassa da potersi considerare trascurabile).*
+*(The servo motor control pin and the photoresistor consume such a low amount of current that they can be considered negligible).*
 
-La corrente totale massima è quindi pari a ~210 mA, abbondantemente entro il limite di 500 mA.                                         
-**N.B.:** sebbene, a livello teorico, la massima corrente consumata da ciascun LED è pari a ~20 mA, nel circuito non supera mai gli 8 mA (per ragioni che saranno spiegate in seguito). Pertanto, la corrente massima (**~100 mA**) utilizzata risulta ancora minore.
+The total maximum current is therefore approximately 210 mA, well within the 500 mA limit.                                         
+**N.B.:** although theoretically, the maximum current consumed by each LED is ~20 mA, in the circuit it never exceeds 8 mA (for reasons that will be explained later). Thus, the maximum current (**~100 mA**) used is even lower.
 
-### Servo motore
-Il servo motore si distingue dagli altri componenti per il suo consumo di corrente **instabile**, caratterizzato da picchi di corrente elevati che potrebbero danneggiare il microcontrollore. Per questo motivo, è consigliabile alimentarlo tramite una fonte esterna, avente una tensione compresa tra 4,8 e 6 V. Di conseguenza, si è optato per l'utilizzo di **4 batterie AA** (1,5 V ciascuna) collegate in serie.
+### Servo Motor
+The servo motor stands out from the other components due to its **unstable** current consumption, characterized by high current peaks that could damage the microcontroller. For this reason, it is advisable to power it through an external source, with a voltage between 4.8 and 6 V. Consequently, **4 AA batteries** (1.5 V each) connected in series were chosen.
 
-## Sensori
-I sensori si occupano di rilevare alcune condizioni ambientali al fine di comunicarle al controllore.
+## Sensors
+The sensors are responsible for detecting certain environmental conditions to communicate them to the controller.
 
-### Sensori ad ultrasuoni
-Un sensore ad ultrasuoni funziona emettendo impulsi sonori ad **alta frequenza**, al di fuori dell'udibile dall'orecchio umano, e misurando il tempo che impiega per questi impulsi a riflettersi da un oggetto e tornare al sensore. Conoscendo la velocità del suono nell'aria, il sensore calcola la distanza basandosi sul tempo impiegato dagli impulsi per viaggiare avanti e indietro, in base alla seguente formula:
+### Ultrasonic Sensors
+An ultrasonic sensor works by emitting high-frequency sound pulses, beyond the range of human hearing, and measuring the time it takes for these pulses to reflect off an object and return to the sensor. Knowing the speed of sound in air, the sensor calculates the distance based on the time it takes for the pulses to travel back and forth, using the following formula:
 
 $$distance =\frac{speed\ of\ sound \times time}{2}$$
   
-![](https://cdn.shopify.com/s/files/1/0550/8091/0899/files/How-Ultrasonic-Sensors-Work_2_bbe85036-facc-4a57-a46d-c1e7f56312ba_600x600.gif?v=1677693349)
+![Ultrasonic Sensor Working](https://cdn.shopify.com/s/files/1/0550/8091/0899/files/How-Ultrasonic-Sensors-Work_2_bbe85036-facc-4a57-a46d-c1e7f56312ba_600x600.gif?v=1677693349)
 
-Il sensore è dotato di 4 connettori: *VCC* per l'alimentazione, *GND* per la terra, *ECHO* e *TRIG* per il controllo. I primi due sono collegati rispettivamente ai pin *5v* e *GND* dell'Arduino, attraverso la breadboard. I connettori *ECHO* e *TRIG* gestiscono l'invio e la ricezione degli ultrasuoni e possono essere collegati allo stesso pin GPIO (*General Purpose Input/Output*) del microcontrollore, poiché operano in modo alternato.
+The sensor has 4 connectors: *VCC* for power, *GND* for ground, *ECHO* and *TRIG* for control. The first two are connected to the *5v* and *GND* pins of the Arduino, respectively, through the breadboard. The *ECHO* and *TRIG* connectors manage the sending and receiving of ultrasounds and can be connected to the same GPIO (*General Purpose Input/Output*) pin of the microcontroller, as they operate alternately.
 
-La scelta di questo sensore per il rilevamento dei parcheggi è motivata dalla sua **precisione** nelle misurazioni della distanza dei veicoli, consentendo una **facile regolazione** per adattarsi a vari tipi di parcheggio. Inoltre, non è influenzato da luce, fumo, polvere e caratteristiche delle superfici riflettenti (eccetto superfici morbide, che possono assorbire gli ultrasuoni anziché rifletterli; tuttavia, questo non è un problema nel contesto del rilevamento dei parcheggi).
+The choice of this sensor for parking detection is due to its **precision** in measuring the distance of vehicles, allowing for **easy adjustment** to adapt to various types of parking. Moreover, it is not affected by light, smoke, dust, and reflective surface characteristics (except for soft surfaces, which may absorb ultrasounds instead of reflecting them; however, this is not an issue in the context of parking detection).
 
-### Sensori ad infrarossi attivo
-Un sensore ad infrarossi attivo funziona emettendo un fascio di luce infrarossa e poi rilevando la sua riflessione. Quando un oggetto si trova nel percorso del fascio, la luce infrarossa viene riflessa verso il sensore, il quale rileva la presenza dell'oggetto. Questa variazione nella riflessione della luce è interpretata come la presenza di un oggetto davanti al sensore.
+### Active Infrared Sensors
+An active infrared sensor works by emitting a beam of infrared light and then detecting its reflection. When an object is in the path of the beam, the infrared light is reflected towards the sensor, which detects the presence of the object. This change in light reflection is interpreted as the presence of an object in front of the sensor.
 
-![](https://circuitdigest.com/sites/default/files/inlineimages/u4/IR-Sensor-Working.gif)
+![Infrared Sensor Working](https://circuitdigest.com/sites/default/files/inlineimages/u4/IR-Sensor-Working.gif)
 
-Il sensore dispone di 3 connettori: *VCC* per l'alimentazione, *GND* per la terra e *OUT* per il controllo.  Il collegamento ad Arduino è analogo a quello del sensore ad ultrasuoni.
+The sensor has 3 connectors: *VCC* for power, *GND* for ground, and *OUT* for control. The connection to Arduino is similar to that of the ultrasonic sensor.
 
-La scelta di utilizzare questo sensore per la rilevazione dei veicoli all'accesso del parcheggio a pagamento è motivata dalla sua **affidabile** capacità di rilevare la presenza di un oggetto di fronte a sé, nonché dalla sua **facilità** di utilizzo. Tuttavia, a differenza del sensore ad ultrasuoni, non è in grado di fornire misurazioni precise, quindi non è raccomandato per il rilevamento dei parcheggi. È inoltre particolarmente sensibile alle condizioni di estrema luminosità, rendendolo inadatto per applicazioni esposte ad una forte luce solare.
+The choice to use this sensor for vehicle detection at the paid parking entrance is due to its **reliable** ability to detect the presence of an object in front of it, as well as its **ease** of use. However, unlike the ultrasonic sensor, it cannot provide precise measurements, making it unsuitable for parking detection. It is also particularly sensitive to extreme brightness conditions, making it unsuitable for applications exposed to strong sunlight.
 
-La volontà di utilizzare due diverse tipologie di sensori nel prototipo deriva anche dalla volontà di effettuare un confronto tra i due, così da delineare i rispettivi **vantaggi e svantaggi**.
+The decision to use two different types of sensors in the prototype also stems from the desire to compare the two, outlining their respective **advantages and disadvantages**.
 
-### Fotoresistenza
+### Photoresistor
 
-Il fotoresistore, pur non essendo un sensore vero e proprio ma una *resistenza*, costituisce l'ultimo componente di questa categoria. È un dispositivo elettronico che **modifica** la propria resistenza in base all'**intensità luminosa** a cui è esposto. Quando la luce colpisce il materiale fotosensibile all'interno del dispositivo, gli elettroni vengono eccitati, aumentando la conduttività del materiale e, di conseguenza, diminuendo la resistenza del fotoresistore. Questa variazione di resistenza viene sfruttata per controllare altri elementi del circuito elettronico, come, ad esempio, l'attivazione o la disattivazione di una luce crepuscolare in risposta ai cambiamenti di luminosità ambientale.
+The photoresistor, while not a true sensor but a *resistor*, constitutes the last component in this category. It is an electronic device that **changes** its resistance based on the **light intensity** it is exposed to. When light hits the photosensitive material inside the device, electrons are excited, increasing the material's conductivity and, consequently, decreasing the photoresistor's resistance. This change in resistance is used to control other elements of the electronic circuit, such as turning a dusk-to-dawn light on or off in response to changes in ambient light.
 
-![](https://engineeringlearn.com/wp-content/uploads/2021/12/LDR.jpg)
+![Photoresistor](https://engineeringlearn.com/wp-content/uploads/2021/12/LDR.jpg)
 
-Poiché i pin di Arduino non sono in grado di misurare direttamente una variazione di resistenza ma solo di tensione, il collegamento del fotoresistore avviene tramite un circuito noto come "***partitore di tensione***". Questo circuito è composto da due resistenze collegate in serie a una fonte di tensione. La tensione si distribuisce sulle diverse resistenze in base ai loro valori, secondo le regole delle *resistenze in serie* e alla *legge delle maglie di Kirchhoff*. Nel nostro caso, le due resistenze sono il fotoresistore (variabile) e un resistore da 10 kΩ (un valore standard per garantire una buona sensibilità e un basso consumo di corrente), mentre la fonte di tensione è il pin *5V* del microcontrollore.
-Successivamente, un GPIO pin analogico di Arduino (in questo caso *A5*), è connesso in mezzo alle due resistenze. Trattandosi di un pin analogico, esso è in grado di leggere una gamma di valori anziché solo un valore digitale. Il valore di tensione misurato può essere interpretato attraverso il codice per determinare il livello di luminosità ed effettuare le azioni necessarie.
+Since Arduino pins cannot directly measure a change in resistance but only in voltage, the photoresistor is connected via a circuit known as a "***voltage divider***." This circuit consists of two resistors connected in series to a voltage source. The voltage is distributed across the different resistors based on their values, according to the rules of *series resistors* and *Kirchhoff's voltage law*. In our case, the two resistors are the photoresistor (variable) and a 10 kΩ resistor (a standard value to ensure good sensitivity and low current consumption), while the voltage source is the *5V* pin of the microcontroller.
+Subsequently, an Arduino analog GPIO pin (in this case *A5*), is connected in the middle of the two resistors. As it is an analog pin, it can read a range of values instead of just a digital value. The measured voltage value can be interpreted through the code to determine the light level and take the necessary actions.
 
-## Attuatori
-Gli attuatori si occupano di convertire i segnali del microcontrollore in azioni fisiche.
+## Actuators
+The actuators convert the microcontroller's signals into physical actions.
 
 ### LED
-Il circuito utilizza 9 LED, diodi a semiconduttore che emettono **luce** quando attraversati da corrente elettrica. Ciascun LED è controllato tramite un pin digitale GPIO di Arduino, con l'eccezione di 3 LED collegati a pin analogici, che possono funzionare anche come digitali (tuttavia tale flessibilità non vale al contrario, in quanto pin digitali non possono fungere da analogici). Nello specifico, ogni LED è dotato di un *anodo* (terminale positivo) connesso al pin della scheda e di un *catodo* (terminale negativo) collegato al *GND* del microcontrollore.
+The circuit uses 9 LEDs, semiconductor diodes that emit **light** when current passes through them. Each LED is controlled via a digital GPIO pin of the Arduino, with the exception of 3 LEDs connected to analog pins, which can also function as digital pins (however, this flexibility does not work the other way around, as digital pins cannot function as analog). Specifically, each LED has an *anode* (positive terminal) connected to the board pin and a *cathode* (negative terminal) connected to the microcontroller's *GND*.
 
-![](https://www.emanuelegenovese.it/wp-content/uploads/2018/03/LED-anatomia.png)
+![LED Anatomy](https://www.emanuelegenovese.it/wp-content/uploads/2018/03/LED-anatomia.png)
 
-Ogni LED possiede 2 importanti proprietà:
-- ***Caduta di tensione diretta** (Vf)*: tensione necessaria affinché possa fluire corrente attraverso il LED.
-- ***Corrente diretta massima** (If)*: valore massimo di corrente che può attraversare il LED senza danneggiarlo. Nei LED utilizzati, equivale a **20 mA**.
+Each LED has 2 important properties:
+- ***Forward Voltage Drop** (Vf)*: the voltage required for current to flow through the LED.
+- ***Maximum Forward Current** (If)*: the maximum current that can flow through the LED without damaging it. For the LEDs used, this is **20 mA**.
 
-Inoltre, ogni pin GPIO dell'*Arduino UNO R4 WiFi* ha un limite massimo di corrente che può essere assorbito da un dispositivo collegato senza danneggiare il pin, pari a **8 mA**. Quindi, per garantire che la corrente che scorre attraverso il LED sia inferiore a 8 mA, è necessario aggiungere un **resistore in serie** a ciascun LED. Per maggior sicurezza, si opta per una corrente ancora più ridotta, come **7 mA**.
+Additionally, each GPIO pin on the *Arduino UNO R4 WiFi* has a maximum current limit that can be drawn by a connected device without damaging the pin, which is **8 mA**. Therefore, to ensure that the current flowing through the LED is less than 8 mA, it is necessary to add a **series resistor** to each LED. For added safety, an even lower current, such as **7 mA**, is chosen.
 
-Il valore idoneo della resistenza è stabilito dalla **prima legge di Ohm**:
-> **"La differenza di potenziale ai capi di un resistore è uguale al prodotto della resistenza per l'intensità della corrente che lo attraversa."**
+The appropriate resistor value is determined by **Ohm's First Law**:
+> **"The potential difference across a resistor is equal to the product of the resistance and the current flowing through it."**
 
-Definendo quindi *Vs* come tensione di alimentazione, pari a *5V* (standard erogato dai GPIO pin di Arduino), possiamo determinare il valore dei resistori in base alla seguente formula:
+Defining *Vs* as the supply voltage, equal to *5V* (standard supplied by the Arduino GPIO pins), we can determine the resistor value using the following formula:
 $$R=\frac{Vs - Vf}{If}$$
 
-Possiamo dunque determinare il valore della resistenza per ogni colore di LED utilizzato.
+We can then determine the resistance value for each color of LED used.
 
-| Colore del LED | Vf | If | Resistenza |
-| --- | --- | ---| --- |
-| `Blu` | 2,7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
-| `Bianco` | 2,7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
-| `Verde` | 2,5 V | 7 mA | $$\frac{5,0 V - 2,5 V}{7 mA} = 357,1 Ω $$ |
-| `Rosso` | 1,9 V | 7 mA | $$\frac{5,0 V - 1,9 V}{7 mA} = 442,9 Ω $$ |
+| LED Color | Vf | If | Resistance |
+| --- | --- | --- | --- |
+| Blue | 2.7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
+| White | 2.7 V | 7 mA | $$\frac{5,0 V - 2,7 V}{7 mA} = 328,6 Ω $$ |
+| Green | 2.5 V | 7 mA | $$\frac{5,0 V - 2,5 V}{7 mA} = 357,1 Ω $$ |
+| Red | 1.9 V | 
 
-Dopo aver eseguito i calcoli e considerando la disponibilità del set di resistori, l'opzione migliore è utilizzare **un resistore da 470 Ω per ciascun LED**, in modo da assicurare che la corrente diretta attraverso ciascuno sia ben al di sotto del limite massimo di 8 mA.
+7 mA | $$\frac{5,0 V - 1,9 V}{7 mA} = 442,9 Ω $$ |
+| Yellow | 1.9 V | 7 mA | $$\frac{5,0 V - 1,9 V}{7 mA} = 442,9 Ω $$ |
 
-**Curiosità** 💡: il valore di resistenza di un resistore è determinato dalle **bande colorate** visibili sulla sua superficie, rendendoli facilmente identificabili attraverso opportune tabelle o [tool](https://www.digikey.it/en/resources/conversion-calculators/conversion-calculator-resistor-color-code) online.
+After performing the calculations and considering the availability of the resistor set, the best option is to use **a 470 Ω resistor for each LED**, ensuring that the direct current through each is well below the maximum limit of 8 mA.
 
-### Servo motore
-Il servomotore è un dispositivo di ridotta potenza utilizzato per convertire un segnale di controllo in un **movimento preciso e controllato**. Questo processo è reso possibile grazie alla tecnica di modulazione chiamata ***PWM (Pulse Width Modulation)***. Un segnale PWM consiste in una serie di impulsi elettrici con una frequenza costante, ma con **durata variabile**. Questi impulsi assumono la forma di *onde quadre*, dove il valore può essere solo *HIGH* (*5V*) o *LOW* (*0V*). 
-Quando Arduino controlla un servomotore, genera segnali PWM con diverse larghezze (che ne rappresentano la durata). Ad esempio, per spostare il servomotore in una posizione desiderata, Arduino invia impulsi PWM con una larghezza **proporzionale** a quella della posizione. Questa relazione tra larghezza dell'impulso e posizione del servomotore è stabilita nel *datasheet* del servomotore stesso e viene sfruttata da Arduino per controllarlo in modo preciso e deterministico.
+**Fun Fact** 💡: the resistance value of a resistor is determined by the **colored bands** visible on its surface, making them easily identifiable through appropriate tables or [online tools](https://www.digikey.it/en/resources/conversion-calculators/conversion-calculator-resistor-color-code).
 
-![](https://lastminuteengineers.com/wp-content/uploads/arduino/Servo-Motor-Working-Animation.gif)
+### Servo Motor
+The servo motor is a low-power device used to convert a control signal into a **precise and controlled movement**. This process is made possible through a modulation technique called ***PWM (Pulse Width Modulation)***. A PWM signal consists of a series of electrical pulses with a constant frequency but with **variable duration**. These pulses take the form of *square waves*, where the value can only be *HIGH* (*5V*) or *LOW* (*0V*). 
+When Arduino controls a servo motor, it generates PWM signals with different widths (representing the duration). For example, to move the servo motor to a desired position, Arduino sends PWM pulses with a width **proportional** to that position. This relationship between pulse width and servo motor position is established in the servo motor's *datasheet* and is used by Arduino to control it precisely and deterministically.
 
-Il servo motore possiede 3 connettori: *rosso* per l'alimentazione, *marrone* per la terra, *arancione* per il controllo. I primi due sono connessi al generatore da *6V*, mentre il cavo di controllo è collegato ad un GPIO PWM digitale, nello specifico al pin *D10*. 
+![Servo Motor Working](https://lastminuteengineers.com/wp-content/uploads/arduino/Servo-Motor-Working-Animation.gif)
+
+The servo motor has 3 connectors: *red* for power, *brown* for ground, and *orange* for control. The first two are connected to the *6V* generator, while the control wire is connected to a digital PWM GPIO, specifically pin *D10*.
 
 
 -----------------------------------------------------------------------------------------------------------
