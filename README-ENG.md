@@ -1,7 +1,7 @@
 # Smart Parking City 🚗
 
-[![ita](https://img.shields.io/badge/lang-ita-green.svg)](README.md)
 [![en](https://img.shields.io/badge/lang-en-red.svg)](README-ENG.md)
+[![ita](https://img.shields.io/badge/lang-ita-green.svg)](README.md)
 
 Prototype of a smart parking system implemented at the municipal level, designed to show how the introduction of **IoT devices** (*Internet of Things*) can facilitate people's lives.
 
