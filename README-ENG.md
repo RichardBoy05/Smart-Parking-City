@@ -408,7 +408,7 @@ Sets the **angle** of the servo motor to open or close the barrier, with a short
 
 **Calibrates** the darkness threshold level based on the initial reading of the light sensor (LDR).
 
-#### `autoLights()` Function
+#### `autoLights()` function
 
 Monitors the light level using the LDR sensor and activates or deactivates the **twilight lights** based on the darkness threshold being exceeded for a certain period.
 
@@ -431,7 +431,7 @@ The sketch implements a `ParkingSensor` class for the use of **ultrasonic sensor
 - `Time.h`: Time management functionality.
 - `NewPing.h`: Use of ultrasonic sensors.
 
-#### Public Method `detectParking()`
+#### Public method `detectParking()`
 
 **Detects the presence of a vehicle** in the parking space and updates the LED indicator accordingly. Specifically:
 - Measures the duration of the ultrasonic wave and calculates the distance from the detected object.
@@ -439,11 +439,11 @@ The sketch implements a `ParkingSensor` class for the use of **ultrasonic sensor
 - If the parking space is occupied for a certain period, it turns on the LED and updates the cloud variable.
 - When no vehicle is detected anymore, it records the absence time and turns off the LED after a certain period.
 
-#### Private Method `updateCloudVariable(boolean state)`
+#### Private method `updateCloudVariable(boolean state)`
 
 Assigns the **state of a parking space** (occupied or free) to the respective variables in the cloud.
 
-#### Private Method `checkMaxOccupationTime()`
+#### Private method `checkMaxOccupationTime()`
 
 Checks if the **maximum occupation time** is exceeded for time-limited parking spaces. Specifically:
 - Verifies if the ID starts with "T", indicating a short-stay parking space.
@@ -471,7 +471,7 @@ Each matrix is defined as a series of rows and columns, where each element repre
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Interdisciplinary Connections :link:
+# Interdisciplinary connections :link:
 
 The project also lends itself to some possible **interdisciplinary connections** between school subjects.
 
@@ -483,7 +483,7 @@ The project also lends itself to some possible **interdisciplinary connections**
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 
-# Conclusions on the Experience :thought_balloon:
+# Conclusions on the experience :thought_balloon:
 
 The project originated from the PCTO experience "*Programma in rete*" 2023, organized by the *Cisco Networking Academy*, during which I had the opportunity to get acquainted with the world of the *Internet of Things*. The course allowed me to acquire many skills which, combined with my previous programming knowledge, enabled me to attempt this activity.
 
